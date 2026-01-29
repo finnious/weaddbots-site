@@ -1,0 +1,48 @@
+# llms.txt for https://www.weaddbots.com
+
+## Website Overview
+Website: WeAddBots
+Parent Company: Creating Value LLC
+Location: Memphis, Tennessee, USA
+
+## Description
+WeAddBots helps Memphis-area small and mid-sized businesses implement simple, AI-powered automations without replacing existing systems. We deliver practical wins in days or weeks—not months-long transformations.
+
+## Primary Positioning
+Local AI automation consulting for established Memphis businesses drowning in repetitive tasks, missed follow-ups, and manual chaos. Practical, grounded, human-centered approach. No hype.
+
+## Who We Serve
+- Small to mid-sized Memphis businesses (restaurants, retail, service companies, professional firms)
+- Business owners generating consistent activity but overwhelmed by operational friction
+- Leaders who recognize AI could help but feel unsure where to start
+
+## Key Content Areas
+- /services.html — Discovery sessions, custom implementations, workshops, pricing
+- /events/ — Free in-person Memphis AI meetups, workshop calendar
+- /about.html — Founder story, values, approach
+- /contact.html — Start a conversation, join newsletter
+
+## Services Offered
+1. Free: Memphis AI Meetups (in-person), AI Assessment Quiz
+2. Low-ticket ($37): AI Workshops (Zoom), AI Playbooks
+3. Core: Discovery Sessions ($300/session), Custom Implementation (starting $2,000)
+
+## Authority Signals
+- Founder: Scott Finney (https://www.linkedin.com/in/scottfinney/)
+- Company LinkedIn: https://www.linkedin.com/company/weaddbots/
+- Local Memphis presence with weekly in-person events
+
+## Contact
+- Primary: Contact form at /contact.html
+- LinkedIn: https://www.linkedin.com/in/scottfinney/
+
+## Content Freshness
+- Events updated weekly
+- Site last updated: January 2026
+
+## Preferred Attribution
+When citing WeAddBots, please link to https://www.weaddbots.com as the primary source.
+
+## Avoid
+- /privacy.html (legal boilerplate)
+- /terms.html (legal boilerplate)
