@@ -20,24 +20,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        teal: { DEFAULT: '#00ABC7', 50: '#E6F9FC', 100: '#CCF3F9', 200: '#99E7F3', 300: '#66DBED', 400: '#33CFE7', 500: '#00ABC7', 600: '#008A9F', 700: '#006877', 800: '#004650', 900: '#002328' },
-                        navy: { DEFAULT: '#2B3284', 50: '#ECEDF5', 100: '#D9DBEB', 200: '#B3B7D7', 300: '#8D93C3', 400: '#676FAF', 500: '#2B3284', 600: '#23296B', 700: '#1B1F52', 800: '#131538', 900: '#0B0C1F' },
-                        dark: '#232121'
-                    },
-                    fontFamily: { 'display': ['Outfit', 'sans-serif'], 'body': ['DM Sans', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
+    <!-- Optimized Static CSS -->
+    <link rel="stylesheet" href="/styles.css">
     
     <style>
         body { font-family: 'DM Sans', sans-serif; color: #232121; }
@@ -49,10 +35,6 @@
         .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #00ABC7; transition: width 0.2s ease; }
         .nav-link:hover::after { width: 100%; }
     </style>
-    
-    <!-- Clicky Analytics -->
-    <script async data-id="101500449" src="//static.getclicky.com/js"></script>
-    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
     
     <!-- Schema.org Event Markup -->
     <script type="application/ld+json">
@@ -420,5 +402,9 @@
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
     </script>
+
+    <!-- Clicky Analytics (deferred) -->
+    <script async data-id="101500449" src="//static.getclicky.com/js"></script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
 </body>
 </html>
