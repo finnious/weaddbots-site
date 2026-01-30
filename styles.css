@@ -49,6 +49,7 @@ p{margin:0}
 .text-gray-600{color:#4b5563}
 .text-gray-700{color:#374151}
 .text-amber-600{color:#d97706}
+.text-red-500{color:#ef4444}
 
 /* ===== COLORS - BACKGROUND ===== */
 .bg-white{background-color:#fff}
@@ -403,3 +404,7 @@ p{margin:0}
 .xl\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
 .xl\:gap-8{gap:2rem}
 }
+
+/* ===== ANIMATIONS ===== */
+@keyframes spin{to{transform:rotate(360deg)}}
+.animate-spin{animation:spin 1s linear infinite}
