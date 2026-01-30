@@ -1,40 +1,4 @@
-# robots.txt for https://www.weaddbots.com
-# WeAddBots - AI Automation Consulting for Memphis Businesses
-
-# Allow all search engine and AI crawlers
 User-agent: *
 Allow: /
 
-# Specifically allow AI crawlers for AEO
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Anthropic-AI
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Sitemap location
 Sitemap: https://www.weaddbots.com/sitemap.xml
-
-# llms.txt for AI context
-# See: https://www.weaddbots.com/llms.txt

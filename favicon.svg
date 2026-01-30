@@ -1,23 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Background circle -->
-  <circle cx="16" cy="16" r="16" fill="#2B3284"/>
-  
-  <!-- Stylized "W" made of connected nodes representing automation -->
-  <!-- Left stroke of W -->
-  <path d="M7 8 L10 22" stroke="#00ABC7" stroke-width="3" stroke-linecap="round"/>
-  <!-- Left-middle stroke of W -->
-  <path d="M10 22 L16 14" stroke="#00ABC7" stroke-width="3" stroke-linecap="round"/>
-  <!-- Right-middle stroke of W -->
-  <path d="M16 14 L22 22" stroke="#00ABC7" stroke-width="3" stroke-linecap="round"/>
-  <!-- Right stroke of W -->
-  <path d="M22 22 L25 8" stroke="#00ABC7" stroke-width="3" stroke-linecap="round"/>
-  
-  <!-- Connection nodes (bot/automation dots) -->
-  <circle cx="7" cy="8" r="2.5" fill="#00ABC7"/>
-  <circle cx="16" cy="14" r="2.5" fill="#00ABC7"/>
-  <circle cx="25" cy="8" r="2.5" fill="#00ABC7"/>
-  
-  <!-- Bottom accent dots -->
-  <circle cx="10" cy="22" r="2" fill="#ffffff"/>
-  <circle cx="22" cy="22" r="2" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="15" fill="#2B3284"/>
+  <text x="50" y="68" font-family="system-ui, sans-serif" font-size="55" font-weight="bold" fill="#00ABC7" text-anchor="middle">W</text>
+  <circle cx="25" cy="30" r="6" fill="#00ABC7"/>
+  <circle cx="75" cy="30" r="6" fill="#00ABC7"/>
+  <circle cx="50" cy="82" r="5" fill="#00ABC7"/>
+  <line x1="25" y1="30" x2="50" y2="55" stroke="#00ABC7" stroke-width="2"/>
+  <line x1="75" y1="30" x2="50" y2="55" stroke="#00ABC7" stroke-width="2"/>
+  <line x1="50" y1="70" x2="50" y2="82" stroke="#00ABC7" stroke-width="2"/>
 </svg>

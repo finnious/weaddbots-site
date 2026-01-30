@@ -2,299 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | WeAddBots - AI Automation for Memphis Businesses</title>
-    <meta name="description" content="Meet Scott Finney and learn how WeAddBots helps Memphis businesses implement practical AI automations without the hype.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.weaddbots.com/about.html">
-    
-    <!-- Favicon -->
+    <title>About | WeAddBots</title>
+    <meta name="description" content="WeAddBots helps Memphis businesses implement practical AI automations. Local, grounded, and focused on results.">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="About WeAddBots">
-    <meta property="og:description" content="Meet Scott Finney and learn how WeAddBots helps Memphis businesses implement practical AI automations.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.weaddbots.com/about.html">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Optimized Static CSS -->
     <link rel="stylesheet" href="/styles.css">
-    
-    <style>
-        body { font-family: 'DM Sans', sans-serif; color: #232121; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
-        .gradient-text { background: linear-gradient(135deg, #00ABC7 0%, #2B3284 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .btn-primary { background: linear-gradient(135deg, #00ABC7 0%, #008A9F 100%); transition: all 0.2s ease; }
-        .btn-primary:hover { background: linear-gradient(135deg, #33CFE7 0%, #00ABC7 100%); transform: translateY(-1px); }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #00ABC7; transition: width 0.2s ease; }
-        .nav-link:hover::after { width: 100%; }
-    </style>
-    
-    <!-- Schema.org Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "@id": "https://www.weaddbots.com/about.html",
-        "name": "About WeAddBots",
-        "description": "Learn about WeAddBots and founder Scott Finney. We help Memphis businesses implement practical AI automations.",
-        "mainEntity": {
-            "@type": "Organization",
-            "@id": "https://www.weaddbots.com/#organization"
-        }
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://www.weaddbots.com/#founder",
-        "name": "Scott Finney",
-        "jobTitle": "Founder",
-        "worksFor": {
-            "@id": "https://www.weaddbots.com/#organization"
-        },
-        "sameAs": "https://www.linkedin.com/in/scottfinney/",
-        "knowsAbout": ["AI Automation", "Business Process Automation", "Small Business Consulting"]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
-            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.weaddbots.com/about.html" }
-        ]
-    }
-    </script>
 </head>
-<body class="antialiased">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex items-center justify-between h-16 sm:h-20">
-                <a href="/" class="flex items-center space-x-2">
-                    <span class="text-2xl sm:text-3xl font-display font-bold">
-                        <span class="text-teal">We</span><span class="text-navy">Add</span><span class="text-teal">Bots</span>
-                    </span>
-                </a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/about.html" class="nav-link text-teal font-medium">About</a>
-                    <a href="/services.html" class="nav-link text-dark font-medium">Services</a>
-                    <a href="/events/" class="nav-link text-dark font-medium">Events</a>
-                    <a href="/contact.html" class="btn-primary text-white px-5 py-2.5 rounded-lg font-semibold">Get Started</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-4 py-4 space-y-3">
-                <a href="/about.html" class="block py-2 text-teal font-medium">About</a>
-                <a href="/services.html" class="block py-2 text-dark font-medium">Services</a>
-                <a href="/events/" class="block py-2 text-dark font-medium">Events</a>
-                <a href="/contact.html" class="block py-3 text-center btn-primary text-white rounded-lg font-semibold">Get Started</a>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WeAddBots</a>
+            <div class="nav-links">
+                <a href="/services">Services</a>
+                <a href="/about">About</a>
+                <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+                <a href="/contact" class="btn btn-primary">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-28 sm:pt-36 pb-16 bg-gradient-to-br from-gray-50 to-teal-50/30">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl">
-                <p class="text-teal font-semibold mb-4 tracking-wide uppercase text-sm">About Us</p>
-                <h1 class="text-4xl sm:text-5xl font-display font-bold text-dark leading-tight mb-6">
-                    More humans, not fewer.
-                </h1>
-                <p class="text-xl text-gray-600 leading-relaxed">
-                    We believe AI should free you up to do more of the work that matters—not replace the human touch that makes your business special.
-                </p>
+    <header class="page-header">
+        <div class="container">
+            <h1>About WeAddBots</h1>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <h2 style="text-align: left;">AI is a big deal.</h2>
+                <p style="font-size: 1.1rem; color: var(--gray-600); margin-bottom: 30px;">Not because it's trendy—because this is the first tool we've ever had that adapts to the user, instead of the user having to adapt to the tool.</p>
+                
+                <p style="margin-bottom: 20px;">WeAddBots exists to help Memphis-area business owners remove daily operational friction by designing and implementing simple, AI-powered automations—without ripping out existing systems.</p>
+                
+                <p style="margin-bottom: 20px;">We work with established small to mid-sized businesses already generating consistent activity but drowning in repetitive tasks, missed follow-ups, slow responses, and manual chaos.</p>
+                
+                <p style="margin-bottom: 30px;">Leaders who recognize AI could help but feel overwhelmed or unsure how to start—that's who we're here for.</p>
+
+                <h3 style="color: var(--navy); margin-bottom: 15px;">Our Approach</h3>
+                <p style="margin-bottom: 20px;">We layer smart, lightweight automations on top of what's already working. We deliver practical "first wins" in days or weeks—not months-long transformations.</p>
+                
+                <p style="margin-bottom: 30px;"><strong>Local. Grounded. Proven—not hype.</strong></p>
+
+                <h3 style="color: var(--navy); margin-bottom: 15px;">A mindset to consider:</h3>
+                <p style="font-style: italic; color: var(--gray-600); padding: 20px; background: var(--gray-50); border-radius: 8px;">What would you do if you had an army of 10,000 of the smartest people you've ever known willing to work for you 24 hours a day—what would you have them work on?</p>
             </div>
         </div>
     </section>
 
-    <!-- Story Section -->
-    <section class="py-16 sm:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <section class="section cta-section">
+        <div class="container text-center">
+            <h2>Ready to Explore?</h2>
+            <p>Join our next meetup or schedule a conversation.</p>
+            <div class="hero-cta">
+                <a href="/events/memphis-ai-meetup-feb-2026" class="btn btn-primary btn-lg">Next Meetup</a>
+                <a href="/contact" class="btn btn-secondary btn-lg">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
                 <div>
-                    <h2 class="text-3xl sm:text-4xl font-display font-bold text-dark mb-6">
-                        Here's the thing about AI...
-                    </h2>
-                    <div class="space-y-4 text-lg text-gray-600">
-                        <p>
-                            It's a big deal. Not because it's trendy—because this is the first tool we've ever had that adapts to the user, instead of the user having to adapt to the tool.
-                        </p>
-                        <p>
-                            But here's what I keep seeing: business owners who know AI could help, but feel overwhelmed by where to start. They're drowning in options, jargon, and promises that sound too good to be true.
-                        </p>
-                        <p>
-                            That's why I started WeAddBots. To cut through the noise and deliver something practical: automations that actually work, layered on top of systems you're already using, delivering wins in days—not months.
-                        </p>
-                        <p class="font-semibold text-dark">
-                            No rip-and-replace. No hype. Just progress.
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-br from-navy to-navy-700 rounded-3xl p-8 sm:p-10 text-white">
-                    <div class="mb-6">
-                        <div class="w-20 h-20 bg-teal/20 rounded-2xl flex items-center justify-center mb-4">
-                            <span class="text-3xl font-display font-bold text-teal-300">SF</span>
-                        </div>
-                        <h3 class="text-2xl font-display font-bold">Scott Finney</h3>
-                        <p class="text-teal-300">Founder</p>
-                    </div>
-                    <p class="text-gray-300 mb-6">
-                        I've spent years helping businesses figure out how to work smarter with technology. Now I'm focused on AI—specifically, helping Memphis businesses cut through the hype and find practical applications that actually move the needle.
-                    </p>
-                    <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-teal-300 hover:text-teal-200 transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        Connect on LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="py-16 sm:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <h2 class="text-3xl sm:text-4xl font-display font-bold text-dark mb-4">
-                    What we believe
-                </h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
-                    <div class="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-dark mb-3">Progress over perfection</h3>
-                    <p class="text-gray-600">Ship something that works. Learn. Improve. The best automation is the one you actually use, not the one that's perfect on paper.</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
-                    <div class="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-dark mb-3">Humans in the loop</h3>
-                    <p class="text-gray-600">AI is a tool, not a replacement. The goal is to free up your time for the work that requires human judgment, creativity, and connection.</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
-                    <div class="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-dark mb-3">Keep it simple</h3>
-                    <p class="text-gray-600">The best solution is often the simplest one. We don't over-engineer. We find the 80/20 automation that gets you results without complexity.</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-8 shadow-sm">
-                    <div class="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-dark mb-3">Local & grounded</h3>
-                    <p class="text-gray-600">We're based in Memphis, serving Memphis businesses. When you work with us, you're working with a neighbor who understands the local market.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 sm:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="bg-gradient-to-br from-teal to-navy rounded-3xl p-8 sm:p-12 text-center text-white">
-                <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
-                    Let's talk about what's possible
-                </h2>
-                <p class="text-xl text-teal-100 mb-8 max-w-2xl mx-auto">
-                    No pitch. No pressure. Just a conversation about where AI might help in your business.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/contact.html" class="bg-white text-navy px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-                        Start a Conversation
-                    </a>
-                    <a href="/events/" class="bg-navy-700 border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-navy-600 transition-colors">
-                        Join a Meetup
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <span class="text-2xl font-display font-bold mb-4 block">
-                        <span class="text-teal">We</span><span class="text-white">Add</span><span class="text-teal">Bots</span>
-                    </span>
-                    <p class="text-gray-400 mb-4 max-w-md">AI automation consulting for Memphis businesses. Simple, practical, proven.</p>
-                    <p class="text-gray-500 text-sm">A service of Creating Value LLC</p>
+                    <h4>WeAddBots</h4>
+                    <p>AI automation for Memphis businesses.</p>
                 </div>
                 <div>
-                    <h4 class="font-display font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/about.html" class="hover:text-teal transition-colors">About</a></li>
-                        <li><a href="/services.html" class="hover:text-teal transition-colors">Services</a></li>
-                        <li><a href="/events/" class="hover:text-teal transition-colors">Events</a></li>
-                        <li><a href="/contact.html" class="hover:text-teal transition-colors">Contact</a></li>
-                    </ul>
+                    <h4>Links</h4>
+                    <a href="/services">Services</a>
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
                 </div>
                 <div>
-                    <h4 class="font-display font-semibold mb-4">Connect</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener" class="hover:text-teal transition-colors">LinkedIn</a></li>
-                        <li><a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener" class="hover:text-teal transition-colors">Scott Finney</a></li>
-                    </ul>
+                    <h4>Legal</h4>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">© 2026 Creating Value LLC. All rights reserved.</p>
-                <div class="flex gap-6 text-sm text-gray-500">
-                    <a href="/privacy.html" class="hover:text-teal transition-colors">Privacy Policy</a>
-                    <a href="/terms.html" class="hover:text-teal transition-colors">Terms of Service</a>
-                </div>
-            </div>
+            <p class="footer-copy">&copy; 2026 Creating Value LLC. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        window.addEventListener('load', function() {
+            var s = document.createElement('script');
+            s.src = '//static.getclicky.com/101500449.js';
+            s.async = true;
+            document.body.appendChild(s);
+        });
     </script>
-
-    <!-- Clicky Analytics (deferred) -->
-    <script async data-id="101500449" src="//static.getclicky.com/js"></script>
     <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
 </body>
 </html>

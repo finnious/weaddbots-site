@@ -2,72 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found | WeAddBots</title>
-    <meta name="robots" content="noindex">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Optimized Static CSS -->
     <link rel="stylesheet" href="/styles.css">
-    
-    <style>
-        body { font-family: 'DM Sans', sans-serif; color: #232121; }
-        h1, h2, h3 { font-family: 'Outfit', sans-serif; }
-        .btn-primary { background: linear-gradient(135deg, #00ABC7 0%, #008A9F 100%); }
-    </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col">
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex items-center justify-between h-16 sm:h-20">
-                <a href="/" class="flex items-center space-x-2">
-                    <span class="text-2xl sm:text-3xl font-display font-bold">
-                        <span class="text-teal">We</span><span class="text-navy">Add</span><span class="text-teal">Bots</span>
-                    </span>
-                </a>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">WeAddBots</a>
+            <div class="nav-links">
+                <a href="/services">Services</a>
+                <a href="/about">About</a>
+                <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+                <a href="/contact" class="btn btn-primary">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- 404 Content -->
-    <main class="flex-grow flex items-center justify-center px-4">
-        <div class="text-center">
-            <p class="text-teal font-semibold text-lg mb-2">404</p>
-            <h1 class="text-4xl sm:text-5xl font-display font-bold text-dark mb-4">Page not found</h1>
-            <p class="text-xl text-gray-600 mb-8 max-w-md mx-auto">
-                Looks like this page took a coffee break. Let's get you back on track.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold">
-                    Go Home
-                </a>
-                <a href="/events/" class="border-2 border-navy text-navy px-8 py-3 rounded-lg font-semibold hover:bg-navy hover:text-white transition-colors">
-                    See Events
-                </a>
-            </div>
+    <section class="section" style="min-height: 60vh; display: flex; align-items: center;">
+        <div class="container text-center">
+            <h1 style="font-size: 4rem; color: var(--navy);">404</h1>
+            <h2>Page Not Found</h2>
+            <p style="margin: 20px 0; color: var(--gray-600);">The page you're looking for doesn't exist or has been moved.</p>
+            <a href="/" class="btn btn-primary btn-lg">Go Home</a>
         </div>
-    </main>
+    </section>
 
-    <!-- Simple Footer -->
-    <footer class="py-8 text-center text-gray-500 text-sm">
-        <p>© 2026 Creating Value LLC</p>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-copy">&copy; 2026 Creating Value LLC. All rights reserved.</p>
+        </div>
     </footer>
-
-    <!-- Clicky Analytics (deferred) -->
-    <script async data-id="101500449" src="//static.getclicky.com/js"></script>
-    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
 </body>
 </html>
