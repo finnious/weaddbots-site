@@ -18,6 +18,26 @@ export async function onRequestPost(context) {
             );
         }
 
+        // Build GHL v2 API request body
+        const ghlBody = {
+            locationId: env.GHL_LOCATION_ID,
+            firstName: data.first_name,
+            lastName: data.last_name || '',
+            email: data.email,
+            phone: data.phone || '',
+            tags: data.tags || [],
+            source: data.source || 'Website'
+        };
+
+        // Map custom fields using GHL field IDs
+        if (data.customFields && data.customFields.length > 0) {
+            ghlBody.customFields = data.customFields.map(field => ({
+                id: field.id,
+                field_value: field.field_value || ''
+            }));
+        }
+
+        // GHL v2 API endpoint with Private Integration
         const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
             method: 'POST',
             headers: {
@@ -25,22 +45,14 @@ export async function onRequestPost(context) {
                 'Content-Type': 'application/json',
                 'Version': '2021-07-28'
             },
-            body: JSON.stringify({
-                locationId: env.GHL_LOCATION_ID,
-                firstName: data.first_name,
-                email: data.email,
-                phone: data.phone || '',
-                tags: data.tags || ['Website-Form'],
-                source: data.source || 'Website',
-                customFields: data.customFields || []
-            })
+            body: JSON.stringify(ghlBody)
         });
 
         if (!ghlResponse.ok) {
-            const errorText = await ghlResponse.text();
-            console.error('GHL Error:', errorText);
+            const error = await ghlResponse.text();
+            console.error('GHL Error:', ghlResponse.status, error);
             return new Response(
-                JSON.stringify({ success: false, error: 'Failed to submit' }),
+                JSON.stringify({ success: false, error: 'CRM error: ' + ghlResponse.status }),
                 { status: 500, headers: corsHeaders }
             );
         }
@@ -55,7 +67,7 @@ export async function onRequestPost(context) {
     } catch (error) {
         console.error('Function error:', error);
         return new Response(
-            JSON.stringify({ success: false, error: 'Server error' }),
+            JSON.stringify({ success: false, error: error.message }),
             { status: 500, headers: corsHeaders }
         );
     }

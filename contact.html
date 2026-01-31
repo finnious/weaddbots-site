@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | WeAddBots</title>
-    <meta name="description" content="Get in touch with WeAddBots for a free AI assessment. Memphis-based AI automation consulting.">
+    <meta name="description" content="Get in touch with WeAddBots. Let's talk about how AI automation can help your Memphis business.">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="/styles.css">
 </head>
@@ -21,65 +21,78 @@
         </div>
     </nav>
 
-    <header class="page-header">
+    <header class="hero" style="padding: 60px 0 40px;">
         <div class="container">
-            <h1>Get In Touch</h1>
+            <h1>Let's Talk</h1>
+            <p>Whether you're curious about AI, ready to automate, or just want to say hi—we'd love to hear from you.</p>
         </div>
     </header>
 
-    <section class="section">
-        <div class="container">
-            <div class="event-details">
-                <div>
-                    <h2 style="text-align: left;">Let's Talk</h2>
-                    <p style="margin-bottom: 30px;">Whether you have a specific automation in mind or just want to explore what's possible, we're happy to chat. Free assessment, no obligation.</p>
-                    
-                    <h3 style="color: var(--navy); margin-bottom: 15px;">What happens next?</h3>
-                    <ol style="padding-left: 20px; color: var(--gray-600); margin-bottom: 30px;">
-                        <li style="margin-bottom: 10px;">Fill out the form with a bit about your situation</li>
-                        <li style="margin-bottom: 10px;">We'll respond within 48 hours</li>
-                        <li style="margin-bottom: 10px;">Schedule a free 20-minute assessment call</li>
-                        <li>Get honest feedback on whether AI automation makes sense for you</li>
-                    </ol>
-
-                    <h3 style="color: var(--navy); margin-bottom: 15px;">Prefer email?</h3>
-                    <p style="color: var(--gray-600);">Reach out directly at <a href="mailto:scott@weaddbots.com" style="color: var(--teal);">scott@weaddbots.com</a></p>
-                </div>
-
-                <div class="event-form">
-                    <h2 style="text-align: left; margin-bottom: 20px;">Contact Form</h2>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="first_name">First Name *</label>
-                            <input type="text" id="first_name" name="first_name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">How can we help?</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your business and what you're looking to improve..."></textarea>
-                        </div>
-
-                        <div class="form-group checkbox-group">
-                            <input type="checkbox" id="marketing_consent" name="marketing_consent">
-                            <label for="marketing_consent">Keep me updated on events and AI tips</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
-                        
-                        <div id="formStatus" class="form-status" style="display: none;"></div>
-                    </form>
-                </div>
+    <section class="section" style="padding-top: 20px;">
+        <div class="container" style="max-width: 700px;">
+            <div style="text-align: center; margin-bottom: 30px; color: var(--gray-600);">
+                <p>📧 Email us directly: <a href="mailto:scott@weaddbots.com" style="color: var(--teal);">scott@weaddbots.com</a></p>
+                <p style="margin-top: 8px; color: var(--gray-400);">— or fill out the form below —</p>
             </div>
+
+            <form id="contactForm" style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+                <div style="display: flex; gap: 12px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="first_name">First Name *</label>
+                        <input type="text" id="first_name" name="first_name" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="what_brings_you">What brings you here? *</label>
+                    <select id="what_brings_you" name="what_brings_you" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit; background: white; color: var(--gray-700); appearance: auto;">
+                        <option value="" disabled selected>Select one...</option>
+                        <option value="Just exploring AI for my business">Just exploring AI for my business</option>
+                        <option value="Interested in attending a meetup">Interested in attending a meetup</option>
+                        <option value="Looking for consulting help">Looking for consulting help</option>
+                        <option value="Want to stay in the loop (newsletter)">Want to stay in the loop (newsletter)</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="area_suggestions">Best area of town for in person meetups? Best time of day? Any venue suggestions?</label>
+                    <textarea id="area_suggestions" name="area_suggestions" rows="3"></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="sms_consent" name="sms_consent">
+                    <label for="sms_consent" style="font-size: 0.85rem; line-height: 1.4;">By checking this box, I consent to receive non-marketing text messages from <a href="https://weaddbots.com" target="_blank">WeAddBots.com</a> about event reminders, meetup updates, and appointment confirmations. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="marketing_consent" name="marketing_consent">
+                    <label for="marketing_consent" style="font-size: 0.85rem; line-height: 1.4;">By checking this box, I consent to receive marketing and promotional messages including special offers, workshop announcements, AI tips, and new service updates from <a href="https://weaddbots.com" target="_blank">WeAddBots.com</a> at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
+                
+                <div id="formStatus" class="form-status" style="display: none;"></div>
+
+                <p style="text-align: center; margin-top: 12px; font-size: 0.85rem; color: var(--gray-500);">
+                    <a href="/privacy" style="color: var(--gray-500);">Privacy Policy</a> | <a href="/terms" style="color: var(--gray-500);">Terms of Service</a>
+                </p>
+            </form>
         </div>
     </section>
 
@@ -121,13 +134,14 @@
 
             const data = {
                 first_name: form.first_name.value,
+                last_name: form.last_name.value || '',
                 email: form.email.value,
                 phone: form.phone.value || '',
                 tags: ['Website-Contact', 'Lead'],
                 source: 'Website Contact Form',
                 customFields: [
-                    { key: 'message', value: form.message.value || '' },
-                    { key: 'marketing_consent', value: form.marketing_consent.checked ? 'Yes' : 'No' }
+                    { id: 'eITRQJpf0jUlGI8aOm6o', field_value: form.what_brings_you.value || '' },
+                    { id: 'pGVZpiJGCT9XgPJalNSC', field_value: form.area_suggestions.value || '' }
                 ]
             };
 
@@ -142,7 +156,7 @@
                 
                 if (result.success) {
                     status.className = 'form-status success';
-                    status.textContent = "Message sent! We'll be in touch within 48 hours.";
+                    status.innerHTML = "😊<br><strong>Thanks! We'll be in touch soon.</strong><br>Thank you for taking the time to connect with us.";
                     form.reset();
                     
                     if (typeof clicky !== 'undefined') {
@@ -154,7 +168,7 @@
                 }
             } catch (err) {
                 status.className = 'form-status error';
-                status.textContent = 'Network error. Please email us directly at scott@weaddbots.com';
+                status.textContent = 'Network error. Please try again.';
             }
             
             button.disabled = false;
@@ -162,6 +176,7 @@
         });
     </script>
 
+    <!-- Clicky Analytics (deferred) -->
     <script>
         window.addEventListener('load', function() {
             var s = document.createElement('script');

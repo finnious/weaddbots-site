@@ -60,19 +60,26 @@
                 <div class="event-form">
                     <h2 style="text-align: left; margin-bottom: 20px;">RSVP</h2>
                     <form id="rsvpForm">
-                        <div class="form-group">
-                            <label for="first_name">First Name *</label>
-                            <input type="text" id="first_name" name="first_name" required>
+                        <div style="display: flex; gap: 12px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="first_name">First Name *</label>
+                                <input type="text" id="first_name" name="first_name" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" id="last_name" name="last_name">
+                            </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone (for text reminders)</label>
-                            <input type="tel" id="phone" name="phone">
+                        <div style="display: flex; gap: 12px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -80,19 +87,28 @@
                             <textarea id="ai_question" name="ai_question" rows="3"></textarea>
                         </div>
 
+                        <div class="form-group">
+                            <label for="area_suggestions">Best area of town for in person meetups? Best time of day? Any venue suggestions?</label>
+                            <textarea id="area_suggestions" name="area_suggestions" rows="3"></textarea>
+                        </div>
+
                         <div class="form-group checkbox-group">
                             <input type="checkbox" id="sms_consent" name="sms_consent">
-                            <label for="sms_consent">Send me text reminders about this event</label>
+                            <label for="sms_consent" style="font-size: 0.85rem; line-height: 1.4;">By checking this box, I consent to receive non-marketing text messages from <a href="https://weaddbots.com" target="_blank">WeAddBots.com</a> about event reminders, meetup updates, and appointment confirmations. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</label>
                         </div>
 
                         <div class="form-group checkbox-group">
                             <input type="checkbox" id="marketing_consent" name="marketing_consent">
-                            <label for="marketing_consent">Keep me updated on future events and AI tips</label>
+                            <label for="marketing_consent" style="font-size: 0.85rem; line-height: 1.4;">By checking this box, I consent to receive marketing and promotional messages including special offers, workshop announcements, AI tips, and new service updates from <a href="https://weaddbots.com" target="_blank">WeAddBots.com</a> at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Reserve My Spot</button>
                         
                         <div id="formStatus" class="form-status" style="display: none;"></div>
+
+                        <p style="text-align: center; margin-top: 12px; font-size: 0.85rem; color: var(--gray-500);">
+                            <a href="/privacy" style="color: var(--gray-500);">Privacy Policy</a> | <a href="/terms" style="color: var(--gray-500);">Terms of Service</a>
+                        </p>
                     </form>
                 </div>
             </div>
@@ -137,16 +153,17 @@
 
             const data = {
                 first_name: form.first_name.value,
+                last_name: form.last_name.value || '',
                 email: form.email.value,
                 phone: form.phone.value || '',
                 tags: ['Event-Feb-2026', 'Meetup-Attendee', 'Website-RSVP'],
                 source: 'Memphis AI Meetup - Feb 2026',
                 customFields: [
-                    { key: 'ai_question', value: form.ai_question.value || '' },
-                    { key: 'sms_consent', value: form.sms_consent.checked ? 'Yes' : 'No' },
-                    { key: 'marketing_consent', value: form.marketing_consent.checked ? 'Yes' : 'No' },
-                    { key: 'event_name', value: 'Memphis AI Meetup - Feb 2026' },
-                    { key: 'event_date', value: '2026-02-05' }
+                    { id: 'nWoiZK1FlDAvd4qKSVMI', field_value: form.ai_question.value || '' },
+                    { id: 'pGVZpiJGCT9XgPJalNSC', field_value: form.area_suggestions.value || '' },
+                    { id: 'vo9iUqMmSpGpCEFM5C66', field_value: 'Memphis AI Meetup - Feb 2026' },
+                    { id: 'bpKUQhL2nQX6mC9mAcN7', field_value: '2026-02-05' },
+                    { id: 'Q8mqK6YWLAExkUX84K1R', field_value: window.location.href }
                 ]
             };
 
@@ -161,7 +178,7 @@
                 
                 if (result.success) {
                     status.className = 'form-status success';
-                    status.textContent = "You're in! Check your email for confirmation details.";
+                    status.innerHTML = "😊<br>You're confirmed for the Memphis AI Meetup!<br>📧 Check your inbox — we just sent you the venue address and everything you need to know.<br>See you there!";
                     form.reset();
                     
                     if (typeof clicky !== 'undefined') {
@@ -169,7 +186,7 @@
                     }
                 } else {
                     status.className = 'form-status error';
-                    status.textContent = 'Something went wrong. Please try again or email us directly.';
+                    status.textContent = 'Something went wrong. Please try again or email us directly at scott@weaddbots.com';
                 }
             } catch (err) {
                 status.className = 'form-status error';
