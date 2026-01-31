@@ -24,10 +24,14 @@ export async function onRequestPost(context) {
             firstName: data.first_name,
             lastName: data.last_name || '',
             email: data.email,
-            phone: data.phone || '',
             tags: data.tags || [],
             source: data.source || 'Website'
         };
+
+        // Only send phone if provided (avoids overwriting existing contact's phone on upsert)
+        if (data.phone) {
+            ghlBody.phone = data.phone;
+        }
 
         // Map custom fields using GHL field IDs
         if (data.customFields && data.customFields.length > 0) {
@@ -37,8 +41,8 @@ export async function onRequestPost(context) {
             }));
         }
 
-        // GHL v2 API endpoint with Private Integration
-        const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
+        // GHL v2 API — upsert: creates new contact OR updates existing (matched by email/phone)
+        const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${env.GHL_API_KEY}`,
