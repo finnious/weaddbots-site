@@ -2,294 +2,241 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events | WeAddBots - Memphis AI Meetups & Workshops</title>
-    <meta name="description" content="Join free Memphis AI meetups and workshops. Learn practical AI skills for your business. In-person events across the Memphis metro area.">
+    <title>Memphis AI Meetups &amp; Events | WeAddBots</title>
+    <meta name="description" content="Free weekly in-person AI meetups for Memphis business owners. Rotating locations across the metro. No pitch, no upsell — just practical AI conversations with local business owners.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.weaddbots.com/events/">
-    
-    <!-- Favicon -->
+    <link rel="canonical" href="https://weaddbots.com/events/">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    
+
     <!-- Open Graph -->
-    <meta property="og:title" content="Events | WeAddBots">
-    <meta property="og:description" content="Join free Memphis AI meetups and workshops. Learn practical AI skills for your business.">
+    <meta property="og:title" content="Memphis AI Meetups &amp; Events | WeAddBots">
+    <meta property="og:description" content="Free weekly in-person AI meetups for Memphis business owners. Rotating locations, practical conversations, zero sales pressure.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.weaddbots.com/events/">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Optimized Static CSS -->
+    <meta property="og:url" content="https://weaddbots.com/events/">
+    <meta property="og:locale" content="en_US">
+
     <link rel="stylesheet" href="/styles.css">
-    
-    <style>
-        body { font-family: 'DM Sans', sans-serif; color: #232121; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
-        .gradient-text { background: linear-gradient(135deg, #00ABC7 0%, #2B3284 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .btn-primary { background: linear-gradient(135deg, #00ABC7 0%, #008A9F 100%); transition: all 0.2s ease; }
-        .btn-primary:hover { background: linear-gradient(135deg, #33CFE7 0%, #00ABC7 100%); transform: translateY(-1px); }
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #00ABC7; transition: width 0.2s ease; }
-        .nav-link:hover::after { width: 100%; }
-        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -8px rgba(0, 171, 199, 0.15); }
-    </style>
-    
-    <!-- Schema.org Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "@id": "https://www.weaddbots.com/events/",
-        "name": "WeAddBots Events",
-        "description": "Memphis AI meetups and workshops for business owners",
-        "mainEntity": {
-            "@type": "ItemList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "item": {
-                        "@type": "Event",
-                        "name": "Memphis AI Meetup - February 2026",
-                        "url": "https://www.weaddbots.com/events/memphis-ai-meetup-feb-2026.html"
-                    }
-                }
-            ]
-        }
-    }
-    </script>
-    
+
+    <!-- Schema.org — BreadcrumbList -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://www.weaddbots.com/events/" }
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://weaddbots.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Events",
+                "item": "https://weaddbots.com/events/"
+            }
         ]
     }
     </script>
 </head>
-<body class="antialiased">
+<body>
+
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex items-center justify-between h-16 sm:h-20">
-                <a href="/" class="flex items-center space-x-2">
-                    <span class="text-2xl sm:text-3xl font-display font-bold">
-                        <span class="text-teal">We</span><span class="text-navy">Add</span><span class="text-teal">Bots</span>
-                    </span>
-                </a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/about.html" class="nav-link text-dark font-medium">About</a>
-                    <a href="/services.html" class="nav-link text-dark font-medium">Services</a>
-                    <a href="/events/" class="nav-link text-teal font-medium">Events</a>
-                    <a href="/contact.html" class="btn-primary text-white px-5 py-2.5 rounded-lg font-semibold">Get Started</a>
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">WeAddBots</a>
+            <div class="nav-links">
+                <a href="/services">Services</a>
+                <a href="/about">About</a>
+                <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+                <a href="/contact">Contact</a>
             </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-4 py-4 space-y-3">
-                <a href="/about.html" class="block py-2 text-dark font-medium">About</a>
-                <a href="/services.html" class="block py-2 text-dark font-medium">Services</a>
-                <a href="/events/" class="block py-2 text-teal font-medium">Events</a>
-                <a href="/contact.html" class="block py-3 text-center btn-primary text-white rounded-lg font-semibold">Get Started</a>
-            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
         </div>
     </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+        <a href="/contact">Contact</a>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="pt-28 sm:pt-36 pb-16 bg-gradient-to-br from-gray-50 to-teal-50/30">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl">
-                <p class="text-teal font-semibold mb-4 tracking-wide uppercase text-sm">Events</p>
-                <h1 class="text-4xl sm:text-5xl font-display font-bold text-dark leading-tight mb-6">
-                    Learn AI with your <span class="gradient-text">Memphis neighbors.</span>
-                </h1>
-                <p class="text-xl text-gray-600 leading-relaxed">
-                    Free meetups. Hands-on workshops. Real conversations about AI for your business. No hype, no pitch—just practical knowledge and community.
-                </p>
-            </div>
+    <!-- Event Banner -->
+    <div class="event-banner">
+        <div class="event-banner-inner">
+            <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Wednesday, Feb 5 &mdash; Collierville</span>
+            <a href="/events/memphis-ai-meetup-feb-2026">RSVP Free &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-page has-banner">
+        <h1>Memphis AI Meetups &amp; Events</h1>
+        <p class="hero-subtitle">Free weekly in-person meetups for Memphis business owners who want practical AI wins &mdash; no hype, no pitch.</p>
+    </section>
+
+    <!-- Answer-First Block -->
+    <section class="section bg-white">
+        <div class="answer-block">
+            <p><strong>WeAddBots hosts free, weekly in-person AI meetups at rotating locations across the Memphis metro area.</strong> Each meetup brings together local business owners, operators, and curious professionals for practical conversations about AI &mdash; what's actually working, what's not, and how to get started without getting overwhelmed. There's no sales pitch, no upsell, and no PowerPoint presentations. Just real people sharing real experiences over coffee or lunch.</p>
+            <p>The meetups rotate between six Memphis-area locations so you'll always have one close to home or work. Whether you've already built your first automation or you're still wondering what AI can actually do for a business like yours, you'll find the conversation useful.</p>
         </div>
     </section>
 
-    <!-- Upcoming Events -->
-    <section class="py-16 sm:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl font-display font-bold text-dark mb-8">Upcoming Events</h2>
-            
-            <div class="space-y-6">
-                <!-- Event Card -->
-                <a href="/events/memphis-ai-meetup-feb-2026.html" class="card-hover block bg-gray-50 rounded-2xl p-6 sm:p-8 border-2 border-transparent hover:border-teal/30">
-                    <div class="flex flex-col sm:flex-row gap-6">
-                        <!-- Date Block -->
-                        <div class="flex-shrink-0">
-                            <div class="bg-teal text-white rounded-xl p-4 text-center w-20">
-                                <p class="text-sm font-medium uppercase">Feb</p>
-                                <p class="text-3xl font-display font-bold">5</p>
-                                <p class="text-xs">Wed</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Event Info -->
-                        <div class="flex-grow">
-                            <div class="flex items-start justify-between gap-4">
-                                <div>
-                                    <span class="inline-block bg-teal/10 text-teal text-xs font-semibold px-2 py-1 rounded mb-2">Free · In-Person</span>
-                                    <h3 class="text-xl font-display font-bold text-dark mb-2">Memphis AI Meetup</h3>
-                                    <p class="text-gray-600 mb-4">Join fellow Memphis business owners for coffee and conversation about practical AI. Bring your questions, share your wins, learn what's working.</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-4 text-sm text-gray-500">
-                                <span class="flex items-center gap-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                    9:00 AM
-                                </span>
-                                <span class="flex items-center gap-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                    </svg>
-                                    Highland Strip Area, Memphis
-                                </span>
-                            </div>
-                        </div>
-                        
-                        <!-- Arrow -->
-                        <div class="flex-shrink-0 self-center hidden sm:block">
-                            <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- Current Featured Event -->
+    <section class="section bg-gray-50">
+        <div class="section-inner">
+            <p class="section-label">Upcoming</p>
+            <h2 class="section-title">February 2026 Meetups</h2>
+            <p class="section-subtitle">This month's schedule of free weekly meetups across the Memphis metro.</p>
 
-    <!-- About Our Events -->
-    <section class="py-16 sm:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl mx-auto text-center mb-12">
-                <h2 class="text-3xl sm:text-4xl font-display font-bold text-dark mb-4">
-                    What to expect
-                </h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
+            <div class="max-w-3xl mx-auto">
+                <div class="event-card">
+                    <div class="event-card-header">
+                        <h3>Memphis AI Meetup &mdash; February 2026</h3>
+                        <span>Weekly rotating locations</span>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-dark mb-3">Real Conversations</h3>
-                    <p class="text-gray-600">No lectures. No sales pitches. Just open discussion about what's working (and what isn't) with AI in business.</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
+                    <div class="event-card-body">
+                        <div class="event-card-meta">
+                            <span>&#128197; Next: Wednesday, Feb 5 &mdash; Collierville</span>
+                            <span>&#128205; Rotating locations across Memphis metro</span>
+                            <span>&#128176; Free &mdash; always</span>
+                            <span>&#128100; Hosted by Scott Finney</span>
+                        </div>
+                        <p>Practical AI conversations for Memphis business owners. What's working, what's not, and how to find your first win. Different location each week so there's always one near you.</p>
+                        <div class="mt-24">
+                            <a href="/events/memphis-ai-meetup-feb-2026" class="btn btn-primary btn-lg">See February Schedule &amp; RSVP &rarr;</a>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-dark mb-3">Practical Focus</h3>
-                    <p class="text-gray-600">We talk about tools you can use today. Real examples. Actual results. Progress over perfection.</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-8 text-center">
-                    <div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-display font-bold text-dark mb-3">Local Community</h3>
-                    <p class="text-gray-600">Connect with Memphis business owners on the same journey. Share insights, build relationships, grow together.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter CTA -->
-    <section class="py-16 sm:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="bg-gradient-to-br from-navy to-navy-700 rounded-3xl p-8 sm:p-12 text-center text-white">
-                <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
-                    Never miss an event
-                </h2>
-                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Get notified when new events are scheduled. We'll also share AI tips and insights you can use right away.
-                </p>
-                <a href="/contact.html" class="inline-block bg-teal hover:bg-teal-400 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-                    Join the List →
-                </a>
+    <!-- What to Expect -->
+    <section class="section bg-white">
+        <div class="section-inner">
+            <p class="section-label">What to Expect</p>
+            <h2 class="section-title">What Happens at a Memphis AI Meetup?</h2>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">&#128172;</div>
+                    <h3>Practical Conversations</h3>
+                    <p>No keynote speakers or sponsor pitches. Just a group of local business owners talking about AI in plain English &mdash; what tools are worth trying, what problems they've solved, and what's still hype. Bring your questions.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">&#127758;</div>
+                    <h3>Rotating Locations</h3>
+                    <p>We meet at a different spot across the Memphis metro each week &mdash; Collierville, Germantown, East Memphis, Midtown, Downtown, and Olive Branch. There's always one close to you, and you'll discover some great local businesses along the way.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">&#129309;</div>
+                    <h3>Zero Pressure</h3>
+                    <p>These are community events, not sales funnels. Come for one meetup or come every week. Ask beginner questions or share advanced workflows. Everyone's welcome and nobody's keeping score.</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Who Should Attend -->
+    <section class="section bg-gray-50">
+        <div class="answer-block">
+            <h2 class="mb-24">Who Should Come?</h2>
+            <p>The meetups are designed for <strong>Memphis-area business owners and operators</strong> &mdash; the people who run restaurants, service companies, retail shops, professional firms, and small teams. You don't need a technical background. You don't need to know anything about AI yet.</p>
+            <p>If you've ever thought "AI could probably help with this, but I don't know where to start" &mdash; that's exactly who the meetup is for. Most people who attend are in that same boat. That's what makes the conversations so useful.</p>
+            <p>You're also welcome if you're already using AI and want to compare notes with other business owners who are figuring this out in real-time.</p>
+        </div>
+    </section>
+
+    <!-- Past Meetup Context -->
+    <section class="section bg-white">
+        <div class="section-inner">
+            <p class="section-label">From Past Meetups</p>
+            <h2 class="section-title">What People Are Talking About</h2>
+            <p class="section-subtitle">Real topics from recent Memphis AI Meetups &mdash; the kind of conversations you can't have with Google.</p>
+
+            <div class="card-grid">
+                <div class="card card-accent">
+                    <h3>&#9889; "I automated my entire Monday morning"</h3>
+                    <p>A service company owner shared how they set up a simple automation that pulls weekend inquiries, sorts them by urgency, and drafts responses before they even sit down with coffee. Total setup time: one afternoon.</p>
+                </div>
+
+                <div class="card card-accent">
+                    <h3>&#128202; "What tools are actually worth paying for?"</h3>
+                    <p>A recurring conversation at every meetup. Attendees share which AI tools have delivered real ROI for their business size and type &mdash; not the ones with the best marketing, but the ones that actually stuck.</p>
+                </div>
+
+                <div class="card card-accent">
+                    <h3>&#128161; "I didn't know my CRM could do that"</h3>
+                    <p>One attendee discovered that the CRM they'd been paying for already had automation features they'd never turned on. Ten minutes of configuration replaced an hour of weekly manual work. That's the kind of win these meetups surface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Come See What the Buzz Is About</h2>
+        <p>The next meetup is free, in-person, and close to you. RSVP takes 30 seconds.</p>
+        <div class="cta-buttons">
+            <a href="/events/memphis-ai-meetup-feb-2026" class="btn btn-white btn-lg">February Schedule &amp; RSVP</a>
+            <a href="/contact" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: #fff;">Have a Question? &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Freshness Signal -->
+    <div class="freshness">Last updated: February 2, 2026</div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <span class="text-2xl font-display font-bold mb-4 block">
-                        <span class="text-teal">We</span><span class="text-white">Add</span><span class="text-teal">Bots</span>
-                    </span>
-                    <p class="text-gray-400 mb-4 max-w-md">AI automation consulting for Memphis businesses. Simple, practical, proven.</p>
-                    <p class="text-gray-500 text-sm">A service of Creating Value LLC</p>
-                </div>
-                <div>
-                    <h4 class="font-display font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="/about.html" class="hover:text-teal transition-colors">About</a></li>
-                        <li><a href="/services.html" class="hover:text-teal transition-colors">Services</a></li>
-                        <li><a href="/events/" class="hover:text-teal transition-colors">Events</a></li>
-                        <li><a href="/contact.html" class="hover:text-teal transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-display font-semibold mb-4">Connect</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener" class="hover:text-teal transition-colors">LinkedIn</a></li>
-                        <li><a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener" class="hover:text-teal transition-colors">Scott Finney</a></li>
-                    </ul>
-                </div>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>WeAddBots</h4>
+                <p class="footer-tagline">AI automation for Memphis businesses.<br>Simple, practical, proven.</p>
+                <p class="footer-legal-name">A service of Creating Value LLC</p>
             </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">© 2026 Creating Value LLC. All rights reserved.</p>
-                <div class="flex gap-6 text-sm text-gray-500">
-                    <a href="/privacy.html" class="hover:text-teal transition-colors">Privacy Policy</a>
-                    <a href="/terms.html" class="hover:text-teal transition-colors">Terms of Service</a>
-                </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Creating Value LLC. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
             </div>
         </div>
     </footer>
 
+    <!-- Mobile Menu Toggle -->
     <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('show');
+        });
     </script>
 
     <!-- Clicky Analytics (deferred) -->
-    <script async data-id="101500449" src="//static.getclicky.com/js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            var s = document.createElement('script');
+            s.src = '//static.getclicky.com/101500449.js';
+            s.async = true;
+            document.body.appendChild(s);
+        });
+    </script>
     <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
 </body>
 </html>

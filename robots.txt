@@ -1,4 +1,28 @@
+# WeAddBots.com — robots.txt
+# AI crawlers explicitly allowed
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: *
 Allow: /
 
-Sitemap: https://www.weaddbots.com/sitemap.xml
+Sitemap: https://weaddbots.com/sitemap.xml

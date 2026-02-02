@@ -1,6 +1,6 @@
 export async function onRequestPost(context) {
     const { request, env } = context;
-    
+
     const corsHeaders = {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -10,7 +10,8 @@ export async function onRequestPost(context) {
 
     try {
         const data = await request.json();
-        
+
+        // Validate required fields
         if (!data.first_name || !data.email) {
             return new Response(
                 JSON.stringify({ success: false, error: 'Missing required fields' }),
@@ -28,9 +29,9 @@ export async function onRequestPost(context) {
             source: data.source || 'Website'
         };
 
-        // Only send phone if provided (avoids overwriting existing contact's phone on upsert)
-        if (data.phone) {
-            ghlBody.phone = data.phone;
+        // Only include phone if provided (prevents blanking existing phone on upsert)
+        if (data.phone && data.phone.trim() !== '') {
+            ghlBody.phone = data.phone.trim();
         }
 
         // Map custom fields using GHL field IDs
@@ -54,15 +55,15 @@ export async function onRequestPost(context) {
 
         if (!ghlResponse.ok) {
             const error = await ghlResponse.text();
-            console.error('GHL Error:', ghlResponse.status, error);
+            console.error('GHL Error:', error);
             return new Response(
-                JSON.stringify({ success: false, error: 'CRM error: ' + ghlResponse.status }),
+                JSON.stringify({ success: false, error: 'Failed to submit to CRM' }),
                 { status: 500, headers: corsHeaders }
             );
         }
 
         const result = await ghlResponse.json();
-        
+
         return new Response(
             JSON.stringify({ success: true, contactId: result.contact?.id }),
             { status: 200, headers: corsHeaders }
@@ -71,18 +72,20 @@ export async function onRequestPost(context) {
     } catch (error) {
         console.error('Function error:', error);
         return new Response(
-            JSON.stringify({ success: false, error: error.message }),
+            JSON.stringify({ success: false, error: 'Server error' }),
             { status: 500, headers: corsHeaders }
         );
     }
 }
 
+// Handle CORS preflight
 export async function onRequestOptions() {
     return new Response(null, {
+        status: 204,
         headers: {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Allow-Headers': 'Content-Type'
         }
     });
 }

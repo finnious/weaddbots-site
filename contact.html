@@ -3,176 +3,542 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | WeAddBots</title>
-    <meta name="description" content="Get in touch with WeAddBots. Let's talk about how AI automation can help your Memphis business.">
+    <title>Contact WeAddBots | Free AI Assessment for Memphis Businesses</title>
+    <meta name="description" content="Get a free AI assessment for your Memphis business. Find out where simple automations can save you time and remove daily friction. No commitment, no pitch — just practical answers.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://weaddbots.com/contact">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact WeAddBots | Free AI Assessment for Memphis Businesses">
+    <meta property="og:description" content="Free AI assessment for your Memphis business. Find where simple automations can save time and remove friction. No pitch, just practical answers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weaddbots.com/contact">
+    <meta property="og:locale" content="en_US">
+
     <link rel="stylesheet" href="/styles.css">
+
+    <!-- Schema.org — ProfessionalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://weaddbots.com/#profservice",
+        "name": "WeAddBots",
+        "legalName": "Creating Value LLC",
+        "url": "https://weaddbots.com",
+        "description": "AI automation consulting for Memphis-area small and mid-sized businesses. We help established businesses remove daily operational friction with simple, AI-powered automations — without ripping out existing systems.",
+        "image": "https://weaddbots.com/favicon.svg",
+        "priceRange": "$$",
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Memphis",
+                "containedInPlace": { "@type": "State", "name": "Tennessee" }
+            },
+            {
+                "@type": "City",
+                "name": "Collierville",
+                "containedInPlace": { "@type": "State", "name": "Tennessee" }
+            },
+            {
+                "@type": "City",
+                "name": "Germantown",
+                "containedInPlace": { "@type": "State", "name": "Tennessee" }
+            },
+            {
+                "@type": "City",
+                "name": "Olive Branch",
+                "containedInPlace": { "@type": "State", "name": "Mississippi" }
+            }
+        ],
+        "founder": {
+            "@type": "Person",
+            "@id": "https://weaddbots.com/#founder",
+            "name": "Scott Finney"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "scott@weaddbots.com",
+            "availableLanguage": "English",
+            "areaServed": "Memphis metropolitan area"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/weaddbots/",
+            "https://www.linkedin.com/in/scottfinney/"
+        ]
+    }
+    </script>
+
+    <!-- Schema.org — FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the free AI assessment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The free AI assessment is a quick review of your business operations to identify where simple AI automations could save you time, reduce errors, or speed up response times. You tell us about your daily workflow, and we'll point out the highest-impact opportunities — no commitment, no pitch."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens after I submit the contact form?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You'll hear back from Scott Finney personally within 48 hours — usually much sooner. If you requested an AI assessment, he'll review your submission and respond with initial observations and a link to schedule a free 20-minute call. If you had a general question, you'll get a direct answer by email."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does it cost to work with WeAddBots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The AI assessment and initial 20-minute discovery call are free. Beyond that, paid discovery sessions start at $300/hour and custom implementation projects typically start at $2,000. There are no retainers — you pay for results, not for keeping us on the clock."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need technical skills to use AI automation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not at all. The whole point of WeAddBots is to handle the technical side so you don't have to. We build automations that work with your existing tools — Google Workspace, your CRM, your email — so your daily workflow gets simpler, not more complicated."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is WeAddBots only for Memphis businesses?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our in-person meetups and community are Memphis-focused, but the AI automation work itself can be done remotely. That said, we work best with local businesses where we can meet in person, understand the operation firsthand, and build a real relationship."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org — BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://weaddbots.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://weaddbots.com/contact"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+
+    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-container">
+        <div class="nav-inner">
             <a href="/" class="nav-logo">WeAddBots</a>
             <div class="nav-links">
                 <a href="/services">Services</a>
                 <a href="/about">About</a>
                 <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
-                <a href="/contact" class="btn btn-primary">Contact</a>
+                <a href="/contact">Contact</a>
             </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
         </div>
     </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+        <a href="/contact">Contact</a>
+    </div>
 
-    <header class="hero" style="padding: 60px 0 40px;">
-        <div class="container">
-            <h1>Let's Talk</h1>
-            <p>Whether you're curious about AI, ready to automate, or just want to say hi—we'd love to hear from you.</p>
+    <!-- Event Banner -->
+    <div class="event-banner">
+        <div class="event-banner-inner">
+            <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Wednesday, Feb 5 — Collierville</span>
+            <a href="/events/memphis-ai-meetup-feb-2026">RSVP Free &rarr;</a>
         </div>
-    </header>
+    </div>
 
-    <section class="section" style="padding-top: 20px;">
-        <div class="container" style="max-width: 700px;">
-            <div style="text-align: center; margin-bottom: 30px; color: var(--gray-600);">
-                <p>📧 Email us directly: <a href="mailto:scott@weaddbots.com" style="color: var(--teal);">scott@weaddbots.com</a></p>
-                <p style="margin-top: 8px; color: var(--gray-400);">— or fill out the form below —</p>
-            </div>
+    <!-- Hero -->
+    <section class="hero-page has-banner">
+        <h1>Let's Talk About Your Business</h1>
+        <p class="hero-subtitle">Free AI assessment. No pitch, no commitment — just a practical look at where AI can help.</p>
+    </section>
 
-            <form id="contactForm" style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
-                <div style="display: flex; gap: 12px;">
-                    <div class="form-group" style="flex: 1;">
-                        <label for="first_name">First Name *</label>
-                        <input type="text" id="first_name" name="first_name" required>
+    <!-- Answer-First + Form Section -->
+    <section class="section bg-white">
+        <div class="section-inner">
+            <div class="event-details">
+
+                <!-- Main Content Column -->
+                <div>
+                    <!-- Answer-First Block -->
+                    <div class="answer-block" style="max-width:none;">
+                        <p><strong>The fastest way to find out if AI automation can help your business is to tell us what's eating your time.</strong> Fill out the form, and Scott Finney will personally review your situation and respond within 48 hours &mdash; usually much sooner. No generic autoresponder, no sales sequence. Just a real person reading your message and giving you a straight answer.</p>
                     </div>
-                    <div class="form-group" style="flex: 1;">
-                        <label for="last_name">Last Name</label>
-                        <input type="text" id="last_name" name="last_name">
+
+                    <!-- What the Assessment Includes -->
+                    <div class="mt-48">
+                        <h2 style="font-size:1.5rem; margin-bottom:16px;">What's the Free AI Assessment?</h2>
+                        <div class="answer-block" style="max-width:none;">
+                            <p>Here's the thing &mdash; most business owners know AI could probably help, but they don't know <em>where</em> to start. The free assessment is designed to answer that question in about 20 minutes.</p>
+                            <p>You'll tell us about your daily operations &mdash; the repetitive tasks, the bottlenecks, the things that fall through cracks. We'll identify the two or three highest-impact spots where simple automation could make an immediate difference. No jargon, no upsell. If AI isn't the right fit for what you need, we'll tell you that too.</p>
+                        </div>
+                    </div>
+
+                    <!-- What to Expect -->
+                    <div class="mt-48">
+                        <h2 style="font-size:1.5rem; margin-bottom:16px;">What Happens After You Reach Out?</h2>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>You fill out the form</h4>
+                                    <p>Tell us about your business and what's taking up too much of your time. The more specific you are, the better our initial assessment will be.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Scott reviews your situation</h4>
+                                    <p>No AI triage on this one &mdash; Scott reads every submission personally. You'll get a response within 48 hours with initial observations and honest feedback.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Free 20-minute discovery call</h4>
+                                    <p>If it makes sense for both of us, we'll hop on a quick call to dig deeper. You'll walk away with at least one actionable idea &mdash; whether or not we end up working together.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Answers -->
+                    <div class="mt-48">
+                        <h2 style="font-size:1.5rem; margin-bottom:16px;">Quick Answers</h2>
+                        <div class="card card-accent mb-16">
+                            <h4 style="margin-bottom:4px;">&#9201; Response time?</h4>
+                            <p style="margin:0; color:var(--gray-600); font-size:0.95rem;">Within 48 hours, usually same day. Real response from Scott, not a bot.</p>
+                        </div>
+                        <div class="card card-accent mb-16">
+                            <h4 style="margin-bottom:4px;">&#128176; Cost to get started?</h4>
+                            <p style="margin:0; color:var(--gray-600); font-size:0.95rem;">The assessment and initial call are free. Paid work starts at $300/hr for discovery sessions, $2k+ for implementation projects.</p>
+                        </div>
+                        <div class="card card-accent mb-16">
+                            <h4 style="margin-bottom:4px;">&#127919; Who's this for?</h4>
+                            <p style="margin:0; color:var(--gray-600); font-size:0.95rem;">Memphis-area business owners drowning in repetitive tasks, missed follow-ups, slow responses, or manual chaos. If you're already generating consistent activity but feel like you're leaving time on the table, this is for you.</p>
+                        </div>
+                        <div class="card card-accent mb-16">
+                            <h4 style="margin-bottom:4px;">&#128736; Do I need to replace my tools?</h4>
+                            <p style="margin:0; color:var(--gray-600); font-size:0.95rem;">No. We layer automations on top of what you're already using. Google Workspace, your CRM, your email &mdash; they all stay. We just make them work smarter.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div style="display: flex; gap: 12px;">
-                    <div class="form-group" style="flex: 1;">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
+                <!-- Sidebar -->
+                <div class="event-sidebar">
+                    <!-- Contact Form Card -->
+                    <div class="card" style="border: 2px solid var(--teal);">
+                        <h3 style="text-align:center; margin-bottom:4px;">Get Your Free Assessment</h3>
+                        <p style="text-align:center; color:var(--gray-500); font-size:0.85rem; margin-bottom:20px;">Tell us about your business. We'll tell you where AI can help.</p>
+
+                        <div id="contact-error" class="form-error"></div>
+                        <div id="contact-success" class="form-success">
+                            <strong>Message received! &#128077;</strong><br>
+                            Scott will review your submission and get back to you within 48 hours. Keep an eye on your inbox.
+                        </div>
+
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name <span class="required">*</span></label>
+                                    <input type="text" name="first_name" required autocomplete="given-name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="last_name" autocomplete="family-name">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email <span class="required">*</span></label>
+                                <input type="email" name="email" required autocomplete="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone <span style="color:var(--gray-400); font-weight:400; font-size:0.8rem;">(optional)</span></label>
+                                <input type="tel" name="phone" autocomplete="tel">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Business Name <span style="color:var(--gray-400); font-weight:400; font-size:0.8rem;">(optional)</span></label>
+                                <input type="text" name="company_name" autocomplete="organization">
+                            </div>
+
+                            <div class="form-group">
+                                <label>What can we help with?</label>
+                                <select name="inquiry_type" id="inquiry-type">
+                                    <option value="Free AI Assessment">Free AI Assessment</option>
+                                    <option value="Discovery Call">Discovery Call</option>
+                                    <option value="General Question">General Question</option>
+                                    <option value="Meetup Info">Meetup Info</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tell us about your situation <span style="color:var(--gray-400); font-weight:400; font-size:0.8rem;">(optional but helpful)</span></label>
+                                <textarea name="message" rows="4" placeholder="What tasks eat up your time? What falls through the cracks? What would you automate first if you could?"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;" id="contact-btn">
+                                Send Message &rarr;
+                            </button>
+
+                            <p style="text-align:center; color:var(--gray-400); font-size:0.75rem; margin-top:12px;">No spam. No sales sequences. Just a real reply.</p>
+                        </form>
                     </div>
-                    <div class="form-group" style="flex: 1;">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
+
+                    <!-- Prefer to Talk Card -->
+                    <div class="card mt-24">
+                        <h4 style="margin-bottom:8px; font-size:1rem;">Prefer a conversation first?</h4>
+                        <p style="color:var(--gray-600); font-size:0.9rem; margin-bottom:16px;">Come to the next <a href="/events/memphis-ai-meetup-feb-2026">Memphis AI Meetup</a> and meet Scott in person. Free, casual, no pressure. It's the easiest way to ask questions without committing to anything.</p>
+                        <a href="/events/memphis-ai-meetup-feb-2026" class="btn btn-outline btn-sm" style="width:100%; text-align:center;">See Upcoming Meetups &rarr;</a>
+                    </div>
+
+                    <!-- Direct Contact Card -->
+                    <div class="card mt-24">
+                        <h4 style="margin-bottom:12px; font-size:1rem;">Direct Contact</h4>
+                        <div style="display:flex; flex-direction:column; gap:10px; font-size:0.9rem; color:var(--gray-600);">
+                            <span>&#128231; <strong>Email:</strong> <a href="mailto:scott@weaddbots.com">scott@weaddbots.com</a></span>
+                            <span>&#128100; <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a></span>
+                            <span>&#127758; <strong>Serving:</strong> Memphis metro area</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="what_brings_you">What brings you here? *</label>
-                    <select id="what_brings_you" name="what_brings_you" required style="width: 100%; padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 8px; font-size: 1rem; font-family: inherit; background: white; color: var(--gray-700); appearance: auto;">
-                        <option value="" disabled selected>Select one...</option>
-                        <option value="Just exploring AI for my business">Just exploring AI for my business</option>
-                        <option value="Interested in attending a meetup">Interested in attending a meetup</option>
-                        <option value="Looking for consulting help">Looking for consulting help</option>
-                        <option value="Want to stay in the loop (newsletter)">Want to stay in the loop (newsletter)</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="area_suggestions">Best area of town for in person meetups? Best time of day? Any venue suggestions?</label>
-                    <textarea id="area_suggestions" name="area_suggestions" rows="3"></textarea>
-                </div>
-
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="sms_consent" name="sms_consent">
-                    <label for="sms_consent" style="font-size: 0.85rem; line-height: 1.4;">By checking this box, I consent to receive non-marketing text messages from <a href="https://weaddbots.com" target="_blank">WeAddBots.com</a> about event reminders, meetup updates, and appointment confirmations. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</label>
-                </div>
-
-                <div class="form-group checkbox-group">
-                    <input type="checkbox" id="marketing_consent" name="marketing_consent">
-                    <label for="marketing_consent" style="font-size: 0.85rem; line-height: 1.4;">By checking this box, I consent to receive marketing and promotional messages including special offers, workshop announcements, AI tips, and new service updates from <a href="https://weaddbots.com" target="_blank">WeAddBots.com</a> at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</label>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
-                
-                <div id="formStatus" class="form-status" style="display: none;"></div>
-
-                <p style="text-align: center; margin-top: 12px; font-size: 0.85rem; color: var(--gray-500);">
-                    <a href="/privacy" style="color: var(--gray-500);">Privacy Policy</a> | <a href="/terms" style="color: var(--gray-500);">Terms of Service</a>
-                </p>
-            </form>
+            </div><!-- /event-details (using 2-col layout) -->
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4>WeAddBots</h4>
-                    <p>AI automation for Memphis businesses.</p>
+    <!-- FAQ Section -->
+    <section class="section bg-gray-50">
+        <div class="section-inner">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-title">Common Questions</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is the free AI assessment?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The free AI assessment is a quick review of your business operations to identify where simple AI automations could save you time, reduce errors, or speed up response times. You tell us about your daily workflow, and we'll point out the highest-impact opportunities &mdash; no commitment, no pitch.</p>
+                    </div>
                 </div>
-                <div>
-                    <h4>Links</h4>
-                    <a href="/services">Services</a>
-                    <a href="/about">About</a>
-                    <a href="/contact">Contact</a>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What happens after I submit the form?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You'll hear back from Scott Finney personally within 48 hours &mdash; usually much sooner. If you requested an AI assessment, he'll review your submission and respond with initial observations and a link to schedule a free 20-minute call. If you had a general question, you'll get a direct answer by email.</p>
+                    </div>
                 </div>
-                <div>
-                    <h4>Legal</h4>
-                    <a href="/privacy">Privacy Policy</a>
-                    <a href="/terms">Terms of Service</a>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How much does it cost to work with WeAddBots?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The AI assessment and initial 20-minute discovery call are free. Beyond that, paid discovery sessions start at $300/hour and custom implementation projects typically start at $2,000. There are no retainers &mdash; you pay for results, not for keeping us on the clock.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do I need technical skills to use AI automation?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all. The whole point of WeAddBots is to handle the technical side so you don't have to. We build automations that work with your existing tools &mdash; Google Workspace, your CRM, your email &mdash; so your daily workflow gets simpler, not more complicated.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is WeAddBots only for Memphis businesses?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our in-person meetups and community are Memphis-focused, but the AI automation work itself can be done remotely. That said, we work best with local businesses where we can meet in person, understand the operation firsthand, and build a real relationship.</p>
+                    </div>
                 </div>
             </div>
-            <p class="footer-copy">&copy; 2026 Creating Value LLC. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Not Sure Where to Start?</h2>
+        <p>That's the whole point of the assessment. Tell us what's eating your time, and we'll show you where AI can help. Zero commitment.</p>
+        <div class="cta-buttons">
+            <a href="#contact-form" class="btn btn-white btn-lg" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}); return false;">Get Free Assessment</a>
+            <a href="/events/memphis-ai-meetup-feb-2026" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: #fff;">Join a Meetup First &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Freshness Signal -->
+    <div class="freshness">Last updated: February 2, 2026</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>WeAddBots</h4>
+                <p class="footer-tagline">AI automation for Memphis businesses.<br>Simple, practical, proven.</p>
+                <p class="footer-legal-name">A service of Creating Value LLC</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Creating Value LLC. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
         </div>
     </footer>
 
+    <!-- Mobile Menu Toggle -->
     <script>
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const status = document.getElementById('formStatus');
-            const button = form.querySelector('button[type="submit"]');
-            
-            button.disabled = true;
-            button.textContent = 'Sending...';
-            status.style.display = 'block';
-            status.className = 'form-status submitting';
-            status.textContent = 'Sending your message...';
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('show');
+        });
+    </script>
 
-            const data = {
-                first_name: form.first_name.value,
-                last_name: form.last_name.value || '',
-                email: form.email.value,
-                phone: form.phone.value || '',
-                tags: ['Website-Contact', 'Lead'],
-                source: 'Website Contact Form',
+    <!-- FAQ Accordion -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.parentElement;
+                var isOpen = item.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(function(el) {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Toggle clicked
+                if (!isOpen) {
+                    item.classList.add('open');
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+
+    <!-- Contact Form Submission (GHL v2 API) -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            var btn = document.getElementById('contact-btn');
+            var errorEl = document.getElementById('contact-error');
+            var successEl = document.getElementById('contact-success');
+            var form = this;
+
+            // Reset states
+            errorEl.style.display = 'none';
+            successEl.style.display = 'none';
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            var firstName = form.first_name.value.trim();
+            var email = form.email.value.trim();
+
+            if (!firstName || !email) {
+                errorEl.textContent = 'Please fill in your first name and email.';
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Send Message \u2192';
+                return;
+            }
+
+            var inquiryType = form.inquiry_type.value;
+
+            var payload = {
+                first_name: firstName,
+                last_name: form.last_name.value.trim(),
+                email: email,
+                phone: form.phone.value.trim(),
+                source: 'Website - Contact Form',
+                tags: ['Website Contact', inquiryType],
                 customFields: [
-                    { id: 'eITRQJpf0jUlGI8aOm6o', field_value: form.what_brings_you.value || '' },
-                    { id: 'pGVZpiJGCT9XgPJalNSC', field_value: form.area_suggestions.value || '' }
+                    { id: 'eITRQJpf0jUlGI8aOm6o', field_value: inquiryType },
+                    { id: 'Q8mqK6YWLAExkUX84K1R', field_value: 'contact' }
                 ]
             };
 
+            // Include company name if provided (append to notes or use companyName field)
+            var companyName = form.company_name.value.trim();
+            if (companyName) {
+                payload.companyName = companyName;
+            }
+
             try {
-                const response = await fetch('/api/submit', {
+                var response = await fetch('/api/submit', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(payload)
                 });
-                
-                const result = await response.json();
-                
+
+                var result = await response.json();
+
                 if (result.success) {
-                    status.className = 'form-status success';
-                    status.innerHTML = "😊<br><strong>Thanks! We'll be in touch soon.</strong><br>Thank you for taking the time to connect with us.";
-                    form.reset();
-                    
-                    if (typeof clicky !== 'undefined') {
-                        clicky.goal('contact_form');
-                    }
+                    form.style.display = 'none';
+                    successEl.style.display = 'block';
                 } else {
-                    status.className = 'form-status error';
-                    status.textContent = 'Something went wrong. Please email us directly at scott@weaddbots.com';
+                    errorEl.textContent = 'Something went wrong. Please try again or email scott@weaddbots.com directly.';
+                    errorEl.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message \u2192';
                 }
             } catch (err) {
-                status.className = 'form-status error';
-                status.textContent = 'Network error. Please try again.';
+                errorEl.textContent = 'Connection error. Please try again in a moment.';
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Send Message \u2192';
             }
-            
-            button.disabled = false;
-            button.textContent = 'Send Message';
         });
     </script>
 
