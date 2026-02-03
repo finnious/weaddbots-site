@@ -526,7 +526,22 @@
             }
         });
     </script>
-
+<!-- Google Analytics GA4 (lightweight, no external script) -->
+<script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            var m = 'G-WCKLX73V4P';
+            var cid = localStorage.getItem('_ga_cid');
+            if (!cid) { cid = Math.random().toString(36).substr(2) + Date.now().toString(36); localStorage.setItem('_ga_cid', cid); }
+            navigator.sendBeacon('https://www.google-analytics.com/g/collect?' +
+                'v=2&tid=' + m + '&cid=' + cid + '&sid=' + Date.now() +
+                '&dl=' + encodeURIComponent(location.href) +
+                '&dt=' + encodeURIComponent(document.title) +
+                '&dr=' + encodeURIComponent(document.referrer) +
+                '&en=page_view');
+        }, 100);
+    });
+</script>
     <!-- Clicky Analytics (deferred) -->
     <script>
         window.addEventListener('load', function() {
