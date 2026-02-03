@@ -541,7 +541,21 @@
             }
         });
     </script>
-
+<!-- Google Analytics GA4 (deferred) -->
+<script>
+    window.addEventListener('load', function() {
+        var g = document.createElement('script');
+        g.src = 'https://www.googletagmanager.com/gtag/js?id=G-WCKLX73V4P';
+        g.async = true;
+        document.body.appendChild(g);
+        g.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WCKLX73V4P');
+        };
+    });
+</script>
     <!-- Clicky Analytics (deferred) -->
     <script>
         window.addEventListener('load', function() {
