@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Memphis AI Meetup Updates | WeAddBots</title>
+    <meta name="description" content="Join the WeAddBots email list. Get weekly Memphis AI Meetup details — dates, times, locations — plus practical AI tips for business owners. Free, no spam.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://weaddbots.com/newsletter">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Get Memphis AI Meetup Updates | WeAddBots">
+    <meta property="og:description" content="Weekly meetup details, practical AI tips, and Memphis business automation insights. Free, no spam.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weaddbots.com/newsletter">
+    <meta property="og:locale" content="en_US">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Schema.org — BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://weaddbots.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Newsletter",
+                "item": "https://weaddbots.com/newsletter"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">WeAddBots</a>
+            <div class="nav-links">
+                <a href="/services">Services</a>
+                <a href="/about">About</a>
+                <a href="/events/memphis-ai-meetup">Events</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/events/memphis-ai-meetup">Events</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-page">
+        <h1>Stay in the Loop</h1>
+        <p class="hero-subtitle">Get weekly Memphis AI Meetup details &mdash; dates, times, locations &mdash; plus practical AI tips for business owners.</p>
+    </section>
+
+    <!-- Signup Form -->
+    <section class="section bg-white">
+        <div class="section-inner" style="max-width: 500px;">
+
+            <div id="newsletter-error" class="form-error"></div>
+            <div id="newsletter-success" class="form-success">
+                <strong>You're in! &#127881;</strong><br>
+                You'll get the next meetup details straight to your inbox. See you there.
+            </div>
+
+            <form id="newsletter-form">
+                <div class="form-row">
+                    <div class="form-group" style="flex:1;">
+                        <label>First Name <span class="required">*</span></label>
+                        <input type="text" name="first_name" required autocomplete="given-name" placeholder="First name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email <span class="required">*</span></label>
+                    <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;" id="newsletter-btn">
+                    Join the List &rarr;
+                </button>
+
+                <p style="text-align:center; color:var(--gray-400); font-size:0.75rem; margin-top:12px;">Free. No spam. Unsubscribe anytime.</p>
+            </form>
+
+            <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--gray-200);">
+                <h3 style="font-size: 1.1rem; margin-bottom: 12px;">What you'll get:</h3>
+                <div style="color: var(--gray-600); font-size: 0.95rem; line-height: 1.7;">
+                    <p>&#128197; Weekly meetup details &mdash; where, when, and what we're covering</p>
+                    <p>&#128161; Practical AI tips you can use in your business this week</p>
+                    <p>&#127897; Recaps from past meetups if you missed one</p>
+                    <p>&#128176; No pitch, no upsell &mdash; just useful stuff</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freshness Signal -->
+    <div class="freshness">Last updated: February 17, 2026</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>WeAddBots</h4>
+                <p class="footer-tagline">AI automation for Memphis businesses.<br>Simple, practical, proven.</p>
+                <p class="footer-legal-name">A service of Creating Value LLC</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/events/memphis-ai-meetup">Events</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Creating Value LLC. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/sitemap.xml">Sitemap</a>
+                <a href="/llms.txt">LLMs.txt</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('show');
+        });
+    </script>
+
+    <!-- Newsletter Form Submission -->
+    <script>
+        document.getElementById('newsletter-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            var btn = document.getElementById('newsletter-btn');
+            var errorEl = document.getElementById('newsletter-error');
+            var successEl = document.getElementById('newsletter-success');
+            var form = this;
+
+            errorEl.style.display = 'none';
+            successEl.style.display = 'none';
+            btn.disabled = true;
+            btn.textContent = 'Joining...';
+
+            var firstName = form.first_name.value.trim();
+            var email = form.email.value.trim();
+
+            if (!firstName || !email) {
+                errorEl.textContent = 'Please fill in your name and email.';
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Join the List \u2192';
+                return;
+            }
+
+            var payload = {
+                first_name: firstName,
+                email: email,
+                source: 'WeAddBots Website - Newsletter',
+                tags: ['WAB-Website-Lead', 'WAB-Newsletter'],
+                customFields: [
+                    { id: 'Q8mqK6YWLAExkUX84K1R', field_value: window.location.href }
+                ]
+            };
+
+            try {
+                var response = await fetch('/api/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                var result = await response.json();
+
+                if (result.success) {
+                    form.style.display = 'none';
+                    successEl.style.display = 'block';
+                } else {
+                    errorEl.textContent = 'Something went wrong. Please try again.';
+                    errorEl.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Join the List \u2192';
+                }
+            } catch (err) {
+                errorEl.textContent = 'Connection error. Please try again in a moment.';
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Join the List \u2192';
+            }
+        });
+    </script>
+
+<!-- Google Analytics GA4 (lightweight, no external script) -->
+<script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            var m = 'G-WCKLX73V4P';
+            var cid = localStorage.getItem('_ga_cid');
+            if (!cid) { cid = Math.random().toString(36).substr(2) + Date.now().toString(36); localStorage.setItem('_ga_cid', cid); }
+            navigator.sendBeacon('https://www.google-analytics.com/g/collect?' +
+                'v=2&tid=' + m + '&cid=' + cid + '&sid=' + Date.now() +
+                '&dl=' + encodeURIComponent(location.href) +
+                '&dt=' + encodeURIComponent(document.title) +
+                '&en=page_view');
+        }, 100);
+    });
+</script>
+    <!-- Clicky Analytics (deferred) -->
+    <script>
+        window.addEventListener('load', function() {
+            var s = document.createElement('script');
+            s.src = '//static.getclicky.com/101500449.js';
+            s.async = true;
+            document.body.appendChild(s);
+        });
+    </script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
+</body>
+</html>
