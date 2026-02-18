@@ -18,6 +18,7 @@
 - [Events](https://www.weaddbots.com/events/memphis-ai-meetup) - Free in-person Memphis AI Meetups for local business owners (weekly, rotating locations)
 - [Contact](https://www.weaddbots.com/contact) - Free AI assessment and discovery call booking
 - [FAQ](https://www.weaddbots.com/faq) - Comprehensive answers about AI automation, services, pricing, Rebecca AI Receptionist, and Memphis AI Meetups
+- [Workshops](https://www.weaddbots.com/workshops) - Upcoming $37 Zoom workshops on practical AI for business owners — topic interest form
 
 ## Positioning
 Primary: AI automation consulting for established small and mid-sized businesses, based in Memphis TN, serving US businesses

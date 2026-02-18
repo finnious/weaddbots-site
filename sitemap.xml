@@ -49,6 +49,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.weaddbots.com/workshops</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.weaddbots.com/privacy</loc>
     <lastmod>2026-01-29</lastmod>
     <changefreq>yearly</changefreq>
