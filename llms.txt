@@ -14,7 +14,7 @@
 - [Home](https://weaddbots.com/) - AI automation consulting overview for Memphis businesses
 - [Services](https://weaddbots.com/services) - AI automation services: lead response, task automation, smart workflows. Pricing, process, and tools.
 - [About](https://weaddbots.com/about) - Founder Scott Finney's story and the WeAddBots approach to AI democratization
-- [Events](https://weaddbots.com/events/memphis-ai-meetup-feb-2026) - Free in-person Memphis AI Meetups for local business owners
+- [Events](https://weaddbots.com/events/memphis-ai-meetup) - Free in-person Memphis AI Meetups for local business owners (weekly, rotating locations)
 - [Contact](https://weaddbots.com/contact) - Free AI assessment and discovery call booking
 
 ## Positioning
@@ -28,20 +28,23 @@ Founder: Scott Finney — software engineer turned AI automation specialist, Mem
 - Lead Response Automation: AI-powered instant responses to inquiries within 60 seconds, 24/7
 - Task Automation: Eliminate repetitive manual tasks draining team time
 - Smart Workflows: Connect existing tools with intelligent automation, no painful migrations
+- Rebecca AI Receptionist: AI-powered receptionist that handles inbound calls, gathers information, qualifies leads ($297-$497/month)
 
 ## Pricing
 - Free AI assessment
 - $300/hr strategy sessions
 - Custom projects from $2k
+- Rebecca AI Receptionist: $297-$497/month
 - No retainers unless results warrant it
 
 ## Tools & Platforms
-GoHighLevel, Zapier, Make, Google Workspace, Salesforce, Calendly, Gumloop, Canva, Read.ai, Stripe
+GoHighLevel, Zapier, Make, Gumloop, Google Workspace, Salesforce, Calendly, Canva, Read.ai, Stripe
 
 ## Authority Signals
 - Weekly in-person Memphis AI Meetups host (rotating locations across Memphis metro)
 - 5-year AI Bot Summit attendee
 - Page Robbins Adult Day Center board member
+- GiveCamp Memphis multi-year volunteer
 - 10+ years software engineering
 - Auburn University graduate
 

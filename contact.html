@@ -152,7 +152,7 @@
             <div class="nav-links">
                 <a href="/services">Services</a>
                 <a href="/about">About</a>
-                <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+                <a href="/events/memphis-ai-meetup">Events</a>
                 <a href="/contact">Contact</a>
             </div>
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
@@ -161,15 +161,15 @@
     <div class="mobile-menu" id="mobile-menu">
         <a href="/services">Services</a>
         <a href="/about">About</a>
-        <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+        <a href="/events/memphis-ai-meetup">Events</a>
         <a href="/contact">Contact</a>
     </div>
 
     <!-- Event Banner -->
     <div class="event-banner">
         <div class="event-banner-inner">
-            <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Feb 5 — East Memphis</span>
-            <a href="/events/memphis-ai-meetup-feb-2026">RSVP Free &rarr;</a>
+            <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Thu, Feb 19 — Highland</span>
+            <a href="/events/memphis-ai-meetup">RSVP Free &rarr;</a>
         </div>
     </div>
 
@@ -317,8 +317,8 @@
                     <!-- Prefer to Talk Card -->
                     <div class="card mt-24">
                         <h4 style="margin-bottom:8px; font-size:1rem;">Prefer a conversation first?</h4>
-                        <p style="color:var(--gray-600); font-size:0.9rem; margin-bottom:16px;">Come to the next <a href="/events/memphis-ai-meetup-feb-2026">Memphis AI Meetup</a> and meet Scott in person. Free, casual, no pressure. It's the easiest way to ask questions without committing to anything.</p>
-                        <a href="/events/memphis-ai-meetup-feb-2026" class="btn btn-outline btn-sm" style="width:100%; text-align:center;">See Upcoming Meetups &rarr;</a>
+                        <p style="color:var(--gray-600); font-size:0.9rem; margin-bottom:16px;">Come to the next <a href="/events/memphis-ai-meetup">Memphis AI Meetup</a> and meet Scott in person. Free, casual, no pressure. It's the easiest way to ask questions without committing to anything.</p>
+                        <a href="/events/memphis-ai-meetup" class="btn btn-outline btn-sm" style="width:100%; text-align:center;">See Upcoming Meetups &rarr;</a>
                     </div>
 
                     <!-- Direct Contact Card -->
@@ -401,12 +401,12 @@
         <p>That's the whole point of the assessment. Tell us what's eating your time, and we'll show you where AI can help. Zero commitment.</p>
         <div class="cta-buttons">
             <a href="#contact-form" class="btn btn-white btn-lg" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}); return false;">Get Free Assessment</a>
-            <a href="/events/memphis-ai-meetup-feb-2026" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: #fff;">Join a Meetup First &rarr;</a>
+            <a href="/events/memphis-ai-meetup" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: #fff;">Join a Meetup First &rarr;</a>
         </div>
     </section>
 
     <!-- Freshness Signal -->
-    <div class="freshness">Last updated: February 2, 2026</div>
+    <div class="freshness">Last updated: February 17, 2026</div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -420,7 +420,7 @@
                 <h4>Quick Links</h4>
                 <a href="/about">About</a>
                 <a href="/services">Services</a>
-                <a href="/events/memphis-ai-meetup-feb-2026">Events</a>
+                <a href="/events/memphis-ai-meetup">Events</a>
                 <a href="/contact">Contact</a>
             </div>
             <div>
@@ -434,6 +434,8 @@
             <div class="footer-bottom-links">
                 <a href="/privacy">Privacy Policy</a>
                 <a href="/terms">Terms of Service</a>
+                <a href="/sitemap.xml">Sitemap</a>
+                <a href="/llms.txt">LLMs.txt</a>
             </div>
         </div>
     </footer>
@@ -501,11 +503,11 @@
                 last_name: form.last_name.value.trim(),
                 email: email,
                 phone: form.phone.value.trim(),
-                source: 'Website - Contact Form',
-                tags: ['Website Contact', inquiryType],
+                source: 'WeAddBots Website - Contact',
+                tags: ['WAB-Website-Lead', 'WAB-Contact', inquiryType],
                 customFields: [
                     { id: 'eITRQJpf0jUlGI8aOm6o', field_value: inquiryType },
-                    { id: 'Q8mqK6YWLAExkUX84K1R', field_value: 'contact' }
+                    { id: 'Q8mqK6YWLAExkUX84K1R', field_value: window.location.href }
                 ]
             };
 

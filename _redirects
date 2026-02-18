@@ -1,0 +1,11 @@
+# WeAddBots Redirects
+# Cloudflare Pages format
+
+# Redirect old monthly event pages to persistent URL
+/events/memphis-ai-meetup-feb-2026  /events/memphis-ai-meetup  301
+/events/memphis-ai-meetup-feb-2026/  /events/memphis-ai-meetup  301
+
+# Future redirects for monthly pages
+/events/memphis-ai-meetup-jan-2026  /events/memphis-ai-meetup  301
+/events/memphis-ai-meetup-mar-2026  /events/memphis-ai-meetup  301
+/events/memphis-ai-meetup-apr-2026  /events/memphis-ai-meetup  301
