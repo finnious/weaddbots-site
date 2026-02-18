@@ -25,4 +25,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://weaddbots.com/sitemap.xml
+Sitemap: https://www.weaddbots.com/sitemap.xml
