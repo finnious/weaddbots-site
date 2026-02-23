@@ -1,544 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeAddBots | AI Automation for Memphis Businesses</title>
-    <meta name="description" content="WeAddBots helps established Memphis businesses remove daily operational friction with simple, AI-powered automations — without ripping out existing systems. Local, practical, proven.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.weaddbots.com/">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="WeAddBots | AI Automation for Memphis Businesses">
-    <meta property="og:description" content="Simple AI-powered automations for Memphis businesses. Remove daily operational friction without ripping out existing systems. Local, practical, proven.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.weaddbots.com/">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://www.weaddbots.com/img/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
-
-    <link rel="stylesheet" href="/styles.css">
-
-    <!-- Schema.org — Organization -->
-    <script type="application/ld+json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeAddBots | AI Automation for Memphis Businesses</title>
+<meta name="description" content="WeAddBots helps established Memphis businesses remove daily operational friction with simple, AI-powered automations — without ripping out existing systems. Local, practical, proven.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.weaddbots.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Open Graph -->
+<meta property="og:title" content="WeAddBots | AI Automation for Memphis Businesses">
+<meta property="og:description" content="Simple AI-powered automations for Memphis businesses. Remove daily operational friction without ripping out existing systems. Local, practical, proven.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.weaddbots.com/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.weaddbots.com/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
+<link rel="stylesheet" href="/styles.css">
+<!-- Schema.org — Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.weaddbots.com/#organization",
+  "name": "WeAddBots",
+  "legalName": "Creating Value LLC",
+  "url": "https://www.weaddbots.com",
+  "description": "AI automation consulting for Memphis-area businesses. We help established small to mid-sized businesses remove daily operational friction with simple, AI-powered automations.",
+  "foundingDate": "2024",
+  "areaServed": {
+    "@type": "City",
+    "name": "Memphis",
+    "containedInPlace": { "@type": "State", "name": "Tennessee" }
+  },
+  "founder": {
+    "@type": "Person",
+    "@id": "https://www.weaddbots.com/#founder",
+    "name": "Scott Finney",
+    "jobTitle": "Founder",
+    "sameAs": "https://www.linkedin.com/in/scottfinney/"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/weaddbots/",
+    "https://www.linkedin.com/in/scottfinney/"
+  ],
+  "knowsAbout": [
+    "AI Automation", "Business Process Automation", "ChatGPT for Business",
+    "Small Business AI", "Workflow Automation", "Lead Response Automation"
+  ],
+  "slogan": "Simple AI automations that layer on top of what's already working"
+}
+</script>
+<!-- Schema.org — WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.weaddbots.com/#website",
+  "name": "WeAddBots",
+  "url": "https://www.weaddbots.com",
+  "publisher": { "@id": "https://www.weaddbots.com/#organization" }
+}
+</script>
+<!-- Schema.org — BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" }
+  ]
+}
+</script>
+<!-- Schema.org — FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://www.weaddbots.com/#organization",
-        "name": "WeAddBots",
-        "legalName": "Creating Value LLC",
-        "url": "https://www.weaddbots.com",
-        "description": "AI automation consulting for Memphis-area businesses. We help established small to mid-sized businesses remove daily operational friction with simple, AI-powered automations.",
-        "foundingDate": "2024",
-        "areaServed": {
-            "@type": "City",
-            "name": "Memphis",
-            "containedInPlace": {
-                "@type": "State",
-                "name": "Tennessee"
-            }
-        },
-        "founder": {
-            "@type": "Person",
-            "@id": "https://www.weaddbots.com/#founder",
-            "name": "Scott Finney",
-            "jobTitle": "Founder",
-            "sameAs": "https://www.linkedin.com/in/scottfinney/"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/company/weaddbots/",
-            "https://www.linkedin.com/in/scottfinney/"
-        ],
-        "knowsAbout": [
-            "AI Automation",
-            "Business Process Automation",
-            "ChatGPT for Business",
-            "Small Business AI",
-            "Workflow Automation",
-            "Lead Response Automation"
-        ],
-        "slogan": "Simple AI automations that layer on top of what's already working"
-    }
-    </script>
-
-    <!-- Schema.org — WebSite -->
-    <script type="application/ld+json">
+      "@type": "Question",
+      "name": "What does AI automation actually look like for a small business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI automation for small businesses usually starts with one specific friction point — like responding to leads faster, eliminating a repetitive data entry task, or connecting two tools that don't talk to each other. We use platforms like Zapier, GoHighLevel, and Google Workspace to build lightweight automations that run in the background. No custom software development, no IT department required. Most businesses see their first automation working within a week or two."
+      }
+    },
     {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://www.weaddbots.com/#website",
-        "name": "WeAddBots",
-        "url": "https://www.weaddbots.com",
-        "publisher": {
-            "@id": "https://www.weaddbots.com/#organization"
-        }
-    }
-    </script>
-
-    <!-- Schema.org — BreadcrumbList -->
-    <script type="application/ld+json">
+      "@type": "Question",
+      "name": "How much does AI automation consulting cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We start with a free AI assessment to identify your biggest friction points. Discovery and strategy sessions are $300/hour, and custom implementation projects typically start at $2,000. We don't do retainers unless results warrant it. The goal is practical wins that pay for themselves quickly — not ongoing consulting fees."
+      }
+    },
     {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.weaddbots.com/"
-            }
-        ]
-    }
-    </script>
-
-    <!-- Schema.org — FAQPage -->
-    <script type="application/ld+json">
+      "@type": "Question",
+      "name": "Do I need to replace my current tools and systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not usually — and that's by design. Our approach starts by layering smart automations on top of what you already use. If you run your business on Google Workspace, QuickBooks, a CRM, or even spreadsheets — we work with those tools first. A rip-and-replace might make sense down the road, but it's never our first recommendation. We connect and enhance what's already working."
+      }
+    },
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What does AI automation actually look like for a small business?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "AI automation for small businesses usually starts with one specific friction point — like responding to leads faster, eliminating a repetitive data entry task, or connecting two tools that don't talk to each other. We use platforms like Zapier, GoHighLevel, and Google Workspace to build lightweight automations that run in the background. No custom software development, no IT department required. Most businesses see their first automation working within a week or two."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How much does AI automation consulting cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We start with a free AI assessment to identify your biggest friction points. Discovery and strategy sessions are $300/hour, and custom implementation projects typically start at $2,000. We don't do retainers unless results warrant it. The goal is practical wins that pay for themselves quickly — not ongoing consulting fees."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do I need to replace my current tools and systems?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Not usually — and that's by design. Our approach starts by layering smart automations on top of what you already use. If you run your business on Google Workspace, QuickBooks, a CRM, or even spreadsheets — we work with those tools first. A rip-and-replace might make sense down the road, but it's never our first recommendation. We connect and enhance what's already working."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How long does it take to see results?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Most clients see their first working automation within the first week. Simple lead response automations can be live in a day. More complex multi-step workflows typically take two to four weeks. We focus on delivering practical 'first wins' fast — not months of planning and promises."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is the Memphis AI Meetup really free?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, completely free. We host weekly in-person AI meetups at rotating locations across the Memphis metro area. No pitch, no upsell — just Memphis business owners sharing what's working with AI, asking questions, and learning together. It's the best way to see if AI automation makes sense for your business before committing to anything."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Schema.org — Speakable -->
-    <script type="application/ld+json">
+      "@type": "Question",
+      "name": "How long does it take to see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most clients see their first working automation within the first week. Simple lead response automations can be live in a day. More complex multi-step workflows typically take two to four weeks. We focus on delivering practical 'first wins' fast — not months of planning and promises."
+      }
+    },
     {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "WeAddBots — AI Automation for Memphis Businesses",
-        "url": "https://www.weaddbots.com/",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".answer-block", ".hero-subtitle"]
-        },
-        "description": "WeAddBots helps established Memphis businesses remove daily operational friction with simple AI-powered automations, without replacing existing systems. Founded by Scott Finney, WeAddBots delivers practical first wins in days or weeks, not months. Free AI assessment and weekly Memphis AI Meetups available."
+      "@type": "Question",
+      "name": "Is the Memphis AI Meetup really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely free. We host weekly in-person AI meetups at rotating locations across the Memphis metro area. No pitch, no upsell — just Memphis business owners sharing what's working with AI, asking questions, and learning together. It's the best way to see if AI automation makes sense for your business before committing to anything."
+      }
     }
-    </script>
+  ]
+}
+</script>
+<!-- Schema.org — Speakable -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "WeAddBots — AI Automation for Memphis Businesses",
+  "url": "https://www.weaddbots.com/",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".answer-block", ".hero-subtitle"]
+  },
+  "description": "WeAddBots helps established Memphis businesses remove daily operational friction with simple AI-powered automations, without replacing existing systems. Founded by Scott Finney, WeAddBots delivers practical first wins in days or weeks, not months. Free AI assessment and weekly Memphis AI Meetups available."
+}
+</script>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="/" class="nav-logo">WeAddBots</a>
-            <div class="nav-links">
-                <a href="/services">Services</a>
-                <a href="/about">About</a>
-                <a href="/events/memphis-ai-meetup">Events</a>
-                <a href="/contact">Contact</a>
-            </div>
-            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
-        </div>
-    </nav>
-    <div class="mobile-menu" id="mobile-menu">
-        <a href="/services">Services</a>
-        <a href="/about">About</a>
-        <a href="/events/memphis-ai-meetup">Events</a>
-        <a href="/contact">Contact</a>
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">WeAddBots</a>
+    <div class="nav-links">
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/events/memphis-ai-meetup">Events</a>
+      <a href="/contact">Contact</a>
     </div>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/services">Services</a>
+  <a href="/about">About</a>
+  <a href="/events/memphis-ai-meetup">Events</a>
+  <a href="/contact">Contact</a>
+</div>
 
-    <!-- Event Banner -->
-    <div class="event-banner">
-        <div class="event-banner-inner">
-            <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Thu, Feb 19 — Highland</span>
-            <a href="/events/memphis-ai-meetup">RSVP Free &rarr;</a>
-        </div>
+<!-- Event Banner -->
+<div class="event-banner">
+  <div class="event-banner-inner">
+    <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Wed, Feb 25 &mdash; Germantown</span>
+    <a href="/events/memphis-ai-meetup">RSVP Free &rarr;</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero-home has-banner">
+  <h1>AI Automation for Memphis Businesses</h1>
+  <p class="hero-subtitle">Remove daily operational friction with simple, AI-powered automations — without ripping out your existing systems.</p>
+  <div class="hero-cta">
+    <a href="/events/memphis-ai-meetup" class="btn btn-primary btn-lg">Join Our Next Meetup</a>
+    <a href="/contact" class="btn btn-outline btn-lg">Free AI Assessment</a>
+  </div>
+</section>
+
+<!-- Answer-First Content Block -->
+<section class="section bg-white">
+  <div class="answer-block">
+    <p><strong>WeAddBots helps established Memphis businesses cut through AI hype and find the automations that actually matter.</strong> Founded by <a href="/about">Scott Finney</a>, we work with service companies, retail shops, professional firms, and other businesses that are already generating consistent activity — but drowning in repetitive tasks, missed follow-ups, slow lead responses, and manual chaos.</p>
+    <p>Here's the thing: you don't need a six-month digital transformation. You don't need to rip out your current systems. You need someone who understands your business, identifies the biggest friction points, and layers smart, lightweight automations on top of what's already working. That's what we do. Your first wins typically show up in a week or two — not months.</p>
+  </div>
+</section>
+
+<!-- What We Do — Services Overview -->
+<section class="section bg-gray-50">
+  <div class="section-inner">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Three Ways We Remove the Friction</h2>
+    <p class="section-subtitle">Every engagement starts with understanding your specific bottlenecks — then building the simplest automation that solves them.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">&#9889;</div>
+        <h3>Lead Response Automation</h3>
+        <p>Your business gets inquiries at 2am, on weekends, and during your busiest hours. AI-powered instant responses engage every lead within 60 seconds, qualify them with the right questions, and route them where they need to go.</p>
+        <p class="text-sm text-gray-500 mt-16">You don't need to manually respond to every lead anymore.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#9881;</div>
+        <h3>Task Automation</h3>
+        <p>That spreadsheet you update every Monday morning. The invoice follow-ups you forget about. The data you copy-paste between three different tools. We identify the repetitive tasks draining your team's time and automate them — so you can focus on the work that actually grows your business.</p>
+        <p class="text-sm text-gray-500 mt-16">One client went from 2.5 hours of inventory work to 4 minutes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128279;</div>
+        <h3>Smart Workflows</h3>
+        <p>Most businesses already use great tools — CRMs, Google Workspace, accounting software, scheduling platforms. The problem is they don't talk to each other. We connect your existing tools with intelligent automation so information flows where it needs to, when it needs to. A rip-and-replace is rarely the first step.</p>
+        <p class="text-sm text-gray-500 mt-16">Keep what works. Connect what doesn't.</p>
+      </div>
     </div>
+    <div class="text-center mt-32">
+      <a href="/services" class="btn btn-primary">See How It Works &rarr;</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Hero -->
-    <section class="hero-home has-banner">
-        <h1>AI Automation for Memphis Businesses</h1>
-        <p class="hero-subtitle">Remove daily operational friction with simple, AI-powered automations — without ripping out your existing systems.</p>
-        <div class="hero-cta">
-            <a href="/events/memphis-ai-meetup" class="btn btn-primary btn-lg">Join Our Next Meetup</a>
-            <a href="/contact" class="btn btn-outline btn-lg">Free AI Assessment</a>
+<!-- Why Memphis Businesses Choose Us -->
+<section class="section bg-white">
+  <div class="section-inner">
+    <p class="section-label">Why WeAddBots</p>
+    <h2 class="section-title">Why Memphis Businesses Choose Us</h2>
+    <p class="section-subtitle">AI is a big deal — not because it's trendy, but because it's the first tool that adapts to the user instead of the other way around.</p>
+    <div class="card-grid-4">
+      <div class="card text-center">
+        <div class="card-icon mx-auto">&#128205;</div>
+        <h3>Local &amp; Grounded</h3>
+        <p>We're here in Memphis. We understand local businesses, not just tech buzzwords. We host weekly AI meetups across the metro area because community matters.</p>
+      </div>
+      <div class="card text-center">
+        <div class="card-icon mx-auto">&#128161;</div>
+        <h3>Practical, Not Hype</h3>
+        <p>We'll tell you what AI can actually do for your business today — and what it can't. No overpromising. No buzzword soup. Just results you can measure.</p>
+      </div>
+      <div class="card text-center">
+        <div class="card-icon mx-auto">&#128295;</div>
+        <h3>Keep What Works</h3>
+        <p>We layer automations on top of your existing systems. Your CRM, your spreadsheets, your email — they stay. We just make them smarter.</p>
+      </div>
+      <div class="card text-center">
+        <div class="card-icon mx-auto">&#128640;</div>
+        <h3>Fast Results</h3>
+        <p>See your first automation working in a week or two, not months. We focus on practical "first wins" that build momentum and prove value fast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof / Credentials -->
+<section class="section bg-gray-50">
+  <div class="section-inner text-center">
+    <p class="section-label">Community</p>
+    <h2 class="section-title">Built on Real Memphis Relationships</h2>
+    <p class="section-subtitle">WeAddBots isn't a faceless agency. It's founded and run by Scott Finney — an active member of the Memphis community.</p>
+    <div class="credential-list justify-center mt-32">
+      <span class="credential-badge">&#127897; Weekly Memphis AI Meetup Host</span>
+      <span class="credential-badge">&#127891; 5-Year AI Bot Summit Attendee</span>
+      <span class="credential-badge">&#10084; Page Robbins Board Member</span>
+      <span class="credential-badge">&#128187; Multi-Year GiveCamp Memphis Volunteer</span>
+      <span class="credential-badge">&#128200; 10+ Years Software Engineering</span>
+    </div>
+    <div class="testimonial max-w-3xl mt-48">
+      <p>"Scott used his technical expertise to lead multiple junior and mid-level developers through a complete overhaul of a WordPress site's architecture. Along with his technical skills, Scott maintained a can-do attitude and focus on project success."</p>
+      <div class="testimonial-author">&mdash; GiveCamp Memphis Collaborator, via LinkedIn</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section bg-white" id="faq">
+  <div class="section-inner">
+    <p class="section-label">Common Questions</p>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Straight answers — no jargon, no runaround.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>What does AI automation actually look like for a small business?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>It usually starts with one specific friction point — like responding to leads faster, eliminating a repetitive data entry task, or connecting two tools that don't talk to each other. We use platforms like Zapier, GoHighLevel, and Google Workspace to build lightweight automations that run in the background. No custom software development, no IT department required. Most businesses see their first automation working within a week or two.</p>
         </div>
-    </section>
-
-    <!-- Answer-First Content Block -->
-    <section class="section bg-white">
-        <div class="answer-block">
-            <p><strong>WeAddBots helps established Memphis businesses cut through AI hype and find the automations that actually matter.</strong> Founded by <a href="/about">Scott Finney</a>, we work with service companies, retail shops, professional firms, and other businesses that are already generating consistent activity — but drowning in repetitive tasks, missed follow-ups, slow lead responses, and manual chaos.</p>
-            <p>Here's the thing: you don't need a six-month digital transformation. You don't need to rip out your current systems. You need someone who understands your business, identifies the biggest friction points, and layers smart, lightweight automations on top of what's already working. That's what we do. Your first wins typically show up in a week or two — not months.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How much does AI automation consulting cost?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We start with a <a href="/contact">free AI assessment</a> to identify your biggest friction points. Discovery and strategy sessions are $300/hour, and custom implementation projects typically start at $2,000. We don't do retainers unless results warrant it. The goal is practical wins that pay for themselves quickly — not ongoing consulting fees.</p>
         </div>
-    </section>
-
-    <!-- What We Do — Services Overview -->
-    <section class="section bg-gray-50">
-        <div class="section-inner">
-            <p class="section-label">What We Do</p>
-            <h2 class="section-title">Three Ways We Remove the Friction</h2>
-            <p class="section-subtitle">Every engagement starts with understanding your specific bottlenecks — then building the simplest automation that solves them.</p>
-
-            <div class="card-grid">
-                <!-- Lead Response -->
-                <div class="card">
-                    <div class="card-icon">&#9889;</div>
-                    <h3>Lead Response Automation</h3>
-                    <p>Your business gets inquiries at 2am, on weekends, and during your busiest hours. AI-powered instant responses engage every lead within 60 seconds, qualify them with the right questions, and route them where they need to go.</p>
-                    <p class="text-sm text-gray-500 mt-16">You don't need to manually respond to every lead anymore.</p>
-                </div>
-
-                <!-- Task Automation -->
-                <div class="card">
-                    <div class="card-icon">&#9881;</div>
-                    <h3>Task Automation</h3>
-                    <p>That spreadsheet you update every Monday morning. The invoice follow-ups you forget about. The data you copy-paste between three different tools. We identify the repetitive tasks draining your team's time and automate them — so you can focus on the work that actually grows your business.</p>
-                    <p class="text-sm text-gray-500 mt-16">One client went from 2.5 hours of inventory work to 4 minutes.</p>
-                </div>
-
-                <!-- Smart Workflows -->
-                <div class="card">
-                    <div class="card-icon">&#128279;</div>
-                    <h3>Smart Workflows</h3>
-                    <p>Most businesses already use great tools — CRMs, Google Workspace, accounting software, scheduling platforms. The problem is they don't talk to each other. We connect your existing tools with intelligent automation so information flows where it needs to, when it needs to. A rip-and-replace is rarely the first step.</p>
-                    <p class="text-sm text-gray-500 mt-16">Keep what works. Connect what doesn't.</p>
-                </div>
-            </div>
-
-            <div class="text-center mt-32">
-                <a href="/services" class="btn btn-primary">See How It Works &rarr;</a>
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do I need to replace my current tools and systems?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Not usually — and that's by design. Our approach starts by layering smart automations on top of what you already use. If you run your business on Google Workspace, QuickBooks, a CRM, or even spreadsheets — we work with those. A rip-and-replace might make sense down the road, but it's never our first recommendation. We connect and enhance what's already working.</p>
         </div>
-    </section>
-
-    <!-- Why Memphis Businesses Choose Us -->
-    <section class="section bg-white">
-        <div class="section-inner">
-            <p class="section-label">Why WeAddBots</p>
-            <h2 class="section-title">Why Memphis Businesses Choose Us</h2>
-            <p class="section-subtitle">AI is a big deal — not because it's trendy, but because it's the first tool that adapts to the user instead of the other way around.</p>
-
-            <div class="card-grid-4">
-                <div class="card text-center">
-                    <div class="card-icon mx-auto">&#128205;</div>
-                    <h3>Local &amp; Grounded</h3>
-                    <p>We're here in Memphis. We understand local businesses, not just tech buzzwords. We host weekly AI meetups across the metro area because community matters.</p>
-                </div>
-                <div class="card text-center">
-                    <div class="card-icon mx-auto">&#128161;</div>
-                    <h3>Practical, Not Hype</h3>
-                    <p>We'll tell you what AI can actually do for your business today — and what it can't. No overpromising. No buzzword soup. Just results you can measure.</p>
-                </div>
-                <div class="card text-center">
-                    <div class="card-icon mx-auto">&#128295;</div>
-                    <h3>Keep What Works</h3>
-                    <p>We layer automations on top of your existing systems. Your CRM, your spreadsheets, your email — they stay. We just make them smarter.</p>
-                </div>
-                <div class="card text-center">
-                    <div class="card-icon mx-auto">&#128640;</div>
-                    <h3>Fast Results</h3>
-                    <p>See your first automation working in a week or two, not months. We focus on practical "first wins" that build momentum and prove value fast.</p>
-                </div>
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How long does it take to see results?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most clients see their first working automation within the first week. Simple lead response automations can be live in a day. More complex multi-step workflows typically take two to four weeks. We focus on delivering practical "first wins" fast — not months of planning and promises.</p>
         </div>
-    </section>
-
-    <!-- Social Proof / Credentials -->
-    <section class="section bg-gray-50">
-        <div class="section-inner text-center">
-            <p class="section-label">Community</p>
-            <h2 class="section-title">Built on Real Memphis Relationships</h2>
-            <p class="section-subtitle">WeAddBots isn't a faceless agency. It's founded and run by Scott Finney — an active member of the Memphis community.</p>
-
-            <div class="credential-list justify-center mt-32">
-                <span class="credential-badge">&#127897; Weekly Memphis AI Meetup Host</span>
-                <span class="credential-badge">&#127891; 5-Year AI Bot Summit Attendee</span>
-                <span class="credential-badge">&#10084; Page Robbins Board Member</span>
-                <span class="credential-badge">&#128187; Multi-Year GiveCamp Memphis Volunteer</span>
-                <span class="credential-badge">&#128200; 10+ Years Software Engineering</span>
-            </div>
-
-            <div class="testimonial max-w-3xl mt-48">
-                <p>"Scott used his technical expertise to lead multiple junior and mid-level developers through a complete overhaul of a WordPress site's architecture. Along with his technical skills, Scott maintained a can-do attitude and focus on project success."</p>
-                <div class="testimonial-author">&mdash; GiveCamp Memphis Collaborator, via LinkedIn</div>
-            </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is the Memphis AI Meetup really free?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, completely free. We host weekly in-person AI meetups at rotating locations across the Memphis metro area. No pitch, no upsell — just Memphis business owners sharing what's working with AI, asking questions, and learning together. It's the best way to see if AI automation makes sense for your business before committing to anything. <a href="/events/memphis-ai-meetup">See the next meetup &rarr;</a></p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- FAQ Section -->
-    <section class="section bg-white" id="faq">
-        <div class="section-inner">
-            <p class="section-label">Common Questions</p>
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Straight answers — no jargon, no runaround.</p>
-
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What does AI automation actually look like for a small business?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>It usually starts with one specific friction point — like responding to leads faster, eliminating a repetitive data entry task, or connecting two tools that don't talk to each other. We use platforms like Zapier, GoHighLevel, and Google Workspace to build lightweight automations that run in the background. No custom software development, no IT department required. Most businesses see their first automation working within a week or two.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How much does AI automation consulting cost?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We start with a <a href="/contact">free AI assessment</a> to identify your biggest friction points. Discovery and strategy sessions are $300/hour, and custom implementation projects typically start at $2,000. We don't do retainers unless results warrant it. The goal is practical wins that pay for themselves quickly — not ongoing consulting fees.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Do I need to replace my current tools and systems?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Not usually — and that's by design. Our approach starts by layering smart automations on top of what you already use. If you run your business on Google Workspace, QuickBooks, a CRM, or even spreadsheets — we work with those. A rip-and-replace might make sense down the road, but it's never our first recommendation. We connect and enhance what's already working.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How long does it take to see results?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Most clients see their first working automation within the first week. Simple lead response automations can be live in a day. More complex multi-step workflows typically take two to four weeks. We focus on delivering practical "first wins" fast — not months of planning and promises.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Is the Memphis AI Meetup really free?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, completely free. We host weekly in-person AI meetups at rotating locations across the Memphis metro area. No pitch, no upsell — just Memphis business owners sharing what's working with AI, asking questions, and learning together. It's the best way to see if AI automation makes sense for your business before committing to anything. <a href="/events/memphis-ai-meetup">See the next meetup &rarr;</a></p>
-                    </div>
-                </div>
-            </div>
+<!-- Newsletter Signup — Inline -->
+<section class="section bg-gray-50">
+  <div class="section-inner text-center" style="max-width: 600px;">
+    <p class="section-label">Stay in the Loop</p>
+    <h2 class="section-title">Get Weekly Meetup Details &amp; AI Tips</h2>
+    <p class="section-subtitle">Dates, times, locations &mdash; plus practical AI tips for Memphis business owners. Free, no spam.</p>
+    <div id="hp-newsletter-error" class="form-error"></div>
+    <div id="hp-newsletter-success" class="form-success">
+      <strong>You're in! &#127881;</strong><br>
+      You'll get the next meetup details straight to your inbox.
+    </div>
+    <form id="hp-newsletter-form" class="mt-24" style="text-align:left;">
+      <div class="form-row">
+        <div class="form-group" style="flex:1;">
+          <input type="text" name="first_name" required autocomplete="given-name" placeholder="First name">
         </div>
-    </section>
-
-    <!-- Newsletter Signup — Inline -->
-    <section class="section bg-gray-50">
-        <div class="section-inner text-center" style="max-width: 600px;">
-            <p class="section-label">Stay in the Loop</p>
-            <h2 class="section-title">Get Weekly Meetup Details &amp; AI Tips</h2>
-            <p class="section-subtitle">Dates, times, locations &mdash; plus practical AI tips for Memphis business owners. Free, no spam.</p>
-
-            <div id="hp-newsletter-error" class="form-error"></div>
-            <div id="hp-newsletter-success" class="form-success">
-                <strong>You're in! &#127881;</strong><br>
-                You'll get the next meetup details straight to your inbox.
-            </div>
-
-            <form id="hp-newsletter-form" class="mt-24" style="text-align:left;">
-                <div class="form-row">
-                    <div class="form-group" style="flex:1;">
-                        <input type="text" name="first_name" required autocomplete="given-name" placeholder="First name">
-                    </div>
-                    <div class="form-group" style="flex:1.5;">
-                        <input type="email" name="email" required autocomplete="email" placeholder="Email address">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width:100%; margin-top:4px;" id="hp-newsletter-btn">
-                    Join the List &rarr;
-                </button>
-                <p style="text-align:center; color:var(--gray-400); font-size:0.75rem; margin-top:8px;">Free. No spam. Unsubscribe anytime.</p>
-            </form>
+        <div class="form-group" style="flex:1.5;">
+          <input type="email" name="email" required autocomplete="email" placeholder="Email address">
         </div>
-    </section>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%; margin-top:4px;" id="hp-newsletter-btn">
+        Join the List &rarr;
+      </button>
+      <p style="text-align:center; color:var(--gray-400); font-size:0.75rem; margin-top:8px;">Free. No spam. Unsubscribe anytime.</p>
+    </form>
+  </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Ready to Remove the Friction?</h2>
-        <p>Join our next Memphis AI Meetup or schedule a free assessment. No commitment, no pressure — just a conversation about what's possible.</p>
-        <div class="cta-buttons">
-            <a href="/events/memphis-ai-meetup" class="btn btn-white btn-lg">Feb 19 Meetup &rarr;</a>
-            <a href="/contact" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: #fff;">Contact Us</a>
-        </div>
-    </section>
+<!-- CTA Section -->
+<section class="cta-section">
+  <h2>Ready to Remove the Friction?</h2>
+  <p>Join our next Memphis AI Meetup or schedule a free assessment. No commitment, no pressure — just a conversation about what's possible.</p>
+  <div class="cta-buttons">
+    <a href="/events/memphis-ai-meetup" class="btn btn-white btn-lg">Feb 25 Meetup &rarr;</a>
+    <a href="/contact" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: #fff;">Contact Us</a>
+  </div>
+</section>
 
-    <!-- Freshness Signal -->
-    <div class="freshness">Last updated: February 17, 2026</div>
+<!-- Freshness Signal -->
+<div class="freshness">Last updated: February 22, 2026</div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <h4>WeAddBots</h4>
-                <p class="footer-tagline">AI automation for Memphis businesses.<br>Simple, practical, proven.</p>
-                <p class="footer-legal-name">A service of Creating Value LLC</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <a href="/about">About</a>
-                <a href="/services">Services</a>
-                <a href="/events/memphis-ai-meetup">Events</a>
-                <a href="/contact">Contact</a>
-            </div>
-            <div>
-                <h4>Connect</h4>
-                <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
-            </div>
-        </div>
-        <!-- Footer Newsletter -->
-        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; margin-top: 24px; text-align: center;">
-            <p style="color: var(--gray-400); font-size: 0.85rem; margin-bottom: 0;">Get weekly meetup details &amp; AI tips &mdash; <a href="/newsletter" style="color: var(--teal);">join the email list</a></p>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Creating Value LLC. All rights reserved.</p>
-            <div class="footer-bottom-links">
-                <a href="/privacy">Privacy Policy</a>
-                <a href="/terms">Terms of Service</a>
-                <a href="/sitemap.xml">Sitemap</a>
-                <a href="/llms.txt">LLMs.txt</a>
-            </div>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>WeAddBots</h4>
+      <p class="footer-tagline">AI automation for Memphis businesses.<br>Simple, practical, proven.</p>
+      <p class="footer-legal-name">A service of Creating Value LLC</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/events/memphis-ai-meetup">Events</a>
+      <a href="/contact">Contact</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
+    </div>
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; margin-top: 24px; text-align: center;">
+    <p style="color: var(--gray-400); font-size: 0.85rem; margin-bottom: 0;">Get weekly meetup details &amp; AI tips &mdash; <a href="/newsletter" style="color: var(--teal);">join the email list</a></p>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Creating Value LLC. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/sitemap.xml">Sitemap</a>
+      <a href="/llms.txt">LLMs.txt</a>
+    </div>
+  </div>
+</footer>
 
-    <!-- Mobile Menu Toggle -->
-    <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('show');
-        });
-    </script>
+<!-- Mobile Menu Toggle -->
+<script>
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+  document.getElementById('mobile-menu').classList.toggle('show');
+});
+</script>
 
-    <!-- FAQ Accordion -->
-    <script>
-        document.querySelectorAll('.faq-question').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                var item = this.parentElement;
-                var isOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('open'); });
-                if (!isOpen) item.classList.add('open');
-                this.setAttribute('aria-expanded', !isOpen);
-            });
-        });
-    </script>
+<!-- FAQ Accordion -->
+<script>
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = this.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+    this.setAttribute('aria-expanded', !isOpen);
+  });
+});
+</script>
 
-    <!-- Homepage Newsletter Form -->
-    <script>
-        document.getElementById('hp-newsletter-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            var btn = document.getElementById('hp-newsletter-btn');
-            var errorEl = document.getElementById('hp-newsletter-error');
-            var successEl = document.getElementById('hp-newsletter-success');
-            var form = this;
-            errorEl.style.display = 'none';
-            successEl.style.display = 'none';
-            btn.disabled = true;
-            btn.textContent = 'Joining...';
-            var firstName = form.first_name.value.trim();
-            var email = form.email.value.trim();
-            if (!firstName || !email) {
-                errorEl.textContent = 'Please fill in your name and email.';
-                errorEl.style.display = 'block';
-                btn.disabled = false;
-                btn.textContent = 'Join the List \u2192';
-                return;
-            }
-            try {
-                var response = await fetch('/api/submit', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        first_name: firstName,
-                        email: email,
-                        source: 'WeAddBots Website - Newsletter',
-                        tags: ['WAB-Website-Lead', 'WAB-Newsletter'],
-                        customFields: [
-                            { id: 'Q8mqK6YWLAExkUX84K1R', field_value: window.location.href }
-                        ]
-                    })
-                });
-                var result = await response.json();
-                if (result.success) {
-                    form.style.display = 'none';
-                    successEl.style.display = 'block';
-                } else {
-                    errorEl.textContent = 'Something went wrong. Please try again.';
-                    errorEl.style.display = 'block';
-                    btn.disabled = false;
-                    btn.textContent = 'Join the List \u2192';
-                }
-            } catch (err) {
-                errorEl.textContent = 'Connection error. Please try again in a moment.';
-                errorEl.style.display = 'block';
-                btn.disabled = false;
-                btn.textContent = 'Join the List \u2192';
-            }
-        });
-    </script>
+<!-- Homepage Newsletter Form -->
+<script>
+document.getElementById('hp-newsletter-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('hp-newsletter-btn');
+  var errorEl = document.getElementById('hp-newsletter-error');
+  var successEl = document.getElementById('hp-newsletter-success');
+  var form = this;
+
+  errorEl.style.display = 'none';
+  successEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Joining...';
+
+  var firstName = form.first_name.value.trim();
+  var email = form.email.value.trim();
+
+  if (!firstName || !email) {
+    errorEl.textContent = 'Please fill in your name and email.';
+    errorEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Join the List \u2192';
+    return;
+  }
+
+  try {
+    var response = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        first_name: firstName,
+        email: email,
+        source: 'WeAddBots Website - Newsletter',
+        tags: ['WAB-Website-Lead', 'WAB-Newsletter'],
+        customFields: [
+          { id: 'Q8mqK6YWLAExkUX84K1R', field_value: window.location.href }
+        ]
+      })
+    });
+
+    var result = await response.json();
+    if (result.success) {
+      form.style.display = 'none';
+      successEl.style.display = 'block';
+
+      /* --- Clicky conversion tracking --- */
+      try {
+        if (typeof clicky !== 'undefined') {
+          if (typeof clicky.goal === 'function') clicky.goal('Newsletter Signup');
+          if (typeof clicky.log === 'function') clicky.log('#newsletter/signup', 'Newsletter Signup');
+        }
+      } catch(e) {}
+
+    } else {
+      errorEl.textContent = 'Something went wrong. Please try again.';
+      errorEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Join the List \u2192';
+    }
+  } catch (err) {
+    errorEl.textContent = 'Connection error. Please try again in a moment.';
+    errorEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Join the List \u2192';
+  }
+});
+</script>
+
 <!-- Google Analytics GA4 (lightweight, no external script) -->
 <script>
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            var m = 'G-WCKLX73V4P';
-            var cid = localStorage.getItem('_ga_cid');
-            if (!cid) { cid = Math.random().toString(36).substr(2) + Date.now().toString(36); localStorage.setItem('_ga_cid', cid); }
-            navigator.sendBeacon('https://www.google-analytics.com/g/collect?' +
-                'v=2&tid=' + m + '&cid=' + cid + '&sid=' + Date.now() +
-                '&dl=' + encodeURIComponent(location.href) +
-                '&dt=' + encodeURIComponent(document.title) +
-                '&dr=' + encodeURIComponent(document.referrer) +
-                '&en=page_view');
-        }, 100);
-    });
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var m = 'G-WCKLX73V4P';
+    var cid = localStorage.getItem('_ga_cid');
+    if (!cid) {
+      cid = Math.random().toString(36).substr(2) + Date.now().toString(36);
+      localStorage.setItem('_ga_cid', cid);
+    }
+    navigator.sendBeacon('https://www.google-analytics.com/g/collect?' +
+      'v=2&tid=' + m +
+      '&cid=' + cid +
+      '&sid=' + Date.now() +
+      '&dl=' + encodeURIComponent(location.href) +
+      '&dt=' + encodeURIComponent(document.title) +
+      '&dr=' + encodeURIComponent(document.referrer) +
+      '&en=page_view');
+  }, 100);
+});
 </script>
-    <!-- Clicky Analytics (deferred) -->
-    <script>
-        window.addEventListener('load', function() {
-            var s = document.createElement('script');
-            s.src = '//static.getclicky.com/101500449.js';
-            s.async = true;
-            document.body.appendChild(s);
-        });
-    </script>
-    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
+
+<!-- Clicky Analytics (deferred, clicky.init pattern per playbook) -->
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var cs = document.createElement('script');
+    cs.async = true;
+    cs.src = '//static.getclicky.com/js';
+    cs.onload = function() {
+      try { clicky.init(101500449); } catch(e) {}
+    };
+    document.body.appendChild(cs);
+  }, 100);
+});
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
+
 </body>
 </html>
