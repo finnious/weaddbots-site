@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clicky Goal Test — WeAddBots</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.test-container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+.test-title { font-family: 'Georgia', serif; font-size: 2rem; color: var(--teal, #2dd4bf); margin-bottom: 12px; }
+.test-desc { color: var(--gray-400, #9ca3af); margin-bottom: 32px; font-size: 1rem; line-height: 1.6; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.test-btn { padding: 12px 24px; font-size: 1rem; font-weight: 700; border: 2px solid var(--teal, #2dd4bf); background: transparent; color: var(--teal, #2dd4bf); border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+.test-btn:hover { background: var(--teal, #2dd4bf); color: var(--navy, #0f172a); }
+.test-btn.secondary { border-color: var(--gray-500, #6b7280); color: var(--gray-400, #9ca3af); }
+.test-btn.secondary:hover { background: var(--gray-500, #6b7280); color: #fff; }
+#log { background: var(--navy, #0f172a); border: 1px solid var(--gray-700, #374151); border-radius: 8px; padding: 20px; margin-top: 24px; font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.8; min-height: 200px; max-height: 400px; overflow-y: auto; }
+.log-line { margin: 0; }
+.log-time { color: var(--gray-500, #6b7280); }
+.log-info { color: var(--gray-300, #d1d5db); }
+.log-success { color: #4ade80; }
+.log-warn { color: #facc15; }
+.log-error { color: #f87171; }
+.log-action { color: var(--teal, #2dd4bf); }
+</style>
+</head>
+<body style="background: #111827; min-height: 100vh;">
+
+<div class="test-container">
+  <h1 class="test-title">Clicky Goal Test Page</h1>
+  <p class="test-desc">This page tests whether Clicky loads correctly and goals fire. Open your Clicky dashboard to Goals after clicking the buttons below.</p>
+
+  <div class="btn-row">
+    <button class="test-btn" onclick="fireGoal()">Fire Test Goal</button>
+    <button class="test-btn" onclick="fireEvent()">Fire Test Event</button>
+    <button class="test-btn" onclick="fireBoth()">Fire Both</button>
+  </div>
+  <div class="btn-row">
+    <button class="test-btn secondary" onclick="checkStatus()">Check Clicky Status</button>
+  </div>
+
+  <div id="log"></div>
+</div>
+
+<script>
+var SITE_ID = 101500449;
+var logEl = document.getElementById('log');
+
+function ts() {
+  return new Date().toLocaleTimeString();
+}
+
+function log(msg, cls) {
+  cls = cls || 'info';
+  var p = document.createElement('p');
+  p.className = 'log-line';
+  p.innerHTML = '<span class="log-time">' + ts() + '</span> &mdash; <span class="log-' + cls + '">' + msg + '</span>';
+  logEl.appendChild(p);
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+// Load Clicky with init pattern (same as production pages)
+(function() {
+  log('Loading Clicky script from //static.getclicky.com/js ...', 'info');
+  var cs = document.createElement('script');
+  cs.async = true;
+  cs.src = '//static.getclicky.com/js';
+  cs.onload = function() {
+    log('Clicky script loaded.', 'info');
+    try {
+      clicky.init(SITE_ID);
+      log('clicky.init(' + SITE_ID + ') called.', 'success');
+    } catch(e) {
+      log('clicky.init() FAILED: ' + e.message, 'error');
+    }
+    checkStatus();
+  };
+  cs.onerror = function() {
+    log('FAILED to load Clicky script. Check ad-blocker or network.', 'error');
+  };
+  document.body.appendChild(cs);
+})();
+
+function checkStatus() {
+  log('typeof clicky = ' + typeof clicky, typeof clicky === 'object' ? 'info' : 'error');
+  if (typeof clicky !== 'undefined') {
+    log('typeof clicky.goal = ' + typeof clicky.goal, typeof clicky.goal === 'function' ? 'info' : 'warn');
+    log('typeof clicky.log = ' + typeof clicky.log, typeof clicky.log === 'function' ? 'info' : 'warn');
+    log('typeof clicky.pageview = ' + typeof clicky.pageview, typeof clicky.pageview === 'function' ? 'info' : 'warn');
+    if (typeof clicky.goal === 'function') {
+      log('READY &mdash; Clicky is loaded and goal function is available.', 'success');
+    } else {
+      log('WARNING &mdash; Clicky object exists but goal function is missing.', 'warn');
+    }
+  } else {
+    log('Clicky is NOT loaded. Goals will not fire.', 'error');
+  }
+}
+
+function fireGoal() {
+  if (typeof clicky !== 'undefined' && typeof clicky.goal === 'function') {
+    try {
+      clicky.goal('Test Goal');
+      log('clicky.goal("Test Goal") &mdash; FIRED', 'action');
+    } catch(e) {
+      log('Goal fire error: ' + e.message, 'error');
+    }
+  } else {
+    log('Cannot fire goal &mdash; clicky.goal is not available.', 'error');
+  }
+}
+
+function fireEvent() {
+  if (typeof clicky !== 'undefined' && typeof clicky.log === 'function') {
+    try {
+      clicky.log('#test/event', 'Test Event');
+      log('clicky.log("#test/event", "Test Event") &mdash; FIRED', 'action');
+    } catch(e) {
+      log('Event fire error: ' + e.message, 'error');
+    }
+  } else {
+    log('Cannot fire event &mdash; clicky.log is not available.', 'error');
+  }
+}
+
+function fireBoth() {
+  fireGoal();
+  fireEvent();
+}
+</script>
+
+</body>
+</html>
