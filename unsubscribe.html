@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsubscribe | WeAddBots</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:image" content="https://www.weaddbots.com/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">WeAddBots</a>
+            <div class="nav-links">
+                <a href="/services">Services</a>
+                <a href="/about">About</a>
+                <a href="/events/memphis-ai-meetup">Events</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/events/memphis-ai-meetup">Events</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <!-- Unsubscribe Content -->
+    <section class="hero-page" style="min-height: 50vh; display:flex; flex-direction:column; justify-content:center;">
+
+        <!-- State 1: Confirm unsubscribe -->
+        <div id="unsub-confirm">
+            <h1>Sorry to see you go</h1>
+            <p class="hero-subtitle" style="margin-bottom:24px;">You'll be removed from Memphis AI Meetup emails. We won't send you any more event announcements or reminders.</p>
+            <p style="margin-bottom:32px; color:var(--gray-600);">You'll still be in our community &mdash; just no more emails. If you ever want back in, RSVP to any future event or sign up for the newsletter again.</p>
+            <div class="cta-buttons" style="justify-content:center;">
+                <button class="btn btn-primary" id="unsub-btn" onclick="processUnsubscribe()">Unsubscribe Me</button>
+                <a href="/" class="btn btn-outline">Never Mind, Take Me Home</a>
+            </div>
+        </div>
+
+        <!-- State 2: Success -->
+        <div id="unsub-success" style="display:none;">
+            <h1>You're unsubscribed</h1>
+            <p class="hero-subtitle" style="margin-bottom:24px;">Done. No more meetup emails from us.</p>
+            <p style="margin-bottom:32px; color:var(--gray-600);">If you change your mind, you're always welcome back. Just sign up again at <a href="/newsletter">weaddbots.com/newsletter</a> or RSVP to a future event.</p>
+            <div class="cta-buttons" style="justify-content:center;">
+                <a href="/" class="btn btn-primary">Back to WeAddBots</a>
+            </div>
+        </div>
+
+        <!-- State 3: Error -->
+        <div id="unsub-error" style="display:none;">
+            <h1>Something went wrong</h1>
+            <p class="hero-subtitle" style="margin-bottom:24px;">We couldn't process your unsubscribe. Please try again or email us directly.</p>
+            <div class="cta-buttons" style="justify-content:center;">
+                <button class="btn btn-primary" onclick="processUnsubscribe()">Try Again</button>
+                <a href="mailto:scott@mg.creatingvaluellc.com?subject=Unsubscribe%20Request" class="btn btn-outline">Email Us Instead</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Creating Value LLC. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('show');
+        });
+    </script>
+
+    <!-- Unsubscribe Logic -->
+    <script>
+        function getEmailFromURL() {
+            var params = new URLSearchParams(window.location.search);
+            return params.get('email') || '';
+        }
+
+        async function processUnsubscribe() {
+            var email = getEmailFromURL();
+            if (!email) {
+                document.getElementById('unsub-confirm').style.display = 'none';
+                document.getElementById('unsub-error').style.display = 'block';
+                return;
+            }
+
+            var btn = document.getElementById('unsub-btn');
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+            }
+
+            try {
+                var response = await fetch('/api/unsubscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+
+                var result = await response.json();
+
+                if (result.success) {
+                    document.getElementById('unsub-confirm').style.display = 'none';
+                    document.getElementById('unsub-success').style.display = 'block';
+                } else {
+                    document.getElementById('unsub-confirm').style.display = 'none';
+                    document.getElementById('unsub-error').style.display = 'block';
+                }
+            } catch (e) {
+                document.getElementById('unsub-confirm').style.display = 'none';
+                document.getElementById('unsub-error').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
