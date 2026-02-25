@@ -447,7 +447,7 @@ document.getElementById('rsvp-form').addEventListener('submit', async function(e
 
   var notifyFuture = document.getElementById('notify_future').checked;
 
-  var tags = ['WAB-Website-Lead', 'WAB-Meetup-Attendee'];
+  var tags = ['WAB-Website-Lead', 'WAB-Meetup-Attendee', 'WAB-Newsletter'];
   selectedDates.forEach(function(tag) { tags.push(tag); });
   if (notifyFuture) { tags.push('WAB-Notify-Future-Meetups'); }
 
