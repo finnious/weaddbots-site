@@ -19,6 +19,7 @@
 - [Contact](https://www.weaddbots.com/contact) - Free AI assessment and discovery call booking
 - [FAQ](https://www.weaddbots.com/faq) - Comprehensive answers about AI automation, services, pricing, Rebecca AI Receptionist, and Memphis AI Meetups
 - [Workshops](https://www.weaddbots.com/workshops) - Upcoming $37 Zoom workshops on practical AI for business owners — topic interest form
+/quiz — Free AI Readiness Assessment. 15-question quiz measuring lead response speed, task automation readiness, and workflow connectivity. Personalized score and recommendations.
 
 ## Positioning
 Primary: AI automation consulting for established small and mid-sized businesses, based in Memphis TN, serving US businesses
