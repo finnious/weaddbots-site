@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free AI Readiness Assessment | WeAddBots — AI Automation for Memphis Businesses</title>
+<meta name="description" content="Take the free 3-minute AI Readiness Assessment. Find out where AI can save your business the most time — and get a personalized action plan based on your score.">
+<link rel="canonical" href="https://www.weaddbots.com/quiz">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free AI Readiness Assessment | WeAddBots">
+<meta property="og:description" content="Answer 15 questions. Find out where AI can save your business the most time. Get personalized recommendations.">
+<meta property="og:url" content="https://www.weaddbots.com/quiz">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.weaddbots.com/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/styles.css">
+
+<style>
+/* ===== QUIZ-SPECIFIC STYLES ===== */
+.quiz-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Progress bar */
+.quiz-progress {
+    width: 100%;
+    height: 6px;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.quiz-progress-bar {
+    height: 100%;
+    background: var(--teal);
+    border-radius: var(--radius-full);
+    transition: width 0.4s ease;
+    width: 0%;
+}
+.quiz-progress-text {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    margin-bottom: 32px;
+    text-align: right;
+}
+
+/* Steps */
+.quiz-step {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+.quiz-step.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section labels */
+.quiz-section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal-600);
+    margin-bottom: 8px;
+}
+
+/* Questions */
+.quiz-question {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 20px;
+    line-height: 1.35;
+}
+.quiz-subtitle {
+    font-size: 0.95rem;
+    color: var(--gray-500);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Option buttons (yes/no and multiple choice) */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    background: var(--white);
+    font-size: 1rem;
+    color: var(--gray-800);
+    line-height: 1.4;
+    text-align: left;
+    width: 100%;
+}
+.quiz-option:hover {
+    border-color: var(--teal);
+    background: var(--teal-50);
+}
+.quiz-option.selected {
+    border-color: var(--teal);
+    background: var(--teal-50);
+    font-weight: 600;
+}
+.quiz-option-marker {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--gray-300);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+}
+.quiz-option.selected .quiz-option-marker {
+    border-color: var(--teal);
+    background: var(--teal);
+}
+.quiz-option.selected .quiz-option-marker::after {
+    content: '\2713';
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Text input */
+.quiz-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    color: var(--gray-800);
+    transition: var(--transition-fast);
+    background: var(--white);
+}
+.quiz-input:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(0, 171, 199, 0.1);
+}
+.quiz-input::placeholder {
+    color: var(--gray-400);
+}
+textarea.quiz-input {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Contact info grid */
+.quiz-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.quiz-contact-grid .quiz-field-full {
+    grid-column: 1 / -1;
+}
+@media (max-width: 500px) {
+    .quiz-contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.quiz-field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 6px;
+}
+.quiz-field .optional {
+    font-weight: 400;
+    color: var(--gray-400);
+}
+
+/* Navigation buttons */
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-100);
+}
+.quiz-nav-back {
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: var(--transition-fast);
+    font-family: var(--font-sans);
+}
+.quiz-nav-back:hover {
+    color: var(--gray-800);
+}
+
+/* Results page */
+.results-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Score gauge */
+.score-gauge {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.score-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    position: relative;
+}
+.score-circle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 8px solid var(--gray-100);
+}
+.score-circle::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: var(--teal);
+    border-right-color: var(--teal);
+    transition: transform 1s ease;
+}
+.score-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+.score-label {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+.score-headline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+}
+.score-summary {
+    font-size: 1rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* Insight cards */
+.insight-card {
+    background: var(--gray-50);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    margin-bottom: 16px;
+}
+.insight-card h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.insight-card p {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+.insight-icon {
+    font-size: 1.25rem;
+}
+
+/* Score color variants */
+.score-low .score-circle::after { border-top-color: var(--amber-500); border-right-color: transparent; }
+.score-mid .score-circle::after { border-top-color: var(--teal); border-right-color: var(--teal); border-bottom-color: transparent; }
+.score-high .score-circle::after { border-top-color: var(--green-500); border-right-color: var(--green-500); border-bottom-color: var(--green-500); }
+
+/* CTA section */
+.results-cta {
+    background: var(--teal-50);
+    border: 2px solid var(--teal-100);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    text-align: center;
+    margin-top: 32px;
+}
+.results-cta h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+.results-cta p {
+    color: var(--gray-600);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Error styling */
+.quiz-error {
+    color: var(--red-500);
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: none;
+}
+
+/* Hide quiz when showing results */
+#quiz-landing, #quiz-flow, #quiz-results {
+    display: none;
+}
+#quiz-landing.active, #quiz-flow.active, #quiz-results.active {
+    display: block;
+}
+</style>
+
+<!-- Schema.org — Quiz/Assessment -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Free AI Readiness Assessment",
+    "url": "https://www.weaddbots.com/quiz",
+    "description": "Take the free 3-minute AI Readiness Assessment. Find out where AI can save your business the most time and get personalized recommendations.",
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-subtitle", ".answer-block"]
+    },
+    "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.weaddbots.com/#website"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+            { "@type": "ListItem", "position": 2, "name": "AI Readiness Assessment", "item": "https://www.weaddbots.com/quiz" }
+        ]
+    }
+}
+</script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">WeAddBots</a>
+        <div class="nav-links">
+            <a href="/services">Services</a>
+            <a href="/about">About</a>
+            <a href="/events/memphis-ai-meetup">Events</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+    <a href="/services">Services</a>
+    <a href="/about">About</a>
+    <a href="/events/memphis-ai-meetup">Events</a>
+    <a href="/contact">Contact</a>
+</div>
+
+<!-- ===== PHASE 1: LANDING PAGE ===== -->
+<div id="quiz-landing" class="active">
+
+<section class="hero-page" style="min-height: auto; padding-bottom: 32px;">
+    <h1>Feeling like AI could help your business&hellip; but not sure where to start?</h1>
+    <p class="hero-subtitle">Answer 15 questions to find out where AI can save you the most time &mdash; and what to do about it.</p>
+</section>
+
+<section class="section bg-white" style="padding-top: 0;">
+    <div class="quiz-container">
+
+        <!-- Value Proposition -->
+        <div class="answer-block" style="margin-bottom: 40px;">
+            <p><strong>Take this free 3-minute assessment so we can measure and improve three key areas of your business:</strong></p>
+        </div>
+
+        <div class="card-grid" style="margin-bottom: 48px;">
+            <div class="card text-center">
+                <div class="card-icon mx-auto">&#9889;</div>
+                <h3>Lead Response Speed</h3>
+                <p>How fast are you responding to new inquiries? Every minute counts &mdash; and most businesses are slower than they think.</p>
+            </div>
+            <div class="card text-center">
+                <div class="card-icon mx-auto">&#9881;</div>
+                <h3>Task Automation Readiness</h3>
+                <p>How many hours a week is your team spending on repetitive tasks that AI could handle in the background?</p>
+            </div>
+            <div class="card text-center">
+                <div class="card-icon mx-auto">&#128279;</div>
+                <h3>Workflow Connectivity</h3>
+                <p>Are your tools talking to each other &mdash; or are you manually copying data between systems?</p>
+            </div>
+        </div>
+
+        <!-- Credibility -->
+        <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 280px;">
+                <p class="section-label">Who built this</p>
+                <p style="color: var(--gray-600); line-height: 1.6;">This assessment was created by <strong>Scott Finney</strong>, founder of WeAddBots and host of the weekly Memphis AI Meetup. Scott works with local business owners every week to identify their biggest time drains and build simple AI automations that fix them. The questions are based on patterns from real conversations with real businesses &mdash; not theoretical AI hype.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; padding: 40px 0;">
+            <button class="btn btn-primary btn-lg" onclick="startQuiz()" style="font-size: 1.1rem; padding: 16px 40px;">
+                Start the Assessment &rarr;
+            </button>
+            <p style="color: var(--gray-400); font-size: 0.85rem; margin-top: 12px;">Takes about 3 minutes &bull; Completely free &bull; Get immediate recommendations</p>
+        </div>
+
+    </div>
+</section>
+</div>
+
+
+<!-- ===== PHASE 2: QUIZ FLOW ===== -->
+<div id="quiz-flow">
+
+<section class="section bg-white" style="padding-top: 40px;">
+    <div class="quiz-container">
+
+        <!-- Progress -->
+        <div class="quiz-progress"><div class="quiz-progress-bar" id="progress-bar"></div></div>
+        <div class="quiz-progress-text" id="progress-text">Question 1 of 17</div>
+
+        <!-- ===== STEP 0: Contact Info ===== -->
+        <div class="quiz-step active" data-step="0">
+            <p class="quiz-section-label">Let's get started</p>
+            <p class="quiz-question">First, tell us a bit about yourself.</p>
+            <p class="quiz-subtitle">We'll use this to send your personalized results.</p>
+
+            <div class="quiz-contact-grid">
+                <div class="quiz-field">
+                    <label for="quiz-first-name">First name *</label>
+                    <input type="text" id="quiz-first-name" class="quiz-input" placeholder="Scott" required>
+                </div>
+                <div class="quiz-field">
+                    <label for="quiz-email">Email *</label>
+                    <input type="email" id="quiz-email" class="quiz-input" placeholder="scott@example.com" required>
+                </div>
+                <div class="quiz-field">
+                    <label for="quiz-business">Business name *</label>
+                    <input type="text" id="quiz-business" class="quiz-input" placeholder="Your business name">
+                </div>
+                <div class="quiz-field">
+                    <label for="quiz-phone">Phone <span class="optional">(optional)</span></label>
+                    <input type="tel" id="quiz-phone" class="quiz-input" placeholder="(901) 555-1234">
+                </div>
+            </div>
+            <p class="quiz-error" id="contact-error">Please fill in your name, email, and business name to continue.</p>
+
+            <div class="quiz-nav" style="border-top: none; margin-top: 16px;">
+                <span></span>
+                <button class="btn btn-primary" onclick="nextStep()">Start the Quiz &rarr;</button>
+            </div>
+        </div>
+
+        <!-- ===== BEST PRACTICES: Lead Response (Q1-Q4) ===== -->
+        <div class="quiz-step" data-step="1">
+            <p class="quiz-section-label">Lead Response Speed</p>
+            <p class="quiz-question">When a new lead or inquiry comes in, do you respond within 60 minutes?</p>
+            <div class="quiz-options" data-key="q1_response_speed">
+                <button class="quiz-option" data-value="yes" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Yes &mdash; almost always within the hour
+                </button>
+                <button class="quiz-option" data-value="sometimes" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Sometimes, but it depends on the day
+                </button>
+                <button class="quiz-option" data-value="no" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>No &mdash; it often takes hours or longer
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="2">
+            <p class="quiz-section-label">Lead Response Speed</p>
+            <p class="quiz-question">Do leads or inquiries that come in after hours, on weekends, or during busy periods get a response before the next business day?</p>
+            <div class="quiz-options" data-key="q2_afterhours">
+                <button class="quiz-option" data-value="yes" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Yes &mdash; we have something in place for that
+                </button>
+                <button class="quiz-option" data-value="no" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>No &mdash; they wait until someone is available
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="3">
+            <p class="quiz-section-label">Lead Response Speed</p>
+            <p class="quiz-question">Do you have a system that automatically qualifies or routes leads based on what they need?</p>
+            <p class="quiz-subtitle">For example: sending pricing inquiries to sales, support questions to a different team, filtering out spam.</p>
+            <div class="quiz-options" data-key="q3_lead_routing">
+                <button class="quiz-option" data-value="yes" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Yes &mdash; leads get sorted automatically
+                </button>
+                <button class="quiz-option" data-value="manual" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Sort of &mdash; someone triages them manually
+                </button>
+                <button class="quiz-option" data-value="no" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>No &mdash; everything lands in one pile
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== BEST PRACTICES: Task Automation (Q4-Q7) ===== -->
+        <div class="quiz-step" data-step="4">
+            <p class="quiz-section-label">Task Automation Readiness</p>
+            <p class="quiz-question">Do you or your team spend time on any task the same way more than twice a week?</p>
+            <p class="quiz-subtitle">Think: data entry, invoice follow-ups, report generation, copy-pasting between tools, manual notifications.</p>
+            <div class="quiz-options" data-key="q4_repetitive_tasks">
+                <button class="quiz-option" data-value="many" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Yes &mdash; several tasks like this
+                </button>
+                <button class="quiz-option" data-value="some" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>A couple, but not too bad
+                </button>
+                <button class="quiz-option" data-value="none" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Not really &mdash; most things are pretty streamlined
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="5">
+            <p class="quiz-section-label">Task Automation Readiness</p>
+            <p class="quiz-question">Do follow-ups (invoices, appointments, check-ins) ever slip through the cracks?</p>
+            <div class="quiz-options" data-key="q5_followups">
+                <button class="quiz-option" data-value="often" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>More often than I'd like to admit
+                </button>
+                <button class="quiz-option" data-value="sometimes" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Occasionally &mdash; usually caught it eventually
+                </button>
+                <button class="quiz-option" data-value="rarely" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Rarely &mdash; we have good systems for this
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="6">
+            <p class="quiz-section-label">Task Automation Readiness</p>
+            <p class="quiz-question">Have you automated any business processes yet?</p>
+            <p class="quiz-subtitle">Examples: automatic email sequences, calendar booking, form-to-CRM connections, auto-generated reports.</p>
+            <div class="quiz-options" data-key="q6_existing_automation">
+                <button class="quiz-option" data-value="several" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Yes &mdash; we've automated several things
+                </button>
+                <button class="quiz-option" data-value="few" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>One or two basic ones
+                </button>
+                <button class="quiz-option" data-value="none" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Not yet &mdash; still doing most things manually
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="7">
+            <p class="quiz-section-label">Task Automation Readiness</p>
+            <p class="quiz-question">How many hours per week would you estimate your team spends on tasks that feel like they should be automatic?</p>
+            <div class="quiz-options" data-key="q7_wasted_hours">
+                <button class="quiz-option" data-value="10plus" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>10+ hours &mdash; it adds up fast
+                </button>
+                <button class="quiz-option" data-value="5to10" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>5&ndash;10 hours a week
+                </button>
+                <button class="quiz-option" data-value="under5" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Under 5 hours
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== BEST PRACTICES: Workflow Connectivity (Q8-Q10) ===== -->
+        <div class="quiz-step" data-step="8">
+            <p class="quiz-section-label">Workflow Connectivity</p>
+            <p class="quiz-question">Do your main business tools (CRM, email, scheduling, accounting) share data automatically?</p>
+            <p class="quiz-subtitle">Or does someone have to manually transfer information between them?</p>
+            <div class="quiz-options" data-key="q8_tool_integration">
+                <button class="quiz-option" data-value="connected" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Mostly connected &mdash; data flows automatically
+                </button>
+                <button class="quiz-option" data-value="partial" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Some are connected, some aren't
+                </button>
+                <button class="quiz-option" data-value="manual" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Mostly manual &mdash; lots of copy-pasting
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="9">
+            <p class="quiz-section-label">Workflow Connectivity</p>
+            <p class="quiz-question">When a new customer comes in, how many systems do you have to update manually?</p>
+            <div class="quiz-options" data-key="q9_manual_systems">
+                <button class="quiz-option" data-value="0to1" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>0&ndash;1 &mdash; it's mostly automated
+                </button>
+                <button class="quiz-option" data-value="2to3" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>2&ndash;3 systems
+                </button>
+                <button class="quiz-option" data-value="4plus" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>4 or more &mdash; it's a process
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="10">
+            <p class="quiz-section-label">Workflow Connectivity</p>
+            <p class="quiz-question">Do you use a CRM or central system to track leads and customers?</p>
+            <div class="quiz-options" data-key="q10_crm">
+                <button class="quiz-option" data-value="yes_active" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Yes &mdash; and we actually use it consistently
+                </button>
+                <button class="quiz-option" data-value="yes_dusty" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>We have one, but it's underused
+                </button>
+                <button class="quiz-option" data-value="no" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>No &mdash; spreadsheets, sticky notes, or memory
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== BIG 5 QUALIFYING QUESTIONS (Q11-Q15) ===== -->
+        <div class="quiz-step" data-step="11">
+            <p class="quiz-section-label">About your business</p>
+            <p class="quiz-question">Which best describes your current situation?</p>
+            <div class="quiz-options" data-key="q11_situation">
+                <button class="quiz-option" data-value="solo" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Solo operator or freelancer
+                </button>
+                <button class="quiz-option" data-value="small_team" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Small team (2&ndash;10 people)
+                </button>
+                <button class="quiz-option" data-value="growing" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Growing business (11&ndash;50 people)
+                </button>
+                <button class="quiz-option" data-value="established" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Established business (50+ people)
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="12">
+            <p class="quiz-section-label">About your business</p>
+            <p class="quiz-question">What's the #1 outcome you'd want from AI in the next 90 days?</p>
+            <div class="quiz-options" data-key="q12_desired_outcome">
+                <button class="quiz-option" data-value="respond_faster" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Respond to leads faster so I stop missing opportunities
+                </button>
+                <button class="quiz-option" data-value="save_time" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Save hours on repetitive tasks every week
+                </button>
+                <button class="quiz-option" data-value="connect_tools" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Get my tools and systems talking to each other
+                </button>
+                <button class="quiz-option" data-value="just_exploring" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Just exploring &mdash; I want to understand what's possible
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="13">
+            <p class="quiz-section-label">About your business</p>
+            <p class="quiz-question">What's been the biggest obstacle to using AI so far?</p>
+            <div class="quiz-options" data-key="q13_obstacle">
+                <button class="quiz-option" data-value="dont_know_where" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>I don't know where to start
+                </button>
+                <button class="quiz-option" data-value="no_time" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>I don't have time to figure it out
+                </button>
+                <button class="quiz-option" data-value="tried_didnt_work" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>I've tried some things but they didn't stick
+                </button>
+                <button class="quiz-option" data-value="cost_trust" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Concerned about cost or trusting AI with my business
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="14">
+            <p class="quiz-section-label">About your business</p>
+            <p class="quiz-question">Which approach sounds most like what you need?</p>
+            <div class="quiz-options" data-key="q14_solution_preference">
+                <button class="quiz-option" data-value="teach_me" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Teach me how to do it myself (workshop / training)
+                </button>
+                <button class="quiz-option" data-value="guide_me" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Guide me through it (coaching / consulting)
+                </button>
+                <button class="quiz-option" data-value="do_it_for_me" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Just build it for me (done-for-you)
+                </button>
+                <button class="quiz-option" data-value="not_sure" onclick="selectOption(this)">
+                    <span class="quiz-option-marker"></span>Not sure yet &mdash; I need to learn more first
+                </button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="15">
+            <p class="quiz-section-label">Almost done</p>
+            <p class="quiz-question">Anything else you think we should know?</p>
+            <p class="quiz-subtitle">Totally optional. But if there's context that would help us give you better recommendations, drop it here.</p>
+            <textarea class="quiz-input" id="quiz-anything-else" placeholder="e.g., We use QuickBooks and Google Workspace... or: Our biggest headache is appointment scheduling..."></textarea>
+
+            <div class="quiz-nav">
+                <button class="quiz-nav-back" onclick="prevStep()">&larr; Back</button>
+                <button class="btn btn-primary" id="submit-btn" onclick="submitQuiz()">See My Results &rarr;</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+</div>
+
+
+<!-- ===== PHASE 3: RESULTS ===== -->
+<div id="quiz-results">
+
+<section class="section bg-white" style="padding-top: 48px;">
+    <div class="results-container">
+
+        <!-- Score -->
+        <div class="score-gauge" id="score-gauge">
+            <div class="score-circle">
+                <span class="score-number" id="score-number">0</span>
+                <span class="score-label">out of 100</span>
+            </div>
+            <h2 class="score-headline" id="score-headline"></h2>
+            <p class="score-summary" id="score-summary"></p>
+        </div>
+
+        <!-- Insights -->
+        <h3 style="font-size: 1.15rem; margin-bottom: 16px;">Your three key insights:</h3>
+        <div id="insights-container"></div>
+
+        <!-- CTA -->
+        <div class="results-cta" id="results-cta"></div>
+
+        <!-- Contact info -->
+        <div style="text-align: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--gray-200);">
+            <p style="color: var(--gray-500); font-size: 0.9rem; margin-bottom: 8px;">Questions? Just reply to the email we'll send you, or reach out directly:</p>
+            <p style="margin-bottom: 4px;"><a href="https://www.weaddbots.com" style="font-weight: 600;">weaddbots.com</a></p>
+            <p style="color: var(--gray-500); font-size: 0.9rem;">
+                <a href="https://www.linkedin.com/in/scottfinney/" style="color: var(--gray-500);">LinkedIn</a>
+                &bull;
+                <a href="/contact" style="color: var(--gray-500);">Contact</a>
+                &bull;
+                <a href="/events/memphis-ai-meetup" style="color: var(--gray-500);">Meetups</a>
+            </p>
+        </div>
+
+    </div>
+</section>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <h4 class="footer-heading">WeAddBots</h4>
+                <p class="footer-text">AI automation for Memphis businesses. Simple tools, real results, no hype.</p>
+            </div>
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <div class="footer-links">
+                    <a href="/services">Services</a>
+                    <a href="/rebecca">Rebecca AI</a>
+                    <a href="/events/memphis-ai-meetup">Events</a>
+                    <a href="/newsletter">Newsletter</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">Connect</h4>
+                <div class="footer-links">
+                    <a href="/contact">Contact Us</a>
+                    <a href="https://www.linkedin.com/in/scottfinney/">LinkedIn</a>
+                    <a href="/about">About Scott</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Creating Value LLC. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/sitemap.xml">Sitemap</a>
+                <a href="/llms.txt">LLMs.txt</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Menu Toggle -->
+<script>
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('show');
+});
+</script>
+
+<!-- ===== QUIZ ENGINE ===== -->
+<script>
+(function() {
+    'use strict';
+
+    // State
+    var currentStep = 0;
+    var totalSteps = 16; // 0=contact, 1-10=scored, 11-15=qualifying
+    var answers = {};
+
+    // Scoring rules: maps answer values to points (out of 10 per question)
+    var scoring = {
+        q1_response_speed:   { yes: 10, sometimes: 5, no: 0 },
+        q2_afterhours:       { yes: 10, no: 0 },
+        q3_lead_routing:     { yes: 10, manual: 5, no: 0 },
+        q4_repetitive_tasks: { many: 0, some: 5, none: 10 },
+        q5_followups:        { often: 0, sometimes: 5, rarely: 10 },
+        q6_existing_automation: { several: 10, few: 5, none: 0 },
+        q7_wasted_hours:     { '10plus': 0, '5to10': 5, under5: 10 },
+        q8_tool_integration: { connected: 10, partial: 5, manual: 0 },
+        q9_manual_systems:   { '0to1': 10, '2to3': 5, '4plus': 0 },
+        q10_crm:             { yes_active: 10, yes_dusty: 5, no: 0 }
+    };
+
+    // Category groupings for insights
+    var categories = {
+        lead_response: ['q1_response_speed', 'q2_afterhours', 'q3_lead_routing'],
+        task_automation: ['q4_repetitive_tasks', 'q5_followups', 'q6_existing_automation', 'q7_wasted_hours'],
+        workflow: ['q8_tool_integration', 'q9_manual_systems', 'q10_crm']
+    };
+
+    window.startQuiz = function() {
+        document.getElementById('quiz-landing').classList.remove('active');
+        document.getElementById('quiz-flow').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        updateProgress();
+    };
+
+    window.selectOption = function(el) {
+        var container = el.closest('.quiz-options');
+        var key = container.getAttribute('data-key');
+        var value = el.getAttribute('data-value');
+
+        // Deselect siblings
+        container.querySelectorAll('.quiz-option').forEach(function(opt) {
+            opt.classList.remove('selected');
+        });
+        el.classList.add('selected');
+        answers[key] = value;
+
+        // Auto-advance after short delay (except last question)
+        if (currentStep < 15) {
+            setTimeout(function() { nextStep(); }, 350);
+        }
+    };
+
+    window.nextStep = function() {
+        // Validate contact info on step 0
+        if (currentStep === 0) {
+            var firstName = document.getElementById('quiz-first-name').value.trim();
+            var email = document.getElementById('quiz-email').value.trim();
+            var business = document.getElementById('quiz-business').value.trim();
+            var errorEl = document.getElementById('contact-error');
+
+            if (!firstName || !email || !business) {
+                errorEl.style.display = 'block';
+                return;
+            }
+            errorEl.style.display = 'none';
+
+            answers._firstName = firstName;
+            answers._email = email;
+            answers._business = business;
+            answers._phone = document.getElementById('quiz-phone').value.trim();
+        }
+
+        if (currentStep < totalSteps - 1) {
+            currentStep++;
+            showStep(currentStep);
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
+    window.prevStep = function() {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+            updateProgress();
+        }
+    };
+
+    function showStep(step) {
+        document.querySelectorAll('.quiz-step').forEach(function(el) {
+            el.classList.remove('active');
+        });
+        var target = document.querySelector('.quiz-step[data-step="' + step + '"]');
+        if (target) target.classList.add('active');
+
+        // Add back button to scored/qualifying questions (steps 1-14)
+        // Step 15 has its own nav built in
+        if (step >= 1 && step <= 14) {
+            // Remove existing auto-nav if present
+            var existingNav = target.querySelector('.quiz-nav-auto');
+            if (!existingNav) {
+                var nav = document.createElement('div');
+                nav.className = 'quiz-nav quiz-nav-auto';
+                nav.innerHTML = '<button class="quiz-nav-back" onclick="prevStep()">&larr; Back</button><span></span>';
+                target.appendChild(nav);
+            }
+        }
+    }
+
+    function updateProgress() {
+        var pct = Math.round(((currentStep) / totalSteps) * 100);
+        document.getElementById('progress-bar').style.width = pct + '%';
+        if (currentStep === 0) {
+            document.getElementById('progress-text').textContent = 'Let\'s get started';
+        } else {
+            document.getElementById('progress-text').textContent = 'Question ' + currentStep + ' of 15';
+        }
+    }
+
+    // ===== SUBMIT =====
+    window.submitQuiz = function() {
+        var btn = document.getElementById('submit-btn');
+        btn.disabled = true;
+        btn.textContent = 'Calculating...';
+
+        // Capture open-ended answer
+        answers.q15_anything_else = document.getElementById('quiz-anything-else').value.trim();
+
+        // Calculate scores
+        var totalScore = 0;
+        var maxScore = 0;
+        var catScores = {};
+
+        Object.keys(categories).forEach(function(cat) {
+            var catTotal = 0;
+            var catMax = 0;
+            categories[cat].forEach(function(qKey) {
+                var val = answers[qKey];
+                if (val !== undefined && scoring[qKey] && scoring[qKey][val] !== undefined) {
+                    catTotal += scoring[qKey][val];
+                }
+                catMax += 10;
+            });
+            catScores[cat] = { score: catTotal, max: catMax, pct: Math.round((catTotal / catMax) * 100) };
+            totalScore += catTotal;
+            maxScore += catMax;
+        });
+
+        var overallPct = Math.round((totalScore / maxScore) * 100);
+
+        // Send to GHL
+        sendToGHL(overallPct, catScores);
+
+        // Show results
+        showResults(overallPct, catScores);
+    };
+
+    function sendToGHL(overallPct, catScores) {
+        // Build custom fields payload
+        // You'll need to create these custom fields in GHL and replace the IDs
+        var customFields = [
+            { id: 'Q8mqK6YWLAExkUX84K1R', field_value: window.location.href }, // Source Page
+            // Quiz score fields
+            { id: 'YQ4UhVSORF45gpSyIXB1', field_value: overallPct.toString() },
+            { id: 'r3FEX5zdPfb5PsbkpkZS', field_value: catScores.lead_response.pct.toString() },
+            { id: 'BmScQcHkmgU5BZqorOuX', field_value: catScores.task_automation.pct.toString() },
+            { id: 'xbIsdKYZDGKVkSd9Rb5C', field_value: catScores.workflow.pct.toString() },
+            // Qualifying answers
+            { id: 'OECsIWyI0gWNwqHtHsgB', field_value: answers.q11_situation || '' },
+            { id: '4vhpAp1Dfj2wK6MMjx09', field_value: answers.q12_desired_outcome || '' },
+            { id: 'pYIYGXqEgrm7FPXqjBl8', field_value: answers.q13_obstacle || '' },
+            { id: 'chx804a7wOWg3sQ6qfh3', field_value: answers.q14_solution_preference || '' },
+            { id: 'I2y4euVDvnJMWEuC69tB', field_value: answers.q15_anything_else || '' }
+        ];
+
+        // Determine tier tag
+        var tierTag = 'WAB-Quiz-Mid';
+        if (overallPct >= 70) tierTag = 'WAB-Quiz-High';
+        else if (overallPct < 40) tierTag = 'WAB-Quiz-Low';
+
+        var payload = {
+            first_name: answers._firstName,
+            email: answers._email,
+            phone: answers._phone || undefined,
+            company_name: answers._business,
+            source: 'WeAddBots Website - AI Assessment Quiz',
+            tags: ['WAB-Website-Lead', 'WAB-Quiz-Complete', 'WAB-Newsletter', tierTag],
+            customFields: customFields.filter(function(f) {
+                return f.field_value;
+            })
+        };
+
+        fetch('/api/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }).then(function(response) {
+            return response.json();
+        }).then(function(result) {
+            if (!result.success) console.error('GHL submission error:', result);
+        }).catch(function(err) {
+            console.error('GHL submission failed:', err);
+        });
+
+        // Clicky tracking
+        try {
+            if (typeof clicky !== 'undefined') {
+                if (typeof clicky.goal === 'function') clicky.goal('Quiz Complete');
+                if (typeof clicky.log === 'function') clicky.log('#quiz/complete', 'Quiz Complete - Score: ' + overallPct);
+            }
+        } catch(e) {}
+    }
+
+    function showResults(overallPct, catScores) {
+        document.getElementById('quiz-flow').classList.remove('active');
+        document.getElementById('quiz-results').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Score display
+        document.getElementById('score-number').textContent = overallPct;
+
+        var gauge = document.getElementById('score-gauge');
+        var headline = document.getElementById('score-headline');
+        var summary = document.getElementById('score-summary');
+
+        if (overallPct >= 70) {
+            gauge.className = 'score-gauge score-high';
+            headline.textContent = 'Strong foundations — you\'re ahead of most.';
+            summary.textContent = 'Your business already has solid systems in place. The opportunity here isn\'t starting from scratch — it\'s finding the specific automation that takes you from good to great. A few targeted improvements could free up significant time.';
+        } else if (overallPct >= 40) {
+            gauge.className = 'score-gauge score-mid';
+            headline.textContent = 'Good start, but there\'s real room to improve.';
+            summary.textContent = 'You\'ve got some things working, but there are clear gaps where AI automation could save you hours every week. The good news: the biggest wins are usually the simplest fixes. You don\'t need a massive project — you need a few smart moves.';
+        } else {
+            gauge.className = 'score-gauge score-low';
+            headline.textContent = 'Lots of opportunity here — and that\'s a good thing.';
+            summary.textContent = 'Your business is doing a lot of things manually that don\'t need to be. That means almost any automation you add is going to create immediate, noticeable improvement. The hardest part is just starting — and you just did by taking this assessment.';
+        }
+
+        // Insights
+        var insights = [];
+        var catNames = {
+            lead_response: { name: 'Lead Response Speed', icon: '&#9889;' },
+            task_automation: { name: 'Task Automation Readiness', icon: '&#9881;' },
+            workflow: { name: 'Workflow Connectivity', icon: '&#128279;' }
+        };
+
+        // Sort categories by score (lowest first = biggest opportunity)
+        var sorted = Object.keys(catScores).sort(function(a, b) {
+            return catScores[a].pct - catScores[b].pct;
+        });
+
+        sorted.forEach(function(cat) {
+            var pct = catScores[cat].pct;
+            var info = catNames[cat];
+            var detail = '';
+
+            if (cat === 'lead_response') {
+                if (pct < 40) detail = 'Leads are likely waiting too long for a response — or not getting one at all. Even a simple auto-reply with qualifying questions can dramatically improve conversion. This is usually the fastest ROI automation for any business.';
+                else if (pct < 70) detail = 'You\'re responding, but there are gaps — especially after hours or during busy periods. A lead response automation could fill those gaps without adding headcount.';
+                else detail = 'Your lead response is solid. Look for opportunities to add smart routing or qualification to make your response even more effective.';
+            } else if (cat === 'task_automation') {
+                if (pct < 40) detail = 'Your team is spending significant time on tasks that should be running in the background. Start by mapping the one task you do the same way more than twice a week — that\'s your first automation target.';
+                else if (pct < 70) detail = 'You\'ve got some automation in place, but follow-ups and repetitive tasks are still eating time. The next step is connecting the dots between your existing tools so handoffs happen automatically.';
+                else detail = 'Strong automation foundations. Focus on optimizing what you have and finding the next layer of efficiency gains.';
+            } else if (cat === 'workflow') {
+                if (pct < 40) detail = 'Your tools aren\'t talking to each other, which means manual data transfers and missed updates. Connecting your CRM, email, and scheduling tools is one of the highest-impact changes you can make.';
+                else if (pct < 70) detail = 'Some systems are connected, but gaps remain. Focus on the handoff points where data gets stuck or duplicated — those are your quick wins.';
+                else detail = 'Your systems are well-connected. Look for edge cases and exceptions that still require manual intervention.';
+            }
+
+            insights.push({
+                icon: info.icon,
+                title: info.name + ': ' + pct + '%',
+                detail: detail
+            });
+        });
+
+        var insightsHTML = '';
+        insights.forEach(function(insight) {
+            insightsHTML += '<div class="insight-card"><h4><span class="insight-icon">' + insight.icon + '</span> ' + insight.title + '</h4><p>' + insight.detail + '</p></div>';
+        });
+        document.getElementById('insights-container').innerHTML = insightsHTML;
+
+        // Dynamic CTA based on score + qualifying answers
+        var ctaEl = document.getElementById('results-cta');
+        var solutionPref = answers.q14_solution_preference;
+
+        if (overallPct >= 70 || solutionPref === 'do_it_for_me' || solutionPref === 'guide_me') {
+            // High scorer or ready-to-buy → Discovery call
+            ctaEl.innerHTML = '<h3>Your Recommended Next Step</h3>' +
+                '<p>Based on your score and where your biggest opportunities are, a quick conversation would help us pinpoint the highest-impact automation for your business. 20 minutes, no pressure.</p>' +
+                '<a href="/contact" class="btn btn-primary" style="margin-right:12px;">Book a Free Discovery Call &rarr;</a>' +
+                '<p style="margin-top:16px; font-size: 0.85rem; color: var(--gray-500);">Or talk to Rebecca, our AI receptionist, right now: <a href="tel:9018785916" style="font-weight:600;">(901) 878-5916</a></p>';
+        } else if (overallPct >= 40 || solutionPref === 'teach_me') {
+            // Mid scorer or wants training → Meetup + workshops
+            ctaEl.innerHTML = '<h3>Your Recommended Next Step</h3>' +
+                '<p>Come see how other Memphis business owners are tackling these exact challenges. Our weekly AI Meetup is free, casual, and zero pressure — just practical conversation about what\'s working.</p>' +
+                '<a href="/events/memphis-ai-meetup" class="btn btn-primary" style="margin-right:12px;">Check Out the Next Meetup &rarr;</a>' +
+                '<a href="/workshops" class="btn btn-outline">See Upcoming Workshops</a>';
+        } else {
+            // Low scorer or just exploring → Newsletter + content
+            ctaEl.innerHTML = '<h3>Your Recommended Next Step</h3>' +
+                '<p>No rush. The best place to start is our weekly email — practical AI tips, meetup invites, and no hype. Plus, you\'ll hear about workshops designed specifically for business owners who are just getting started with AI.</p>' +
+                '<p style="font-size: 0.95rem; color: var(--gray-800); font-weight: 600; margin-bottom: 12px;">&#10003; You\'re already on the list — check your inbox for a welcome email from Scott.</p>' +
+                '<a href="/events/memphis-ai-meetup" class="btn btn-outline">See the Next Meetup</a>';
+        }
+    }
+
+})();
+</script>
+
+<!-- Clicky Analytics (deferred) -->
+<script>var clicky_site_ids=clicky_site_ids||[];clicky_site_ids.push(101487498);</script>
+<script async src="//static.getclicky.com/js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101487498ns.gif"></p></noscript>
+
+</body>
+</html>
