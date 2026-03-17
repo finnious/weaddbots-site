@@ -439,7 +439,7 @@ textarea.quiz-input {
         <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 40px; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 280px;">
                 <p class="section-label">Who built this</p>
-                <p style="color: var(--gray-600); line-height: 1.6;">This assessment was created by <strong>Scott Finney</strong>, founder of WeAddBots and host of the weekly Memphis AI Meetup. Scott works with local business owners every week to identify their biggest time drains and build simple AI automations that fix them. The questions are based on patterns from real conversations with real businesses &mdash; not theoretical AI hype.</p>
+                <p style="color: var(--gray-600); line-height: 1.6;">This assessment was created by <strong><a href="/about">Scott Finney</a></strong>, founder of WeAddBots and host of the weekly <a href="/events/memphis-ai-meetup">Memphis AI Meetup</a>. Scott works with local business owners every week to identify their biggest time drains and build simple AI automations that fix them. The questions are based on patterns from real conversations with real businesses &mdash; not theoretical AI hype.</p>
             </div>
         </div>
 
@@ -1139,7 +1139,7 @@ document.getElementById('mobile-menu-btn').addEventListener('click', function() 
             ctaEl.innerHTML = '<h3>Your Recommended Next Step</h3>' +
                 '<p>Based on your score and where your biggest opportunities are, a quick conversation would help us pinpoint the highest-impact automation for your business. 20 minutes, no pressure.</p>' +
                 '<a href="/contact" class="btn btn-primary" style="margin-right:12px;">Book a Free Discovery Call &rarr;</a>' +
-                '<p style="margin-top:16px; font-size: 0.85rem; color: var(--gray-500);">Or talk to Rebecca, our AI receptionist, right now: <a href="tel:9018785916" style="font-weight:600;">(901) 878-5916</a></p>';
+                '<p style="margin-top:16px; font-size: 0.85rem; color: var(--gray-500);">Or talk to <a href="/rebecca">Rebecca, our AI receptionist</a>, right now: <a href="tel:9018785916" style="font-weight:600;">(901) 878-5916</a></p>';
         } else if (overallPct >= 40 || solutionPref === 'teach_me') {
             // Mid scorer or wants training → Meetup + workshops
             ctaEl.innerHTML = '<h3>Your Recommended Next Step</h3>' +
