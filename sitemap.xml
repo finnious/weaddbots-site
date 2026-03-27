@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.weaddbots.com/events/</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.weaddbots.com/events/memphis-ai-meetup</loc>
     <lastmod>2026-03-27</lastmod>
     <changefreq>weekly</changefreq>
