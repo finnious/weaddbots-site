@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-03",
+  "last_updated": "2026-04-09",
   "events": [
     {
       "id": "WAB-2026-03-25-Germantown",
@@ -41,7 +41,7 @@
     },
     {
       "id": "WAB-2026-04-07-Germantown",
-      "status": "confirmed",
+      "status": "past",
       "week_iso": "2026-W15",
       "week_start": "2026-04-06",
       "display_range": "Week of Apr 6-10",
@@ -59,23 +59,23 @@
       "notes": "Venue sent via email to RSVPs only"
     },
     {
-      "id": "WAB-2026-W16-TBA",
-      "status": "placeholder",
+      "id": "WAB-2026-04-17-UofM",
+      "status": "confirmed",
       "week_iso": "2026-W16",
       "week_start": "2026-04-13",
-      "display_range": "Week of Apr 13-17",
-      "day_of_week": null,
-      "date_display": null,
-      "display_date": null,
-      "date_iso": null,
-      "time": null,
-      "time_start": null,
-      "time_end": null,
-      "area": null,
-      "schema_location_name": null,
-      "venue_private": null,
+      "display_range": "Week of Apr 13–17",
+      "day_of_week": "Thursday",
+      "date_display": "April 17, 2026",
+      "display_date": "Thursday, April 17, 2026",
+      "date_iso": "2026-04-17",
+      "time": "9:15 – 9:45 AM",
+      "time_start": "9:15 AM",
+      "time_end": "9:45 AM",
+      "area": "Near University of Memphis",
+      "schema_location_name": "Near University of Memphis",
+      "venue_private": "Belltower Coffee at Highland, 525 S Highland St, Memphis, TN 38111",
       "venue_public": false,
-      "notes": ""
+      "notes": "Venue sent via email to RSVPs only"
     },
     {
       "id": "WAB-2026-W17-TBA",
