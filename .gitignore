@@ -1,0 +1,11 @@
+# Private local-only content (AI workflows, strategy notes, etc.)
+private/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# .gitignore
+.env
+.env.local
+
