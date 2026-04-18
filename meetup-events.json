@@ -55,6 +55,17 @@
       "area": "Germantown",
       "venue_private": "Congregation Coffee, 3060 Forest Hill Irene Rd, Germantown, TN 38138",
       "venue_public": false
+    },
+    {
+      "id": "WAB-2026-04-30-Midtown",
+      "status": "confirmed",
+      "date_iso": "2026-04-30",
+      "day_of_week": "Thursday",
+      "date_display": "April 30, 2026",
+      "time": "9:15 – 9:45 AM",
+      "area": "Midtown",
+      "venue_private": "Cooper House Project, 906 Cooper St, Memphis, TN 38104",
+      "venue_public": false
     }
   ],
   "skipped_weeks": []
