@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-17",
+  "last_updated": "2026-04-26",
   "events": [
     {
       "id": "WAB-2026-03-25-Germantown",
@@ -47,7 +47,7 @@
     },
     {
       "id": "WAB-2026-04-22-Germantown",
-      "status": "confirmed",
+      "status": "past",
       "date_iso": "2026-04-22",
       "day_of_week": "Wednesday",
       "date_display": "April 22, 2026",
