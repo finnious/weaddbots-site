@@ -1,11 +1,14 @@
-# Private local-only content (AI workflows, strategy notes, etc.)
+# Private / operational (lives in parent wab/ folder, not in this repo)
 private/
+docs/
+scripts/
+meetup-assets/
 
 # OS / editor
 .DS_Store
 Thumbs.db
 
-# .gitignore
+# Secrets
 .env
 .env.local
 
