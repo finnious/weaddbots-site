@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free AI Readiness Assessment | WeAddBots — AI Automation for Memphis Businesses</title>
+<title>Free AI Readiness Assessment | WeAddBots</title>
 <meta name="description" content="Take the free 3-minute AI Readiness Assessment. Find out where AI can save your business the most time — and get a personalized action plan based on your score.">
 <link rel="canonical" href="https://www.weaddbots.com/quiz">
 
@@ -388,7 +388,7 @@ textarea.quiz-input {
         <div class="nav-links">
             <a href="/services">Services</a>
             <a href="/about">About</a>
-            <a href="/events/memphis-ai-meetup">Events</a>
+            <a href="/events/">Events</a>
             <a href="/contact">Contact</a>
         </div>
         <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
@@ -397,7 +397,7 @@ textarea.quiz-input {
 <div class="mobile-menu" id="mobile-menu">
     <a href="/services">Services</a>
     <a href="/about">About</a>
-    <a href="/events/memphis-ai-meetup">Events</a>
+    <a href="/events/">Events</a>
     <a href="/contact">Contact</a>
 </div>
 
@@ -810,7 +810,7 @@ textarea.quiz-input {
                 <div class="footer-links">
                     <a href="/services">Services</a>
                     <a href="/rebecca">Rebecca AI</a>
-                    <a href="/events/memphis-ai-meetup">Events</a>
+                    <a href="/events/">Events</a>
                     <a href="/newsletter">Newsletter</a>
                 </div>
             </div>
@@ -1158,10 +1158,33 @@ document.getElementById('mobile-menu-btn').addEventListener('click', function() 
 })();
 </script>
 
-<!-- Clicky Analytics (deferred) -->
-<script>var clicky_site_ids=clicky_site_ids||[];clicky_site_ids.push(101487498);</script>
-<script async src="//static.getclicky.com/js"></script>
-<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101487498ns.gif"></p></noscript>
+<!-- Google Analytics GA4 (lightweight, no external script) -->
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var m = 'G-WCKLX73V4P';
+    var cid = localStorage.getItem('_ga_cid');
+    if (!cid) { cid = Math.random().toString(36).substr(2) + Date.now().toString(36); localStorage.setItem('_ga_cid', cid); }
+    navigator.sendBeacon('https://www.google-analytics.com/g/collect?' + 'v=2&tid=' + m + '&cid=' + cid + '&sid=' + Date.now() + '&dl=' + encodeURIComponent(location.href) + '&dt=' + encodeURIComponent(document.title) + '&dr=' + encodeURIComponent(document.referrer) + '&en=page_view');
+  }, 100);
+});
+</script>
+
+<!-- Clicky Analytics (deferred, clicky.init pattern per playbook) -->
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var cs = document.createElement('script');
+    cs.async = true;
+    cs.src = '//static.getclicky.com/js';
+    cs.onload = function() {
+      try { clicky.init(101500449); } catch(e) {}
+    };
+    document.body.appendChild(cs);
+  }, 100);
+});
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
 
 </body>
 </html>
