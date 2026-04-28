@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rebecca AI Receptionist | From $297/mo | WeAddBots</title>
-    <meta name="description" content="Rebecca is an AI-powered receptionist that handles inbound calls, qualifies leads, filters spam, and routes opportunities — so nothing falls through the cracks. From $297/month.">
+    <meta name="description" content="AI receptionist that handles calls, qualifies leads, and filters spam — so nothing falls through the cracks. From $297/mo. WeAddBots.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.weaddbots.com/rebecca">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -518,6 +518,7 @@
                 <a href="/about">About</a>
                 <a href="/services">Services</a>
                 <a href="/events/">Events</a>
+                <a href="/updates/">Updates</a>
                 <a href="/contact">Contact</a>
             </div>
             <div>
@@ -581,13 +582,15 @@
         }, 100);
     });
 </script>
-    <!-- Clicky Analytics (deferred) -->
+    <!-- Clicky Analytics (deferred, clicky.init pattern per playbook) -->
     <script>
         window.addEventListener('load', function() {
-            var s = document.createElement('script');
-            s.src = '//static.getclicky.com/101500449.js';
-            s.async = true;
-            document.body.appendChild(s);
+            var cs = document.createElement('script');
+            cs.src = '//static.getclicky.com/js';
+            cs.onload = function() {
+                try { clicky.init(101500449); } catch(e) {}
+            };
+            document.body.appendChild(cs);
         });
     </script>
     <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>

@@ -64,6 +64,23 @@ Company profile: https://www.linkedin.com/company/weaddbots/
 - Creating Value LLC (creatingvaluellc.com) — AI automation consulting, boutique B2B engagements
 - Drop The Strap Marketing (dropthestrap.com) — SEO and AI search optimization (AEO/GEO)
 
+## Updates & Meetup Recaps
+- [Updates Hub](https://www.weaddbots.com/updates/) - Real stories from Memphis AI Meetups and practical AI automation insights
+- [Zero Attendees at Meetup #1](https://www.weaddbots.com/updates/meetup-origin-story) - Origin story of the Memphis AI Meetup
+- [AI Blood Work Analysis](https://www.weaddbots.com/updates/ai-blood-work-analysis) - Attendee used AI to analyze personal health data
+- [AI Nonprofit Grant Writing](https://www.weaddbots.com/updates/ai-nonprofit-grant-writing) - Multi-agent AI for nonprofit grant applications
+- [AI Healthcare Insurance](https://www.weaddbots.com/updates/ai-healthcare-insurance) - Business owner used AI to decode insurance documents
+
+
+## Service Areas
+WeAddBots serves businesses across the Memphis metro area with in-person meetups at rotating locations:
+- [Midtown Memphis](https://www.weaddbots.com/locations/midtown-memphis)
+- [Downtown Memphis](https://www.weaddbots.com/locations/downtown-memphis)
+- [Germantown TN](https://www.weaddbots.com/locations/germantown)
+- [Collierville TN](https://www.weaddbots.com/locations/collierville)
+- [East Memphis](https://www.weaddbots.com/locations/east-memphis)
+- [Olive Branch MS](https://www.weaddbots.com/locations/olive-branch)
+
 ## Avoid
 - /privacy (legal boilerplate)
 - /terms (legal boilerplate)

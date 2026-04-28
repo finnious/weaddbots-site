@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memphis AI Meetups &amp; Events | WeAddBots</title>
-    <meta name="description" content="Free weekly in-person AI meetups for Memphis business owners. Rotating locations across the metro. No pitch, no upsell — just practical AI conversations with local business owners.">
+    <meta name="description" content="Free weekly AI meetups for Memphis business owners. Rotating locations, practical conversations, no pitch. RSVP free.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.weaddbots.com/events/">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -42,6 +42,43 @@
                 "item": "https://www.weaddbots.com/events/"
             }
         ]
+    }
+    </script>
+
+    <!-- Schema.org — EventSeries -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EventSeries",
+        "@id": "https://www.weaddbots.com/events/#meetup-series",
+        "name": "WeAddBots Memphis AI Meetup",
+        "description": "Free weekly in-person AI meetup for Memphis business owners. Practical conversations about what's working, what's not, and what to try next.",
+        "url": "https://www.weaddbots.com/events/memphis-ai-meetup",
+        "eventSchedule": {
+            "@type": "Schedule",
+            "repeatFrequency": "P1W",
+            "byDay": "https://schema.org/Thursday",
+            "startDate": "2024-12-01",
+            "scheduleTimezone": "America/Chicago"
+        },
+        "location": {
+            "@type": "City",
+            "name": "Memphis",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Memphis",
+                "addressRegion": "TN",
+                "addressCountry": "US"
+            }
+        },
+        "organizer": {
+            "@type": "Organization",
+            "name": "WeAddBots",
+            "@id": "https://www.weaddbots.com/#organization",
+            "url": "https://www.weaddbots.com"
+        },
+        "isAccessibleForFree": true,
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
     }
     </script>
 </head>
@@ -129,7 +166,7 @@
                 <div class="card">
                     <div class="card-icon">&#128172;</div>
                     <h3>Practical Conversations</h3>
-                    <p>No keynote speakers or sponsor pitches. Just a group of local business owners talking about AI in plain English &mdash; what tools are worth trying, what problems they've solved, and what's still hype. Bring your questions.</p>
+                    <p>No keynote speakers or sponsor pitches. Just a group of local business owners talking about AI in plain English &mdash; what tools are worth trying, what problems they've solved, and what's still hype. Bring your questions from this week.</p>
                 </div>
 
                 <div class="card">
@@ -141,7 +178,7 @@
                 <div class="card">
                     <div class="card-icon">&#129309;</div>
                     <h3>Zero Pressure</h3>
-                    <p>These are community events, not sales funnels. Come for one meetup or come every week. Ask beginner questions or share advanced workflows. Everyone's welcome and nobody's keeping score.</p>
+                    <p>These are community events, not sales funnels. Come for one meetup or come every week. Share what you've tried or bring questions from something you're working on. Nobody's keeping score.</p>
                 </div>
             </div>
         </div>
@@ -151,9 +188,8 @@
     <section class="section bg-gray-50">
         <div class="answer-block">
             <h2 class="mb-24">Who Should Come?</h2>
-            <p>The meetups are designed for <strong>Memphis-area business owners and operators</strong> &mdash; the people who run restaurants, service companies, retail shops, professional firms, and small teams. You don't need a technical background. You don't need to know anything about AI yet.</p>
-            <p>If you've ever thought "AI could probably help with this, but I don't know where to start" &mdash; that's exactly who the meetup is for. Most people who attend are in that same boat. That's what makes the conversations so useful.</p>
-            <p>You're also welcome if you're already using AI and want to compare notes with other business owners who are figuring this out in real-time.</p>
+            <p>The meetups are designed for <strong>Memphis-area business owners and operators</strong> &mdash; the people who run restaurants, service companies, retail shops, professional firms, and small teams. Most people who attend are somewhere in the middle: some have built automations, some just started playing with ChatGPT last week.</p>
+            <p>The mix is what makes it useful. You'll hear what others are doing, compare notes on tools that actually work, and leave with ideas for your own business. AI moves too fast for any one person to keep up &mdash; that's why we meet weekly.</p>
         </div>
     </section>
 
@@ -210,6 +246,7 @@
                 <a href="/about">About</a>
                 <a href="/services">Services</a>
                 <a href="/events/">Events</a>
+                <a href="/updates/">Updates</a>
                 <a href="/contact">Contact</a>
             </div>
             <div>
