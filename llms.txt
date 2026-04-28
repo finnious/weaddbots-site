@@ -72,6 +72,9 @@ Company profile: https://www.linkedin.com/company/weaddbots/
 - [AI Healthcare Insurance](https://www.weaddbots.com/updates/ai-healthcare-insurance) - Business owner used AI to decode insurance documents
 
 
+## Work With Us
+- [Build With Me](https://www.weaddbots.com/build-with-me) - Scott is building agent orchestration and self-running workflows. Looking for async-first builders comfortable with Git and Claude Code.
+
 ## Service Areas
 WeAddBots serves businesses across the Memphis metro area with in-person meetups at rotating locations:
 - [Midtown Memphis](https://www.weaddbots.com/locations/midtown-memphis)
