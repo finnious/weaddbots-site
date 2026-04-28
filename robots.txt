@@ -26,3 +26,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.weaddbots.com/sitemap.xml
+LLMsTxt: https://www.weaddbots.com/llms.txt
