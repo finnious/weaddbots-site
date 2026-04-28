@@ -66,6 +66,7 @@ Company profile: https://www.linkedin.com/company/weaddbots/
 
 ## Updates & Meetup Recaps
 - [Updates Hub](https://www.weaddbots.com/updates/) - Real stories from Memphis AI Meetups and practical AI automation insights
+- [12 Pages in One Afternoon](https://www.weaddbots.com/updates/ai-website-overhaul-case-study) - Case study: AI-powered publishing vs click-based CMS platforms
 - [Zero Attendees at Meetup #1](https://www.weaddbots.com/updates/meetup-origin-story) - Origin story of the Memphis AI Meetup
 - [AI Blood Work Analysis](https://www.weaddbots.com/updates/ai-blood-work-analysis) - Attendee used AI to analyze personal health data
 - [AI Nonprofit Grant Writing](https://www.weaddbots.com/updates/ai-nonprofit-grant-writing) - Multi-agent AI for nonprofit grant applications
