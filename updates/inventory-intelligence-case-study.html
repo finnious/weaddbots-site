@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$270K in Inventory, Zero Daily Visibility &mdash; Until We Built This | WeAddBots</title>
+    <meta name="description" content="How we turned a 97-column raw data export into role-specific daily reports for a 3-location distributor — built in one afternoon, runs forever with zero maintenance.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.weaddbots.com/updates/inventory-intelligence-case-study">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="$270K in Inventory, Zero Daily Visibility — Until We Built This">
+    <meta property="og:description" content="How we turned a 97-column raw data export into role-specific daily reports for a 3-location distributor — built in one afternoon, runs forever.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.weaddbots.com/updates/inventory-intelligence-case-study">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://www.weaddbots.com/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="article:published_time" content="2026-05-05">
+    <meta property="article:author" content="https://www.creatingvaluellc.com/about">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Schema.org — Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "$270K in Inventory, Zero Daily Visibility — Until We Built This",
+        "description": "How we turned a 97-column raw data export into role-specific daily reports for a 3-location distributor — built in one afternoon, runs forever with zero maintenance.",
+        "datePublished": "2026-05-05",
+        "dateModified": "2026-05-05",
+        "author": {
+            "@type": "Person",
+            "name": "Scott Finney",
+            "@id": "https://www.creatingvaluellc.com/about#scott-finney",
+            "url": "https://www.creatingvaluellc.com/about"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "WeAddBots",
+            "@id": "https://www.weaddbots.com/#organization",
+            "url": "https://www.weaddbots.com"
+        },
+        "mainEntityOfPage": "https://www.weaddbots.com/updates/inventory-intelligence-case-study",
+        "keywords": ["AI automation", "inventory management", "daily reporting", "fractional CTO", "operational intelligence", "automated reports", "multi-location business"]
+    }
+    </script>
+
+    <!-- Schema.org — BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.weaddbots.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Updates",
+                "item": "https://www.weaddbots.com/updates/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "$270K in Inventory, Zero Daily Visibility",
+                "item": "https://www.weaddbots.com/updates/inventory-intelligence-case-study"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">WeAddBots</a>
+            <div class="nav-links">
+                <a href="/services">Services</a>
+                <a href="/about">About</a>
+                <a href="/events/">Events</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/events/">Events</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <!-- Event Banner -->
+    <div class="event-banner">
+        <div class="event-banner-inner">
+            <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Thu, May 14 &mdash; Germantown</span>
+            <a href="/events/memphis-ai-meetup">RSVP Free &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Article Header -->
+    <section class="hero-page has-banner">
+        <h1>$270K in Inventory, Zero Daily Visibility</h1>
+        <p class="hero-subtitle">How we built automated daily intelligence for a 3-location distributor &mdash; in one afternoon</p>
+    </section>
+
+    <!-- Article Body -->
+    <section class="section bg-white">
+        <div class="section-inner" style="max-width: 48rem;">
+            <div class="answer-block">
+                <p style="color: var(--gray-500); font-size: 0.9rem; margin-bottom: 24px;">By <a href="/about">Scott Finney</a> &bull; May 5, 2026</p>
+
+                <p>A regional wholesale distributor with three locations had <strong>$270K+ in high-value inventory</strong> spread across nearly 100 product categories. Their sales team &mdash; the people answering phones and closing deals &mdash; started every morning blind.</p>
+
+                <p>To answer a basic customer question ("Do you have this in stock?"), they'd log into their inventory system, search item by item, check quantities, verify nothing was committed to another order, then quote a price. Thirty seconds to a minute per inquiry. Multiplied across every customer, every call, every day.</p>
+
+                <p>The data existed. Their inventory management system refreshed a full export every morning before dawn &mdash; <strong>97 columns, 130+ rows</strong> of raw item and inventory data. But no human was going to open that file, filter it, format it, split it by category, and email it to the right people before the first customer called at 8 AM.</p>
+
+                <p>Nobody had time. So nobody did it. Every day, the team operated on memory instead of data.</p>
+
+                <h2>What We Built</h2>
+
+                <p>An automated pipeline that transforms a raw inventory export into <strong>role-specific, print-ready PDFs</strong> delivered to inboxes before the team arrives &mdash; every single day, zero human effort.</p>
+
+                <h3>The Daily Output (by 7:15 AM):</h3>
+
+                <p><strong>For the Sales Team:</strong></p>
+                <ul>
+                    <li><strong>High-Value Inventory &mdash; Page 1:</strong> Premium categories (average item price over $1,000), sorted by what customers ask about most. Every item shows on-hand quantity, incoming orders, price, and below-minimum flags.</li>
+                    <li><strong>High-Value Inventory &mdash; Page 2:</strong> Remaining categories &mdash; smaller items, accessories, supporting products.</li>
+                    <li><strong>Used/One-Off Inventory:</strong> Separate PDF, only generated when relevant inventory exists. Unique items with no reorder logic &mdash; just what's available today.</li>
+                </ul>
+
+                <p><strong>For the Purchasing Team:</strong></p>
+                <ul>
+                    <li><strong>Action Items:</strong> Below-min alerts (using net quantity &mdash; accounting for committed and backordered units), overstock flags, dead stock over 365 days, aging inventory warnings.</li>
+                    <li><strong>Price Audit:</strong> Margin analysis on every item &mdash; current margin vs. cost, suggested prices at multiple margin tiers, vendor pricing floor flags.</li>
+                </ul>
+
+                <p><strong>For Everyone:</strong></p>
+                <ul>
+                    <li><strong>Master Spreadsheet:</strong> 12 tabs refreshed daily, archived for 30 days, accessible for ad-hoc analysis.</li>
+                </ul>
+
+                <h2>By the Numbers</h2>
+
+                <div class="card card-accent" style="margin: 24px 0;">
+                    <div style="color: var(--gray-600); font-size: 0.95rem; line-height: 1.8;">
+                        <p><strong>Daily inventory value monitored:</strong> $272,915+ (high-value categories alone)</p>
+                        <p><strong>Items tracked daily:</strong> 130+ SKUs across multiple inventory classes</p>
+                        <p><strong>Product categories:</strong> ~15 active subcategories</p>
+                        <p><strong>Raw data columns per export:</strong> 97 (system uses 20 &mdash; the rest is noise)</p>
+                        <p><strong>PDFs generated per run:</strong> Up to 5 (segmented by audience and purpose)</p>
+                        <p><strong>Audience segments served:</strong> 3 (sales, purchasing/margin, operations)</p>
+                        <p><strong>Processing time:</strong> ~8 seconds end-to-end</p>
+                        <p><strong>Human effort required:</strong> Zero &mdash; runs on a timer, every day, including weekends</p>
+                        <p><strong>Development time:</strong> One working session &mdash; concept to production in an afternoon</p>
+                    </div>
+                </div>
+
+                <h2>What Changed</h2>
+
+                <h3>For Sales</h3>
+
+                <p><strong>Before:</strong> "Let me look that up&hellip; one moment&hellip; checking inventory&hellip;" (30&ndash;90 seconds per inquiry, repeated dozens of times daily)</p>
+
+                <p><strong>After:</strong> A one-page PDF is in their inbox before they arrive. Items sorted by what customers ask about most. Quantity, price, incoming orders, and flags &mdash; all visible at a glance. The customer gets an answer in seconds.</p>
+
+                <h3>For Purchasing</h3>
+
+                <p><strong>Before:</strong> Monthly or ad-hoc margin reviews. Problems discovered late. Reorder points missed until something ran out.</p>
+
+                <p><strong>After:</strong> A daily margin audit arrives with every item's current margin, suggested prices at target tiers, and vendor floor warnings. Below-minimum alerts surface before stockouts happen.</p>
+
+                <h3>The Compounding Effect</h3>
+
+                <p>This isn't a one-time report. It runs every morning. Inventory changes overnight &mdash; orders arrive, items sell, commitments shift. The report reflects reality as of 6 AM, and the team sees it by 7:15. Every day, the business operates on current intelligence instead of yesterday's memory.</p>
+
+                <h2>How It Was Built</h2>
+
+                <p>This wasn't a six-month IT project with a team of developers and a requirements document. It was built in a single working session &mdash; AI reading the existing data infrastructure, understanding the data model, writing the transformation logic, generating the PDF layouts, and iterating on formatting in real-time based on business feedback.</p>
+
+                <p>I provided the business logic and domain expertise. The AI handled the implementation at a speed no internal team could match &mdash; not because the team isn't capable, but because they're running a business. They don't have an afternoon to burn building a reporting pipeline. I do.</p>
+
+                <p><strong>Total investment:</strong> One afternoon of collaborative work.<br><strong>Ongoing cost:</strong> Essentially zero &mdash; the automation runs on existing infrastructure.</p>
+
+                <h2>The Bigger Picture</h2>
+
+                <p>This report was one piece of a larger engagement: reducing internal communication noise, restructuring how information flows between teams, and building role-specific intelligence that meets each person where they are &mdash; not forcing them to dig for data in systems they shouldn't need to touch during their workday.</p>
+
+                <p>The same methodology applies across any operation: identify where people are spending time hunting for information, then build automated pipelines that deliver that information proactively, in the format they need, at the time they need it.</p>
+
+                <h2>Is Your Team Starting the Day Blind?</h2>
+
+                <p>Where are your people logging into systems, running searches, making phone calls &mdash; when the answer could be sitting in their inbox before they unlock the door?</p>
+
+                <p>That's the gap. And it's almost always smaller to close than people think.</p>
+            </div>
+
+            <!-- Related Posts -->
+            <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--gray-200);">
+                <h3 style="font-size: 1.1rem; margin-bottom: 16px;">More from Updates</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/updates/ai-website-overhaul-case-study" style="color: var(--teal); font-weight: 500;">12 Pages in One Afternoon &rarr;</a>
+                    <a href="/updates/meetup-origin-story" style="color: var(--teal); font-weight: 500;">Zero Attendees at Meetup #1 &rarr;</a>
+                    <a href="/updates/ai-nonprofit-grant-writing" style="color: var(--teal); font-weight: 500;">AI Agents Wrote Nonprofit Grant Applications &rarr;</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 48px; padding: 32px; background: var(--teal-50); border-radius: var(--radius-lg); text-align: center;">
+                <h3 style="margin-bottom: 12px;">Your Team Shouldn't Start the Day Blind</h3>
+                <p style="margin-bottom: 16px;">Free AI assessment. Find out where your operation is stuck hunting for data instead of acting on it.</p>
+                <a href="/contact" class="btn btn-primary btn-lg">Get Free Assessment &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freshness Signal -->
+    <div class="freshness">Published: May 5, 2026</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>WeAddBots</h4>
+                <p class="footer-tagline">AI automation for Memphis businesses.<br>Simple, practical, proven.</p>
+                <p class="footer-legal-name">A service of <a href="https://www.creatingvaluellc.com" target="_blank" rel="noopener">Creating Value LLC</a></p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="/newsletter">Newsletter</a>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/events/">Events</a>
+                <a href="/locations/">Locations</a>
+                <a href="/updates/">Updates</a>
+                <a href="/build-with-me">Build With Me</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; margin-top: 24px; text-align: center;">
+            <p style="color: var(--gray-400); font-size: 0.85rem; margin-bottom: 0;">Get weekly meetup details &amp; AI tips &mdash; <a href="/newsletter" style="color: var(--teal);">join the email list</a></p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <a href="https://www.creatingvaluellc.com" target="_blank" rel="noopener">Creating Value LLC</a>. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/sitemap.xml">Sitemap</a>
+                <a href="/llms.txt">LLMs.txt</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('show');
+        });
+    </script>
+    <!-- Google Analytics GA4 (lightweight, no external script) -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var m = 'G-WCKLX73V4P';
+                var cid = localStorage.getItem('_ga_cid');
+                if (!cid) { cid = Math.random().toString(36).substr(2) + Date.now().toString(36); localStorage.setItem('_ga_cid', cid); }
+                navigator.sendBeacon('https://www.google-analytics.com/g/collect?' +
+                    'v=2&tid=' + m + '&cid=' + cid + '&sid=' + Date.now() +
+                    '&dl=' + encodeURIComponent(location.href) +
+                    '&dt=' + encodeURIComponent(document.title) +
+                    '&dr=' + encodeURIComponent(document.referrer) +
+                    '&en=page_view');
+            }, 100);
+        });
+    </script>
+    <!-- Clicky Analytics (deferred, clicky.init pattern per playbook) -->
+    <script>
+        window.addEventListener('load', function() {
+            var cs = document.createElement('script');
+            cs.src = '//static.getclicky.com/js';
+            cs.onload = function() {
+                try { clicky.init(101500449); } catch(e) {}
+            };
+            document.body.appendChild(cs);
+        });
+    </script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
+</body>
+</html>
