@@ -1,7 +1,7 @@
 # Private / operational (lives in parent wab/ folder, not in this repo)
 private/
 docs/
-scripts/
+scripts/private/
 meetup-assets/
 
 # OS / editor
