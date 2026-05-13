@@ -23,182 +23,177 @@
 
     <link rel="stylesheet" href="/styles.css">
 
-    <!-- Schema.org — WebPage -->
+    <!-- Schema.org — Unified @graph -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "AI Automation FAQ for Memphis Businesses",
-        "url": "https://www.weaddbots.com/faq",
-        "description": "Frequently asked questions about AI automation for small businesses. What it costs, how it works, and whether your business is ready.",
-        "publisher": {"@id": "https://www.weaddbots.com/#organization"},
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
-    }
-    </script>
-
-    <!-- Schema.org — FAQPage (all questions) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
+        "@graph": [
             {
-                "@type": "Question",
-                "name": "What is AI automation for small businesses?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "AI automation uses artificial intelligence tools to handle repetitive business tasks automatically — things like responding to leads, routing inquiries, processing data, connecting tools, and generating reports. For small businesses, this typically means layering lightweight automations on top of existing tools like Google Workspace, CRMs, and accounting software. No custom software development or IT department required."
-                }
+                "@type": "WebPage",
+                "@id": "https://www.weaddbots.com/faq#WebPage",
+                "name": "AI Automation FAQ for Memphis Businesses",
+                "url": "https://www.weaddbots.com/faq",
+                "description": "Frequently asked questions about AI automation for small businesses. What it costs, how it works, and whether your business is ready.",
+                "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+                "breadcrumb": { "@id": "https://www.weaddbots.com/faq#BreadcrumbList" },
+                "mainEntity": { "@id": "https://www.weaddbots.com/faq#FAQPage" },
+                "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"] }
             },
             {
-                "@type": "Question",
-                "name": "What does AI automation actually look like for a small business?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "It usually starts with one specific friction point — like responding to leads faster, eliminating a repetitive data entry task, or connecting two tools that don't talk to each other. WeAddBots uses platforms like Zapier, GoHighLevel, and Google Workspace to build lightweight automations that run in the background. Most businesses see their first automation working within a week or two."
-                }
+                "@type": "FAQPage",
+                "@id": "https://www.weaddbots.com/faq#FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is AI automation for small businesses?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "AI automation uses artificial intelligence tools to handle repetitive business tasks automatically — things like responding to leads, routing inquiries, processing data, connecting tools, and generating reports. For small businesses, this typically means layering lightweight automations on top of existing tools like Google Workspace, CRMs, and accounting software. No custom software development or IT department required."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What does AI automation actually look like for a small business?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It usually starts with one specific friction point — like responding to leads faster, eliminating a repetitive data entry task, or connecting two tools that don't talk to each other. WeAddBots uses platforms like Zapier, GoHighLevel, and Google Workspace to build lightweight automations that run in the background. Most businesses see their first automation working within a week or two."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I know if my business is ready for AI automation?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "If your business is already generating consistent activity but you're drowning in repetitive tasks, missed follow-ups, slow lead responses, or manual chaos — you're ready. You don't need to be technical. You don't need to understand AI. You just need to know what's eating your time. That's the starting point."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What industries does WeAddBots work with?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "WeAddBots works with established small to mid-sized businesses across industries — retail, service companies, professional firms, restaurants, healthcare practices, and more. The common thread is businesses already generating consistent activity but drowning in repetitive tasks. If you have processes that run the same way every time, there's likely an automation opportunity."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I need to replace my current tools and systems?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Not usually — and that's by design. WeAddBots layers smart automations on top of what you already use. Google Workspace, QuickBooks, your CRM, spreadsheets — they all stay. A rip-and-replace might make sense down the road, but it's never the first recommendation. The approach is to connect and enhance what's already working."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can AI automation work with my existing CRM?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. WeAddBots integrates with most popular CRMs and business tools including GoHighLevel, Salesforce, HubSpot, and others. The automation platforms used (Zapier, Google Apps Script, webhooks) connect to thousands of apps. If your tool has an integration or API, it can almost certainly be connected."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What tools does WeAddBots use?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The core automation stack includes Zapier, GoHighLevel, Google Apps Script, and webhooks. For AI and language processing: ChatGPT and Claude. For CRM and email: GoHighLevel. All built on top of whatever tools you're already using — Google Workspace, your existing CRM, accounting software, scheduling platforms. No proprietary platforms that lock you in."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What's the difference between WeAddBots and hiring a developer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A developer builds custom software from scratch — which can be expensive, time-consuming, and hard to maintain. WeAddBots uses existing no-code and low-code automation platforms to connect your tools and automate your workflows. The result is faster implementation (days instead of months), lower cost, and systems you can understand and adjust without writing code. If you eventually need custom development, that's a bridge to cross later."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does AI automation consulting cost?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "WeAddBots starts with a free AI assessment to identify your biggest friction points. Discovery and strategy sessions are $300/hour, and custom implementation projects typically start at $2,000. No retainers unless results warrant it. The Rebecca AI Receptionist product starts at $297/month. The goal is practical wins that pay for themselves quickly."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the free AI assessment?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The free AI assessment is a review of your business operations to identify where AI automation could make the biggest impact. You tell WeAddBots about your daily operations — the repetitive tasks, the bottlenecks, the things that fall through cracks — and you get back an honest assessment of where automation could help and where it can't. No jargon, no upsell."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does it take to see results?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most clients see their first working automation within the first week. Simple lead response automations can be live in a day. More complex multi-step workflows typically take two to four weeks. The focus is on delivering practical first wins fast — not months of planning and promises."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What happens after I fill out the contact form?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Every submission gets reviewed personally by Scott Finney. You'll get a response with initial observations and honest feedback on where AI could actually help. If it makes sense for both sides, a free 20-minute discovery call is the next step. You'll walk away with at least one actionable idea — whether or not you end up working together."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I need technical skills to use AI automation?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. WeAddBots builds and manages the automations for you. Once set up, most automations run in the background without any technical input. If you can use email and a web browser, you can use the systems WeAddBots builds. Training and documentation are included so your team understands what's happening and how to make adjustments."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is WeAddBots only for Memphis businesses?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "WeAddBots serves US-based businesses. The company is based in Memphis, TN, and the in-person AI meetups are Memphis-area only. But the automation consulting and implementation work is done remotely and works for businesses anywhere in the US."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is Rebecca AI Receptionist?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Rebecca is an AI-powered receptionist that answers your inbound calls, gathers key information from callers, qualifies leads, filters spam, and routes real opportunities to the right person. She works 24/7, costs a fraction of a full-time hire (starting at $297/month), and can be set up in a single 30-minute call. She's already live and taking calls for WeAddBots' sister company."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is the Memphis AI Meetup really free?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, completely free. WeAddBots hosts weekly in-person AI meetups at rotating locations across the Memphis metro area. No pitch, no upsell — just Memphis business owners sharing what's working with AI, asking questions, and learning together. 30+ business owners have attended so far."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What happens at the Memphis AI Meetup?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It's 30 minutes over coffee. Casual, practical, no slides or lectures. Attendees share what they're trying with AI, ask questions, and get real answers about what's working and what isn't. Real tools, real examples, things you can actually use that week. The meetups rotate days, times, and locations around Memphis so more people can make it."
+                        }
+                    }
+                ]
             },
             {
-                "@type": "Question",
-                "name": "How do I know if my business is ready for AI automation?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "If your business is already generating consistent activity but you're drowning in repetitive tasks, missed follow-ups, slow lead responses, or manual chaos — you're ready. You don't need to be technical. You don't need to understand AI. You just need to know what's eating your time. That's the starting point."
-                }
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/faq#BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://www.weaddbots.com/faq" }
+                ]
             },
             {
-                "@type": "Question",
-                "name": "What industries does WeAddBots work with?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "WeAddBots works with established small to mid-sized businesses across industries — retail, service companies, professional firms, restaurants, healthcare practices, and more. The common thread is businesses already generating consistent activity but drowning in repetitive tasks. If you have processes that run the same way every time, there's likely an automation opportunity."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do I need to replace my current tools and systems?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Not usually — and that's by design. WeAddBots layers smart automations on top of what you already use. Google Workspace, QuickBooks, your CRM, spreadsheets — they all stay. A rip-and-replace might make sense down the road, but it's never the first recommendation. The approach is to connect and enhance what's already working."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can AI automation work with my existing CRM?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. WeAddBots integrates with most popular CRMs and business tools including GoHighLevel, Salesforce, HubSpot, and others. The automation platforms used (Zapier, Google Apps Script, webhooks) connect to thousands of apps. If your tool has an integration or API, it can almost certainly be connected."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What tools does WeAddBots use?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The core automation stack includes Zapier, GoHighLevel, Google Apps Script, and webhooks. For AI and language processing: ChatGPT and Claude. For CRM and email: GoHighLevel. All built on top of whatever tools you're already using — Google Workspace, your existing CRM, accounting software, scheduling platforms. No proprietary platforms that lock you in."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What's the difference between WeAddBots and hiring a developer?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A developer builds custom software from scratch — which can be expensive, time-consuming, and hard to maintain. WeAddBots uses existing no-code and low-code automation platforms to connect your tools and automate your workflows. The result is faster implementation (days instead of months), lower cost, and systems you can understand and adjust without writing code. If you eventually need custom development, that's a bridge to cross later."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How much does AI automation consulting cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "WeAddBots starts with a free AI assessment to identify your biggest friction points. Discovery and strategy sessions are $300/hour, and custom implementation projects typically start at $2,000. No retainers unless results warrant it. The Rebecca AI Receptionist product starts at $297/month. The goal is practical wins that pay for themselves quickly."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is the free AI assessment?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The free AI assessment is a review of your business operations to identify where AI automation could make the biggest impact. You tell WeAddBots about your daily operations — the repetitive tasks, the bottlenecks, the things that fall through cracks — and you get back an honest assessment of where automation could help and where it can't. No jargon, no upsell."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How long does it take to see results?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Most clients see their first working automation within the first week. Simple lead response automations can be live in a day. More complex multi-step workflows typically take two to four weeks. The focus is on delivering practical first wins fast — not months of planning and promises."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What happens after I fill out the contact form?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Every submission gets reviewed personally by Scott Finney. You'll get a response with initial observations and honest feedback on where AI could actually help. If it makes sense for both sides, a free 20-minute discovery call is the next step. You'll walk away with at least one actionable idea — whether or not you end up working together."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do I need technical skills to use AI automation?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. WeAddBots builds and manages the automations for you. Once set up, most automations run in the background without any technical input. If you can use email and a web browser, you can use the systems WeAddBots builds. Training and documentation are included so your team understands what's happening and how to make adjustments."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is WeAddBots only for Memphis businesses?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "WeAddBots serves US-based businesses. The company is based in Memphis, TN, and the in-person AI meetups are Memphis-area only. But the automation consulting and implementation work is done remotely and works for businesses anywhere in the US."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is Rebecca AI Receptionist?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Rebecca is an AI-powered receptionist that answers your inbound calls, gathers key information from callers, qualifies leads, filters spam, and routes real opportunities to the right person. She works 24/7, costs a fraction of a full-time hire (starting at $297/month), and can be set up in a single 30-minute call. She's already live and taking calls for WeAddBots' sister company."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is the Memphis AI Meetup really free?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, completely free. WeAddBots hosts weekly in-person AI meetups at rotating locations across the Memphis metro area. No pitch, no upsell — just Memphis business owners sharing what's working with AI, asking questions, and learning together. 30+ business owners have attended so far."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What happens at the Memphis AI Meetup?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "It's 30 minutes over coffee. Casual, practical, no slides or lectures. Attendees share what they're trying with AI, ask questions, and get real answers about what's working and what isn't. Real tools, real examples, things you can actually use that week. The meetups rotate days, times, and locations around Memphis so more people can make it."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Schema.org — BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.weaddbots.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "FAQ",
-                "item": "https://www.weaddbots.com/faq"
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
             }
         ]
     }
@@ -508,7 +503,7 @@
     </section>
 
     <!-- Freshness Signal -->
-    <div class="freshness">Last updated: April 3, 2026</div>
+    <div class="freshness">Last updated: May 12, 2026</div>
 
     <!-- Footer -->
     <footer class="footer">

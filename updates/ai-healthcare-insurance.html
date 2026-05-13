@@ -24,30 +24,46 @@
 
     <link rel="stylesheet" href="/styles.css">
 
+    <!-- Schema.org — @graph -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "AI Helped a Business Owner Decode Their Healthcare Insurance",
-        "description": "A Memphis AI Meetup attendee used AI to navigate their healthcare insurance plan. Here's what happened and why it matters.",
-        "datePublished": "2026-04-27",
-        "dateModified": "2026-04-27",
-        "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
-        "publisher": { "@id": "https://www.weaddbots.com/#organization" },
-        "mainEntityOfPage": "https://www.weaddbots.com/updates/ai-healthcare-insurance",
-        "keywords": ["AI healthcare insurance", "AI document analysis", "practical AI", "Memphis AI Meetup"],
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Updates", "item": "https://www.weaddbots.com/updates/" },
-            { "@type": "ListItem", "position": 3, "name": "AI Healthcare Insurance", "item": "https://www.weaddbots.com/updates/ai-healthcare-insurance" }
+        "@graph": [
+            {
+                "@type": "Article",
+                "@id": "https://www.weaddbots.com/updates/ai-healthcare-insurance#Article",
+                "headline": "AI Helped a Business Owner Decode Their Healthcare Insurance",
+                "description": "A Memphis AI Meetup attendee used AI to navigate their healthcare insurance plan. Here's what happened and why it matters.",
+                "datePublished": "2026-04-27",
+                "dateModified": "2026-05-12",
+                "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
+                "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+                "mainEntityOfPage": "https://www.weaddbots.com/updates/ai-healthcare-insurance",
+                "breadcrumb": { "@id": "https://www.weaddbots.com/updates/ai-healthcare-insurance#BreadcrumbList" },
+                "keywords": ["AI healthcare insurance", "AI document analysis", "practical AI", "Memphis AI Meetup"],
+                "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/updates/ai-healthcare-insurance#BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Updates", "item": "https://www.weaddbots.com/updates/" },
+                    { "@type": "ListItem", "position": 3, "name": "AI Healthcare Insurance", "item": "https://www.weaddbots.com/updates/ai-healthcare-insurance" }
+                ]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
+            },
+            {
+                "@type": "Person",
+                "@id": "https://www.creatingvaluellc.com/about#scott-finney",
+                "name": "Scott Finney",
+                "url": "https://www.creatingvaluellc.com/about"
+            }
         ]
     }
     </script>

@@ -14,8 +14,36 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
 <link rel="stylesheet" href="/styles.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Terms & Conditions","url":"https://www.weaddbots.com/terms","description":"WeAddBots terms and conditions for services and website use.","publisher":{"@id":"https://www.weaddbots.com/#organization"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.weaddbots.com/"},{"@type":"ListItem","position":2,"name":"Terms & Conditions","item":"https://www.weaddbots.com/terms"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.weaddbots.com/terms#WebPage",
+      "name": "Terms & Conditions",
+      "url": "https://www.weaddbots.com/terms",
+      "description": "WeAddBots terms and conditions for services and website use.",
+      "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+      "breadcrumb": { "@id": "https://www.weaddbots.com/terms#BreadcrumbList" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.weaddbots.com/terms#BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://www.weaddbots.com/terms" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.weaddbots.com/#organization",
+      "name": "WeAddBots",
+      "url": "https://www.weaddbots.com"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -74,7 +102,7 @@
   </div>
 </section>
 
-<div class="freshness">Last updated: March 16, 2026</div>
+<div class="freshness">Last updated: May 12, 2026</div>
 
 <footer class="footer">
   <div class="footer-grid">

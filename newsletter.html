@@ -23,41 +23,38 @@
 
     <link rel="stylesheet" href="/styles.css">
 
-    <!-- Schema.org — WebPage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Get Memphis AI Meetup Updates",
-        "url": "https://www.weaddbots.com/newsletter",
-        "description": "Join the WeAddBots email list. Weekly Memphis AI Meetup details — dates, times, locations — plus practical AI tips for business owners.",
-        "publisher": {"@id": "https://www.weaddbots.com/#organization"},
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]},
-        "potentialAction": {
-            "@type": "SubscribeAction",
-            "target": "https://www.weaddbots.com/newsletter",
-            "name": "Subscribe to WeAddBots Newsletter"
-        }
-    }
-    </script>
-
-    <!-- Schema.org — BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.weaddbots.com/"
+                "@type": "WebPage",
+                "@id": "https://www.weaddbots.com/newsletter#WebPage",
+                "name": "Get Memphis AI Meetup Updates",
+                "url": "https://www.weaddbots.com/newsletter",
+                "description": "Join the WeAddBots email list. Weekly Memphis AI Meetup details — dates, times, locations — plus practical AI tips for business owners.",
+                "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+                "breadcrumb": { "@id": "https://www.weaddbots.com/newsletter#BreadcrumbList" },
+                "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"] },
+                "potentialAction": {
+                    "@type": "SubscribeAction",
+                    "target": "https://www.weaddbots.com/newsletter",
+                    "name": "Subscribe to WeAddBots Newsletter"
+                }
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Newsletter",
-                "item": "https://www.weaddbots.com/newsletter"
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/newsletter#BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Newsletter", "item": "https://www.weaddbots.com/newsletter" }
+                ]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
             }
         ]
     }
@@ -142,7 +139,7 @@
     </section>
 
     <!-- Freshness Signal -->
-    <div class="freshness">Last updated: April 27, 2026</div>
+    <div class="freshness">Last updated: May 12, 2026</div>
 
     <!-- Footer -->
     <footer class="footer">

@@ -24,30 +24,46 @@
 
     <link rel="stylesheet" href="/styles.css">
 
+    <!-- Schema.org — @graph -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "AI Agents Wrote Nonprofit Grant Applications",
-        "description": "Multiple AI agents collaborated on grant applications for Memphis nonprofits at GiveCamp. Here's how multi-agent AI workflows handle complex work.",
-        "datePublished": "2026-04-27",
-        "dateModified": "2026-04-27",
-        "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
-        "publisher": { "@id": "https://www.weaddbots.com/#organization" },
-        "mainEntityOfPage": "https://www.weaddbots.com/updates/ai-nonprofit-grant-writing",
-        "keywords": ["AI agents", "grant writing", "nonprofit AI", "multi-agent AI", "Memphis AI Meetup", "GiveCamp Memphis"],
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Updates", "item": "https://www.weaddbots.com/updates/" },
-            { "@type": "ListItem", "position": 3, "name": "AI Nonprofit Grant Writing", "item": "https://www.weaddbots.com/updates/ai-nonprofit-grant-writing" }
+        "@graph": [
+            {
+                "@type": "Article",
+                "@id": "https://www.weaddbots.com/updates/ai-nonprofit-grant-writing#Article",
+                "headline": "AI Agents Wrote Nonprofit Grant Applications",
+                "description": "Multiple AI agents collaborated on grant applications for Memphis nonprofits at GiveCamp. Here's how multi-agent AI workflows handle complex work.",
+                "datePublished": "2026-04-27",
+                "dateModified": "2026-05-12",
+                "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
+                "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+                "mainEntityOfPage": "https://www.weaddbots.com/updates/ai-nonprofit-grant-writing",
+                "breadcrumb": { "@id": "https://www.weaddbots.com/updates/ai-nonprofit-grant-writing#BreadcrumbList" },
+                "keywords": ["AI agents", "grant writing", "nonprofit AI", "multi-agent AI", "Memphis AI Meetup", "GiveCamp Memphis"],
+                "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/updates/ai-nonprofit-grant-writing#BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Updates", "item": "https://www.weaddbots.com/updates/" },
+                    { "@type": "ListItem", "position": 3, "name": "AI Nonprofit Grant Writing", "item": "https://www.weaddbots.com/updates/ai-nonprofit-grant-writing" }
+                ]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
+            },
+            {
+                "@type": "Person",
+                "@id": "https://www.creatingvaluellc.com/about#scott-finney",
+                "name": "Scott Finney",
+                "url": "https://www.creatingvaluellc.com/about"
+            }
         ]
     }
     </script>

@@ -23,36 +23,33 @@
 
     <link rel="stylesheet" href="/styles.css">
 
-    <!-- Schema.org — WebPage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "AI Workshops for Memphis Businesses",
-        "url": "https://www.weaddbots.com/workshops",
-        "description": "Practical, hands-on AI workshops for Memphis business owners. $37 on Zoom, 60-90 minutes, focused on things you can use in your business that same week.",
-        "publisher": {"@id": "https://www.weaddbots.com/#organization"},
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
-    }
-    </script>
-
-    <!-- Schema.org — BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.weaddbots.com/"
+                "@type": "WebPage",
+                "@id": "https://www.weaddbots.com/workshops#WebPage",
+                "name": "AI Workshops for Memphis Businesses",
+                "url": "https://www.weaddbots.com/workshops",
+                "description": "Practical, hands-on AI workshops for Memphis business owners. $37 on Zoom, 60-90 minutes, focused on things you can use in your business that same week.",
+                "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+                "breadcrumb": { "@id": "https://www.weaddbots.com/workshops#BreadcrumbList" },
+                "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"] }
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Workshops",
-                "item": "https://www.weaddbots.com/workshops"
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/workshops#BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Workshops", "item": "https://www.weaddbots.com/workshops" }
+                ]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
             }
         ]
     }
@@ -264,7 +261,7 @@
     </section>
 
     <!-- Freshness Signal -->
-    <div class="freshness">Last updated: April 3, 2026</div>
+    <div class="freshness">Last updated: May 12, 2026</div>
 
     <!-- Footer -->
     <footer class="footer">

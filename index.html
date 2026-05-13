@@ -21,170 +21,157 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
 <link rel="stylesheet" href="/styles.css">
-<!-- Schema.org — Organization -->
+<!-- Schema.org — Unified @graph -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.weaddbots.com/#organization",
-  "name": "WeAddBots",
-  "legalName": "Creating Value LLC",
-  "url": "https://www.weaddbots.com",
-  "description": "AI automation consulting for Memphis-area businesses. We help established small to mid-sized businesses remove daily operational friction with simple, AI-powered automations.",
-  "foundingDate": "2024",
-  "areaServed": {
-    "@type": "City",
-    "name": "Memphis",
-    "containedInPlace": { "@type": "State", "name": "Tennessee" }
-  },
-  "founder": {
-    "@type": "Person",
-    "@id": "https://www.creatingvaluellc.com/about#scott-finney",
-    "name": "Scott Finney",
-    "jobTitle": "Founder",
-    "url": "https://www.creatingvaluellc.com/about",
-    "sameAs": "https://www.linkedin.com/in/scottfinney/"
-  },
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Creating Value LLC",
-    "@id": "https://www.creatingvaluellc.com/#organization",
-    "url": "https://www.creatingvaluellc.com"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/weaddbots/",
-    "https://www.linkedin.com/in/scottfinney/"
-  ],
-  "knowsAbout": [
-    "AI Automation", "Business Process Automation", "ChatGPT for Business",
-    "Small Business AI", "Workflow Automation", "Lead Response Automation"
-  ],
-  "slogan": "Simple AI automations that layer on top of what's already working"
-}
-</script>
-<!-- Schema.org — WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://www.weaddbots.com/#website",
-  "name": "WeAddBots",
-  "url": "https://www.weaddbots.com",
-  "publisher": { "@id": "https://www.weaddbots.com/#organization" }
-}
-</script>
-<!-- Schema.org — Founder (canonical definition for #founder references) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": "https://www.weaddbots.com/#founder",
-  "name": "Scott Finney",
-  "jobTitle": "Founder",
-  "url": "https://www.creatingvaluellc.com/about",
-  "image": "https://www.weaddbots.com/img/scott-finney.jpg",
-  "worksFor": { "@id": "https://www.weaddbots.com/#organization" },
-  "sameAs": [
-    "https://www.linkedin.com/in/scottfinney/",
-    "https://www.creatingvaluellc.com/about"
-  ],
-  "knowsAbout": ["Artificial Intelligence", "AI Automation", "Business Process Automation"]
-}
-</script>
-<!-- Schema.org — LocalBusiness -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.weaddbots.com/#localbusiness",
-  "name": "WeAddBots",
-  "description": "AI automation consulting and weekly AI meetups for Memphis businesses",
-  "url": "https://www.weaddbots.com",
-  "founder": { "@id": "https://www.weaddbots.com/#founder" },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Memphis",
-    "addressRegion": "TN",
-    "addressCountry": "US"
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
-  },
-  "parentOrganization": { "@id": "https://www.creatingvaluellc.com/#organization" }
-}
-</script>
-<!-- Schema.org — BreadcrumbList -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" }
-  ]
-}
-</script>
-<!-- Schema.org — FAQPage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "What does AI automation actually look like for a small business?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AI automation for small businesses usually starts with one specific friction point — like responding to leads faster, eliminating a repetitive data entry task, or connecting two tools that don't talk to each other. We use platforms like Zapier, GoHighLevel, and Google Workspace to build lightweight automations that run in the background. No custom software development, no IT department required. Most businesses see their first automation working within a week or two."
-      }
+      "@type": "Organization",
+      "@id": "https://www.weaddbots.com/#organization",
+      "name": "WeAddBots",
+      "legalName": "Creating Value LLC",
+      "url": "https://www.weaddbots.com",
+      "description": "AI automation consulting for Memphis-area businesses. We help established small to mid-sized businesses remove daily operational friction with simple, AI-powered automations.",
+      "foundingDate": "2024",
+      "areaServed": {
+        "@type": "City",
+        "name": "Memphis",
+        "containedInPlace": { "@type": "State", "name": "Tennessee" }
+      },
+      "founder": {
+        "@type": "Person",
+        "@id": "https://www.creatingvaluellc.com/about#scott-finney",
+        "name": "Scott Finney",
+        "jobTitle": "Founder",
+        "url": "https://www.creatingvaluellc.com/about",
+        "sameAs": "https://www.linkedin.com/in/scottfinney/"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Creating Value LLC",
+        "@id": "https://www.creatingvaluellc.com/#organization",
+        "url": "https://www.creatingvaluellc.com"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/weaddbots/",
+        "https://www.linkedin.com/in/scottfinney/"
+      ],
+      "knowsAbout": [
+        "AI Automation", "Business Process Automation", "ChatGPT for Business",
+        "Small Business AI", "Workflow Automation", "Lead Response Automation"
+      ],
+      "slogan": "Simple AI automations that layer on top of what's already working"
     },
     {
-      "@type": "Question",
-      "name": "How much does AI automation consulting cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We start with a free AI assessment to identify your biggest friction points. Discovery and strategy sessions are $300/hour, and custom implementation projects typically start at $2,000. We don't do retainers unless results warrant it. The goal is practical wins that pay for themselves quickly — not ongoing consulting fees."
-      }
+      "@type": "WebSite",
+      "@id": "https://www.weaddbots.com/#website",
+      "name": "WeAddBots",
+      "url": "https://www.weaddbots.com",
+      "publisher": { "@id": "https://www.weaddbots.com/#organization" }
     },
     {
-      "@type": "Question",
-      "name": "Do I need to replace my current tools and systems?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not usually — and that's by design. Our approach starts by layering smart automations on top of what you already use. If you run your business on Google Workspace, QuickBooks, a CRM, or even spreadsheets — we work with those tools first. A rip-and-replace might make sense down the road, but it's never our first recommendation. We connect and enhance what's already working."
-      }
+      "@type": "Person",
+      "@id": "https://www.weaddbots.com/#founder",
+      "name": "Scott Finney",
+      "jobTitle": "Founder",
+      "url": "https://www.creatingvaluellc.com/about",
+      "image": "https://www.weaddbots.com/img/scott-finney.jpg",
+      "worksFor": { "@id": "https://www.weaddbots.com/#organization" },
+      "sameAs": [
+        "https://www.linkedin.com/in/scottfinney/",
+        "https://www.creatingvaluellc.com/about"
+      ],
+      "knowsAbout": ["Artificial Intelligence", "AI Automation", "Business Process Automation"]
     },
     {
-      "@type": "Question",
-      "name": "How long does it take to see results?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most clients see their first working automation within the first week. Simple lead response automations can be live in a day. More complex multi-step workflows typically take two to four weeks. We focus on delivering practical 'first wins' fast — not months of planning and promises."
-      }
+      "@type": "LocalBusiness",
+      "@id": "https://www.weaddbots.com/#localbusiness",
+      "name": "WeAddBots",
+      "description": "AI automation consulting and weekly AI meetups for Memphis businesses",
+      "url": "https://www.weaddbots.com",
+      "founder": { "@id": "https://www.weaddbots.com/#founder" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Memphis",
+        "addressRegion": "TN",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "parentOrganization": { "@id": "https://www.creatingvaluellc.com/#organization" }
     },
     {
-      "@type": "Question",
-      "name": "Is the Memphis AI Meetup really free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, completely free. We host weekly in-person AI meetups at rotating locations across the Memphis metro area. No pitch, no upsell — just Memphis business owners sharing what's working with AI, asking questions, and learning together. It's the best way to see if AI automation makes sense for your business before committing to anything."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://www.weaddbots.com/#BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.weaddbots.com/#FAQPage",
+      "isPartOf": { "@id": "https://www.weaddbots.com/#WebPage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does AI automation actually look like for a small business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI automation for small businesses usually starts with one specific friction point — like responding to leads faster, eliminating a repetitive data entry task, or connecting two tools that don't talk to each other. We use platforms like Zapier, GoHighLevel, and Google Workspace to build lightweight automations that run in the background. No custom software development, no IT department required. Most businesses see their first automation working within a week or two."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does AI automation consulting cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We start with a free AI assessment to identify your biggest friction points. Discovery and strategy sessions are $300/hour, and custom implementation projects typically start at $2,000. We don't do retainers unless results warrant it. The goal is practical wins that pay for themselves quickly — not ongoing consulting fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to replace my current tools and systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not usually — and that's by design. Our approach starts by layering smart automations on top of what you already use. If you run your business on Google Workspace, QuickBooks, a CRM, or even spreadsheets — we work with those tools first. A rip-and-replace might make sense down the road, but it's never our first recommendation. We connect and enhance what's already working."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to see results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most clients see their first working automation within the first week. Simple lead response automations can be live in a day. More complex multi-step workflows typically take two to four weeks. We focus on delivering practical 'first wins' fast — not months of planning and promises."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Memphis AI Meetup really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, completely free. We host weekly in-person AI meetups at rotating locations across the Memphis metro area. No pitch, no upsell — just Memphis business owners sharing what's working with AI, asking questions, and learning together. It's the best way to see if AI automation makes sense for your business before committing to anything."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.weaddbots.com/#WebPage",
+      "name": "WeAddBots — AI Automation for Memphis Businesses",
+      "url": "https://www.weaddbots.com/",
+      "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+      "breadcrumb": { "@id": "https://www.weaddbots.com/#BreadcrumbList" },
+      "about": { "@id": "https://www.weaddbots.com/#organization" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".answer-block", ".hero-subtitle"]
+      },
+      "description": "WeAddBots helps established Memphis businesses remove daily operational friction with simple AI-powered automations, without replacing existing systems. Founded by Scott Finney, WeAddBots delivers practical first wins in days or weeks, not months. Free AI assessment and weekly Memphis AI Meetups available."
     }
   ]
-}
-</script>
-<!-- Schema.org — Speakable -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "WeAddBots — AI Automation for Memphis Businesses",
-  "url": "https://www.weaddbots.com/",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".answer-block", ".hero-subtitle"]
-  },
-  "description": "WeAddBots helps established Memphis businesses remove daily operational friction with simple AI-powered automations, without replacing existing systems. Founded by Scott Finney, WeAddBots delivers practical first wins in days or weeks, not months. Free AI assessment and weekly Memphis AI Meetups available."
 }
 </script>
 </head>
@@ -430,7 +417,7 @@
 </section>
 
 <!-- Freshness Signal -->
-<div class="freshness">Last updated: April 26, 2026 <!-- Updated by Claude AI agent --></div>
+<div class="freshness">Last updated: May 12, 2026</div>
 
 <!-- Footer -->
 <footer class="footer">

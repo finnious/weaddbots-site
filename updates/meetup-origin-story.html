@@ -25,46 +25,60 @@
 
     <link rel="stylesheet" href="/styles.css">
 
-    <!-- Schema.org — Article -->
+    <!-- Schema.org — @graph -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Zero Attendees at Meetup #1 — How the Memphis AI Meetup Started",
-        "description": "The first Memphis AI Meetup had zero attendees. Scott Finney showed up anyway. Here's the origin story of Memphis's weekly AI meetup for business owners.",
-        "datePublished": "2026-04-27",
-        "dateModified": "2026-04-27",
-        "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
-        "publisher": { "@id": "https://www.weaddbots.com/#organization" },
-        "mainEntityOfPage": "https://www.weaddbots.com/updates/meetup-origin-story",
-        "keywords": ["Memphis AI Meetup", "AI automation", "Memphis business owners", "community building"],
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
-    }
-    </script>
-
-    <!-- Schema.org — BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.weaddbots.com/"
+                "@type": "Article",
+                "@id": "https://www.weaddbots.com/updates/meetup-origin-story#Article",
+                "headline": "Zero Attendees at Meetup #1 — How the Memphis AI Meetup Started",
+                "description": "The first Memphis AI Meetup had zero attendees. Scott Finney showed up anyway. Here's the origin story of Memphis's weekly AI meetup for business owners.",
+                "datePublished": "2026-04-27",
+                "dateModified": "2026-05-12",
+                "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
+                "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+                "mainEntityOfPage": "https://www.weaddbots.com/updates/meetup-origin-story",
+                "breadcrumb": { "@id": "https://www.weaddbots.com/updates/meetup-origin-story#BreadcrumbList" },
+                "keywords": ["Memphis AI Meetup", "AI automation", "Memphis business owners", "community building"],
+                "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Updates",
-                "item": "https://www.weaddbots.com/updates/"
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/updates/meetup-origin-story#BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.weaddbots.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Updates",
+                        "item": "https://www.weaddbots.com/updates/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Zero Attendees at Meetup #1",
+                        "item": "https://www.weaddbots.com/updates/meetup-origin-story"
+                    }
+                ]
             },
             {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Zero Attendees at Meetup #1",
-                "item": "https://www.weaddbots.com/updates/meetup-origin-story"
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
+            },
+            {
+                "@type": "Person",
+                "@id": "https://www.creatingvaluellc.com/about#scott-finney",
+                "name": "Scott Finney",
+                "url": "https://www.creatingvaluellc.com/about"
             }
         ]
     }

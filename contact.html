@@ -20,92 +20,104 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
 <link rel="stylesheet" href="/styles.css">
-<!-- Schema.org — ProfessionalService -->
+<!-- Schema.org — Unified @graph -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://www.weaddbots.com/#profservice",
-  "name": "WeAddBots",
-  "legalName": "Creating Value LLC",
-  "url": "https://www.weaddbots.com",
-  "description": "AI automation consulting for Memphis-area small and mid-sized businesses. We help established businesses remove daily operational friction with simple, AI-powered automations — without ripping out existing systems.",
-  "image": "https://www.weaddbots.com/favicon.svg",
-  "priceRange": "$$",
-  "areaServed": [
-    { "@type": "City", "name": "Memphis", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
-    { "@type": "City", "name": "Collierville", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
-    { "@type": "City", "name": "Germantown", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
-    { "@type": "City", "name": "Olive Branch", "containedInPlace": { "@type": "State", "name": "Mississippi" } }
-  ],
-  "founder": { "@id": "https://www.weaddbots.com/#founder" },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer service",
-    "email": "scott@weaddbots.com",
-    "availableLanguage": "English",
-    "areaServed": "Memphis metropolitan area"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/weaddbots/",
-    "https://www.linkedin.com/in/scottfinney/"
-  ]
-}
-</script>
-<!-- Schema.org — FAQPage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "What is the free AI assessment?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The free AI assessment is a quick review of your business operations to identify where simple AI automations could save you time, reduce errors, or speed up response times. You tell us about your daily workflow, and we'll point out the highest-impact opportunities — no commitment, no pitch." }
+      "@type": "ContactPage",
+      "@id": "https://www.weaddbots.com/contact#WebPage",
+      "name": "Contact WeAddBots",
+      "url": "https://www.weaddbots.com/contact",
+      "mainEntity": { "@id": "https://www.weaddbots.com/#organization" },
+      "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+      "breadcrumb": { "@id": "https://www.weaddbots.com/contact#BreadcrumbList" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".answer-block", ".hero-subtitle"]
+      },
+      "description": "Get a free AI assessment for your Memphis business. Find where simple automations can save time and remove friction."
     },
     {
-      "@type": "Question",
-      "name": "What happens after I submit the contact form?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Every submission gets reviewed personally. You'll receive a response with initial observations and a link to schedule a free 20-minute call. If you had a general question, you'll get a direct answer." }
+      "@type": "ProfessionalService",
+      "@id": "https://www.weaddbots.com/#profservice",
+      "name": "WeAddBots",
+      "legalName": "Creating Value LLC",
+      "url": "https://www.weaddbots.com",
+      "description": "AI automation consulting for Memphis-area small and mid-sized businesses. We help established businesses remove daily operational friction with simple, AI-powered automations — without ripping out existing systems.",
+      "image": "https://www.weaddbots.com/favicon.svg",
+      "priceRange": "$$",
+      "areaServed": [
+        { "@type": "City", "name": "Memphis", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
+        { "@type": "City", "name": "Collierville", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
+        { "@type": "City", "name": "Germantown", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
+        { "@type": "City", "name": "Olive Branch", "containedInPlace": { "@type": "State", "name": "Mississippi" } }
+      ],
+      "founder": { "@id": "https://www.weaddbots.com/#founder" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "scott@weaddbots.com",
+        "availableLanguage": "English",
+        "areaServed": "Memphis metropolitan area"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/weaddbots/",
+        "https://www.linkedin.com/in/scottfinney/"
+      ]
     },
     {
-      "@type": "Question",
-      "name": "How much does it cost to work with WeAddBots?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The AI assessment and initial 20-minute discovery call are free. Beyond that, paid discovery sessions start at $300/hour and custom implementation projects typically start at $2,000. There are no retainers — you pay for results, not for keeping us on the clock." }
+      "@type": "FAQPage",
+      "@id": "https://www.weaddbots.com/contact#FAQPage",
+      "isPartOf": { "@id": "https://www.weaddbots.com/contact#WebPage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the free AI assessment?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The free AI assessment is a quick review of your business operations to identify where simple AI automations could save you time, reduce errors, or speed up response times. You tell us about your daily workflow, and we'll point out the highest-impact opportunities — no commitment, no pitch." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after I submit the contact form?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Every submission gets reviewed personally. You'll receive a response with initial observations and a link to schedule a free 20-minute call. If you had a general question, you'll get a direct answer." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost to work with WeAddBots?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The AI assessment and initial 20-minute discovery call are free. Beyond that, paid discovery sessions start at $300/hour and custom implementation projects typically start at $2,000. There are no retainers — you pay for results, not for keeping us on the clock." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need technical skills to use AI automation?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not at all. The whole point of WeAddBots is to handle the technical side so you don't have to. We build automations that work with your existing tools — Google Workspace, your CRM, your email — so your daily workflow gets simpler, not more complicated." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is WeAddBots only for Memphis businesses?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Our in-person meetups and community are Memphis-focused, but we work with US-based businesses and the AI automation work itself can be done remotely. We're based out of Memphis, TN." }
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Do I need technical skills to use AI automation?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Not at all. The whole point of WeAddBots is to handle the technical side so you don't have to. We build automations that work with your existing tools — Google Workspace, your CRM, your email — so your daily workflow gets simpler, not more complicated." }
+      "@type": "BreadcrumbList",
+      "@id": "https://www.weaddbots.com/contact#BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.weaddbots.com/contact" }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Is WeAddBots only for Memphis businesses?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Our in-person meetups and community are Memphis-focused, but we work with US-based businesses and the AI automation work itself can be done remotely. We're based out of Memphis, TN." }
+      "@type": "Organization",
+      "@id": "https://www.weaddbots.com/#organization",
+      "name": "WeAddBots",
+      "url": "https://www.weaddbots.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.weaddbots.com/#founder",
+      "name": "Scott Finney"
     }
-  ]
-}
-</script>
-<!-- Schema.org — ContactPage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "name": "Contact WeAddBots",
-  "url": "https://www.weaddbots.com/contact",
-  "mainEntity": {"@id": "https://www.weaddbots.com/#organization"},
-  "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]},
-  "description": "Get a free AI assessment for your Memphis business. Find where simple automations can save time and remove friction."
-}
-</script>
-<!-- Schema.org — BreadcrumbList -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.weaddbots.com/contact" }
   ]
 }
 </script>
@@ -350,7 +362,7 @@
 </section>
 
 <!-- Freshness Signal -->
-<div class="freshness">Last updated: April 3, 2026</div>
+<div class="freshness">Last updated: May 12, 2026</div>
 
 <!-- Footer -->
 <footer class="footer">

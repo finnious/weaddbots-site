@@ -23,162 +23,147 @@
 
     <link rel="stylesheet" href="/styles.css">
 
-    <!-- Schema.org — Product -->
+    <!-- Schema.org — Unified @graph -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Product",
-        "@id": "https://www.weaddbots.com/rebecca#product",
-        "name": "Rebecca AI Receptionist",
-        "description": "An AI-powered receptionist that handles inbound calls, gathers information, qualifies leads, filters spam, and routes opportunities — so nothing falls through the cracks.",
-        "brand": {
-            "@id": "https://www.weaddbots.com/#organization"
-        },
-        "offers": [
+        "@graph": [
             {
-                "@type": "Offer",
-                "name": "Starter",
-                "price": "297",
-                "priceCurrency": "USD",
-                "priceSpecification": {
-                    "@type": "UnitPriceSpecification",
-                    "price": "297",
-                    "priceCurrency": "USD",
-                    "billingDuration": "P1M"
-                },
-                "description": "Core call handling, lead qualification, spam filtering, weekly email summaries",
-                "availability": "https://schema.org/InStock",
-                "url": "https://www.weaddbots.com/rebecca"
-            },
-            {
-                "@type": "Offer",
-                "name": "Standard",
-                "price": "397",
-                "priceCurrency": "USD",
-                "priceSpecification": {
-                    "@type": "UnitPriceSpecification",
-                    "price": "397",
-                    "priceCurrency": "USD",
-                    "billingDuration": "P1M"
-                },
-                "description": "Everything in Starter plus real-time lead notifications, monthly performance dashboard, and custom routing rules",
-                "availability": "https://schema.org/InStock",
-                "url": "https://www.weaddbots.com/rebecca"
-            },
-            {
-                "@type": "Offer",
-                "name": "Enhanced",
-                "price": "497",
-                "priceCurrency": "USD",
-                "priceSpecification": {
-                    "@type": "UnitPriceSpecification",
-                    "price": "497",
-                    "priceCurrency": "USD",
-                    "billingDuration": "P1M"
-                },
-                "description": "Everything in Standard plus competitor monitoring and advanced market intelligence",
-                "availability": "https://schema.org/InStock",
-                "url": "https://www.weaddbots.com/rebecca"
-            }
-        ],
-        "category": "AI Automation",
-        "isRelatedTo": {
-            "@type": "Service",
-            "@id": "https://www.weaddbots.com/services#lead-response"
-        }
-    }
-    </script>
-
-    <!-- Schema.org — FAQPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What does Rebecca AI Receptionist actually do?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Rebecca is an AI-powered receptionist that answers your inbound calls, gathers key information from callers, qualifies leads based on your criteria, filters out spam and time-wasters, and routes real opportunities to the right person. She provides weekly summary reports and real-time notifications for qualified leads."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How much does Rebecca cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Rebecca starts at $297/month for core call handling, lead qualification, and weekly summaries. The Standard plan at $397/month adds real-time notifications and a monthly performance dashboard. The Enhanced plan at $497/month includes competitor monitoring. No long-term contracts — month to month."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How long does it take to set up Rebecca?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Setup takes a single 30-minute consultation where we configure Rebecca's parameters, define your information gathering criteria, and set up routing rules. She can be answering your calls the same day."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Will callers know they're talking to AI?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Rebecca is designed to have natural, professional conversations. She gathers the information you need, asks the right qualifying questions, and routes callers appropriately. Most callers experience it as a friendly, efficient receptionist interaction."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I try Rebecca before committing?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes — Rebecca already answers the phone for our sister company, Creating Value LLC. You can call and experience her in action right now. You can also see a live demo at any of our weekly Memphis AI Meetups."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Schema.org — BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.weaddbots.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Services",
-                "item": "https://www.weaddbots.com/services"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
+                "@type": "Product",
+                "@id": "https://www.weaddbots.com/rebecca#product",
                 "name": "Rebecca AI Receptionist",
-                "item": "https://www.weaddbots.com/rebecca"
+                "description": "An AI-powered receptionist that handles inbound calls, gathers information, qualifies leads, filters spam, and routes opportunities — so nothing falls through the cracks.",
+                "brand": { "@id": "https://www.weaddbots.com/#organization" },
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Starter",
+                        "price": "297",
+                        "priceCurrency": "USD",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "297",
+                            "priceCurrency": "USD",
+                            "billingDuration": "P1M"
+                        },
+                        "description": "Core call handling, lead qualification, spam filtering, weekly email summaries",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.weaddbots.com/rebecca"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Standard",
+                        "price": "397",
+                        "priceCurrency": "USD",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "397",
+                            "priceCurrency": "USD",
+                            "billingDuration": "P1M"
+                        },
+                        "description": "Everything in Starter plus real-time lead notifications, monthly performance dashboard, and custom routing rules",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.weaddbots.com/rebecca"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Enhanced",
+                        "price": "497",
+                        "priceCurrency": "USD",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "497",
+                            "priceCurrency": "USD",
+                            "billingDuration": "P1M"
+                        },
+                        "description": "Everything in Standard plus competitor monitoring and advanced market intelligence",
+                        "availability": "https://schema.org/InStock",
+                        "url": "https://www.weaddbots.com/rebecca"
+                    }
+                ],
+                "category": "AI Automation",
+                "isRelatedTo": {
+                    "@type": "Service",
+                    "@id": "https://www.weaddbots.com/services#lead-response"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.weaddbots.com/rebecca#FAQPage",
+                "isPartOf": { "@id": "https://www.weaddbots.com/rebecca#WebPage" },
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What does Rebecca AI Receptionist actually do?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Rebecca is an AI-powered receptionist that answers your inbound calls, gathers key information from callers, qualifies leads based on your criteria, filters out spam and time-wasters, and routes real opportunities to the right person. She provides weekly summary reports and real-time notifications for qualified leads."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does Rebecca cost?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Rebecca starts at $297/month for core call handling, lead qualification, and weekly summaries. The Standard plan at $397/month adds real-time notifications and a monthly performance dashboard. The Enhanced plan at $497/month includes competitor monitoring. No long-term contracts — month to month."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does it take to set up Rebecca?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Setup takes a single 30-minute consultation where we configure Rebecca's parameters, define your information gathering criteria, and set up routing rules. She can be answering your calls the same day."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Will callers know they're talking to AI?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Rebecca is designed to have natural, professional conversations. She gathers the information you need, asks the right qualifying questions, and routes callers appropriately. Most callers experience it as a friendly, efficient receptionist interaction."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I try Rebecca before committing?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes — Rebecca already answers the phone for our sister company, Creating Value LLC. You can call and experience her in action right now. You can also see a live demo at any of our weekly Memphis AI Meetups."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": "https://www.weaddbots.com/rebecca#WebPage",
+                "name": "Rebecca AI Receptionist — WeAddBots",
+                "url": "https://www.weaddbots.com/rebecca",
+                "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+                "breadcrumb": { "@id": "https://www.weaddbots.com/rebecca#BreadcrumbList" },
+                "about": { "@id": "https://www.weaddbots.com/rebecca#product" },
+                "speakable": {
+                    "@type": "SpeakableSpecification",
+                    "cssSelector": [".answer-block", ".hero-subtitle"]
+                },
+                "description": "Rebecca is an AI-powered receptionist that answers inbound calls 24/7, qualifies leads, filters spam, and routes opportunities. Setup takes 30 minutes. Pricing starts at $297 per month with no long-term contracts. Rebecca is live and taking calls now for WeAddBots' sister company."
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/rebecca#BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.weaddbots.com/services" },
+                    { "@type": "ListItem", "position": 3, "name": "Rebecca AI Receptionist", "item": "https://www.weaddbots.com/rebecca" }
+                ]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
             }
         ]
-    }
-    </script>
-
-    <!-- Schema.org — Speakable -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Rebecca AI Receptionist — WeAddBots",
-        "url": "https://www.weaddbots.com/rebecca",
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".answer-block", ".hero-subtitle"]
-        },
-        "description": "Rebecca is an AI-powered receptionist that answers inbound calls 24/7, qualifies leads, filters spam, and routes opportunities. Setup takes 30 minutes. Pricing starts at $297 per month with no long-term contracts. Rebecca is live and taking calls now for WeAddBots' sister company."
     }
     </script>
 </head>
@@ -502,7 +487,7 @@
     </section>
 
     <!-- Freshness Signal -->
-    <div class="freshness">Last updated: April 3, 2026</div>
+    <div class="freshness">Last updated: May 12, 2026</div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -517,6 +502,7 @@
                 <a href="/newsletter">Newsletter</a>
                 <a href="/about">About</a>
                 <a href="/services">Services</a>
+                <a href="/rebecca">Rebecca AI</a>
                 <a href="/events/">Events</a>
                 <a href="/locations/">Locations</a>
                 <a href="/updates/">Updates</a>

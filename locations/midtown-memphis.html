@@ -25,45 +25,51 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "AI Automation Consulting in Midtown Memphis",
-        "url": "https://www.weaddbots.com/locations/midtown-memphis",
-        "description": "AI automation consulting and weekly AI meetups for Midtown Memphis businesses. Lead response, task automation, and smart workflows.",
-        "publisher": {"@id": "https://www.weaddbots.com/#organization"},
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "@id": "https://www.weaddbots.com/#organization",
-        "name": "WeAddBots",
-        "description": "AI automation consulting and weekly AI meetups for Midtown Memphis businesses",
-        "url": "https://www.weaddbots.com",
-        "areaServed": {
-            "@type": "Place",
-            "name": "Midtown Memphis",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Memphis",
-                "addressRegion": "TN",
-                "addressCountry": "US"
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": "https://www.weaddbots.com/locations/midtown-memphis#WebPage",
+                "name": "AI Automation Consulting in Midtown Memphis",
+                "url": "https://www.weaddbots.com/locations/midtown-memphis",
+                "description": "AI automation consulting and weekly AI meetups for Midtown Memphis businesses. Lead response, task automation, and smart workflows.",
+                "publisher": {"@id": "https://www.weaddbots.com/#organization"},
+                "breadcrumb": {"@id": "https://www.weaddbots.com/locations/midtown-memphis#BreadcrumbList"},
+                "about": {"@id": "https://www.weaddbots.com/locations/midtown-memphis#LocalBusiness"},
+                "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
+            },
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://www.weaddbots.com/locations/midtown-memphis#LocalBusiness",
+                "name": "WeAddBots",
+                "description": "AI automation consulting and weekly AI meetups for Midtown Memphis businesses",
+                "url": "https://www.weaddbots.com",
+                "areaServed": {
+                    "@type": "Place",
+                    "name": "Midtown Memphis",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Memphis",
+                        "addressRegion": "TN",
+                        "addressCountry": "US"
+                    }
+                },
+                "parentOrganization": {"@id": "https://www.creatingvaluellc.com/#organization"}
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/locations/midtown-memphis#BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/"},
+                    {"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.weaddbots.com/locations/"},
+                    {"@type": "ListItem", "position": 3, "name": "Midtown Memphis", "item": "https://www.weaddbots.com/locations/midtown-memphis"}
+                ]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
             }
-        },
-        "parentOrganization": { "@id": "https://www.creatingvaluellc.com/#organization" }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.weaddbots.com/locations/" },
-            { "@type": "ListItem", "position": 3, "name": "Midtown Memphis", "item": "https://www.weaddbots.com/locations/midtown-memphis" }
         ]
     }
     </script>
@@ -184,7 +190,7 @@
         </div>
     </section>
 
-    <div class="freshness">Last updated: April 27, 2026</div>
+    <div class="freshness">Last updated: May 12, 2026</div>
 
     <footer class="footer">
         <div class="footer-grid">

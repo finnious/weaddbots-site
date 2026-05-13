@@ -25,46 +25,60 @@
 
     <link rel="stylesheet" href="/styles.css">
 
-    <!-- Schema.org — Article -->
+    <!-- Schema.org — @graph -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "129 Pages, Zero Structured Data — Fixed in One Session",
-        "description": "How we built an AI pipeline that generated production-ready schema markup for 129 content pages in about an hour — work that would have taken a senior SEO three weeks by hand.",
-        "datePublished": "2026-05-12",
-        "dateModified": "2026-05-12",
-        "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
-        "publisher": { "@id": "https://www.weaddbots.com/#organization" },
-        "mainEntityOfPage": "https://www.weaddbots.com/updates/schema-pipeline-case-study",
-        "keywords": ["AI automation", "schema markup", "structured data", "content pipeline", "technical SEO automation", "JSON-LD"],
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
-    }
-    </script>
-
-    <!-- Schema.org — BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.weaddbots.com/"
+                "@type": "Article",
+                "@id": "https://www.weaddbots.com/updates/schema-pipeline-case-study#Article",
+                "headline": "129 Pages, Zero Structured Data — Fixed in One Session",
+                "description": "How we built an AI pipeline that generated production-ready schema markup for 129 content pages in about an hour — work that would have taken a senior SEO three weeks by hand.",
+                "datePublished": "2026-05-12",
+                "dateModified": "2026-05-12",
+                "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
+                "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+                "mainEntityOfPage": "https://www.weaddbots.com/updates/schema-pipeline-case-study",
+                "breadcrumb": { "@id": "https://www.weaddbots.com/updates/schema-pipeline-case-study#BreadcrumbList" },
+                "keywords": ["AI automation", "schema markup", "structured data", "content pipeline", "technical SEO automation", "JSON-LD"],
+                "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Updates",
-                "item": "https://www.weaddbots.com/updates/"
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/updates/schema-pipeline-case-study#BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.weaddbots.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Updates",
+                        "item": "https://www.weaddbots.com/updates/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "129 Pages, Zero Structured Data",
+                        "item": "https://www.weaddbots.com/updates/schema-pipeline-case-study"
+                    }
+                ]
             },
             {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "129 Pages, Zero Structured Data",
-                "item": "https://www.weaddbots.com/updates/schema-pipeline-case-study"
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
+            },
+            {
+                "@type": "Person",
+                "@id": "https://www.creatingvaluellc.com/about#scott-finney",
+                "name": "Scott Finney",
+                "url": "https://www.creatingvaluellc.com/about"
             }
         ]
     }

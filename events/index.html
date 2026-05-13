@@ -23,75 +23,74 @@
 
     <link rel="stylesheet" href="/styles.css">
 
-    <!-- Schema.org — BreadcrumbList -->
+    <!-- Schema.org — @graph -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.weaddbots.com/"
+                "@type": "WebPage",
+                "@id": "https://www.weaddbots.com/events/#WebPage",
+                "name": "Memphis AI Meetups & Events",
+                "url": "https://www.weaddbots.com/events/",
+                "description": "Free weekly in-person AI meetups for Memphis business owners. Rotating locations, practical conversations, no pitch.",
+                "publisher": {"@id": "https://www.weaddbots.com/#organization"},
+                "breadcrumb": {"@id": "https://www.weaddbots.com/events/#BreadcrumbList"},
+                "about": {"@id": "https://www.weaddbots.com/events/#meetup-series"},
+                "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Events",
-                "item": "https://www.weaddbots.com/events/"
+                "@type": "EventSeries",
+                "@id": "https://www.weaddbots.com/events/#meetup-series",
+                "name": "WeAddBots Memphis AI Meetup",
+                "description": "Free weekly in-person AI meetup for Memphis business owners. Practical conversations about what's working, what's not, and what to try next.",
+                "url": "https://www.weaddbots.com/events/memphis-ai-meetup",
+                "eventSchedule": {
+                    "@type": "Schedule",
+                    "repeatFrequency": "P1W",
+                    "byDay": "https://schema.org/Thursday",
+                    "startDate": "2024-12-01",
+                    "scheduleTimezone": "America/Chicago"
+                },
+                "location": {
+                    "@type": "City",
+                    "name": "Memphis",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "Memphis",
+                        "addressRegion": "TN",
+                        "addressCountry": "US"
+                    }
+                },
+                "organizer": {"@id": "https://www.weaddbots.com/#organization"},
+                "isAccessibleForFree": true,
+                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://www.weaddbots.com/events/#BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.weaddbots.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Events",
+                        "item": "https://www.weaddbots.com/events/"
+                    }
+                ]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.weaddbots.com/#organization",
+                "name": "WeAddBots",
+                "url": "https://www.weaddbots.com"
             }
         ]
-    }
-    </script>
-
-    <!-- Schema.org — WebPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Memphis AI Meetups & Events",
-        "url": "https://www.weaddbots.com/events/",
-        "description": "Free weekly in-person AI meetups for Memphis business owners. Rotating locations, practical conversations, no pitch.",
-        "publisher": {"@id": "https://www.weaddbots.com/#organization"},
-        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
-    }
-    </script>
-
-    <!-- Schema.org — EventSeries -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EventSeries",
-        "@id": "https://www.weaddbots.com/events/#meetup-series",
-        "name": "WeAddBots Memphis AI Meetup",
-        "description": "Free weekly in-person AI meetup for Memphis business owners. Practical conversations about what's working, what's not, and what to try next.",
-        "url": "https://www.weaddbots.com/events/memphis-ai-meetup",
-        "eventSchedule": {
-            "@type": "Schedule",
-            "repeatFrequency": "P1W",
-            "byDay": "https://schema.org/Thursday",
-            "startDate": "2024-12-01",
-            "scheduleTimezone": "America/Chicago"
-        },
-        "location": {
-            "@type": "City",
-            "name": "Memphis",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Memphis",
-                "addressRegion": "TN",
-                "addressCountry": "US"
-            }
-        },
-        "organizer": {
-            "@type": "Organization",
-            "name": "WeAddBots",
-            "@id": "https://www.weaddbots.com/#organization",
-            "url": "https://www.weaddbots.com"
-        },
-        "isAccessibleForFree": true,
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
     }
     </script>
 </head>
@@ -243,7 +242,7 @@
     </section>
 
     <!-- Freshness Signal -->
-    <div class="freshness">Last updated: April 26, 2026</div>
+    <div class="freshness">Last updated: May 12, 2026</div>
 
     <!-- Footer -->
     <footer class="footer">

@@ -14,8 +14,36 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
 <link rel="stylesheet" href="/styles.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy","url":"https://www.weaddbots.com/privacy","description":"WeAddBots privacy policy. How we collect, use, and protect your information.","publisher":{"@id":"https://www.weaddbots.com/#organization"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.weaddbots.com/"},{"@type":"ListItem","position":2,"name":"Privacy Policy","item":"https://www.weaddbots.com/privacy"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.weaddbots.com/privacy#WebPage",
+      "name": "Privacy Policy",
+      "url": "https://www.weaddbots.com/privacy",
+      "description": "WeAddBots privacy policy. How we collect, use, and protect your information.",
+      "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+      "breadcrumb": { "@id": "https://www.weaddbots.com/privacy#BreadcrumbList" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.weaddbots.com/privacy#BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.weaddbots.com/privacy" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.weaddbots.com/#organization",
+      "name": "WeAddBots",
+      "url": "https://www.weaddbots.com"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -70,7 +98,7 @@
   </div>
 </section>
 
-<div class="freshness">Last updated: March 16, 2026</div>
+<div class="freshness">Last updated: May 12, 2026</div>
 
 <footer class="footer">
   <div class="footer-grid">
