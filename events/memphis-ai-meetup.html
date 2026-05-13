@@ -42,12 +42,12 @@
       "addressCountry": "US"
     }
   },
-  "organizer": { "@type": "Organization", "@id": "https://www.weaddbots.com/#organization", "name": "WeAddBots", "url": "https://www.weaddbots.com" },
-  "performer": { "@type": "Person", "@id": "https://www.weaddbots.com/#founder", "name": "Scott Finney" },
+  "organizer": { "@id": "https://www.weaddbots.com/#organization" },
+  "performer": { "@id": "https://www.weaddbots.com/#founder" },
   "isAccessibleForFree": true,
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.weaddbots.com/events/memphis-ai-meetup" },
   "image": "https://www.weaddbots.com/favicon.svg",
-  "superEvent": { "@type": "EventSeries", "name": "Memphis AI Meetup — Weekly Series", "description": "Free weekly in-person AI meetups rotating across Memphis metro locations. Hosted by WeAddBots." }
+  "superEvent": { "@id": "https://www.weaddbots.com/events/#meetup-series" }
 }
 </script>
 <!-- Schema.org — FAQPage -->
@@ -381,6 +381,18 @@
   </div>
 </section>
 
+<!-- Post-Meetup CTA -->
+<section class="section bg-white">
+  <div class="section-inner" style="max-width: 700px; text-align: center;">
+    <p class="section-label">Been to a Meetup?</p>
+    <h2 class="section-title">Ready to Go Deeper?</h2>
+    <p>If something from the conversation stuck with you &mdash; a friction point you recognized, a tool you want to try, an automation that would save your team hours &mdash; the next step is a free one-on-one AI assessment. No pitch, just a practical look at where AI fits your business.</p>
+    <div class="mt-24">
+      <a href="/contact" class="btn btn-primary btn-lg">Get a Free AI Assessment &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA Section -->
 <section class="cta-section">
   <h2>Ready to See What AI Can Do for Your Business?</h2>
@@ -407,6 +419,7 @@
       <a href="/newsletter">Newsletter</a>
       <a href="/about">About</a>
       <a href="/services">Services</a>
+      <a href="/rebecca">Rebecca AI</a>
       <a href="/events/">Events</a>
       <a href="/locations/">Locations</a>
       <a href="/updates/">Updates</a><a href="/build-with-me">Build With Me</a><a href="/contact">Contact</a>
