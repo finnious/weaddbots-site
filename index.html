@@ -73,18 +73,34 @@
   "publisher": { "@id": "https://www.weaddbots.com/#organization" }
 }
 </script>
+<!-- Schema.org — Founder (canonical definition for #founder references) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.weaddbots.com/#founder",
+  "name": "Scott Finney",
+  "jobTitle": "Founder",
+  "url": "https://www.creatingvaluellc.com/about",
+  "image": "https://www.weaddbots.com/img/scott-finney.jpg",
+  "worksFor": { "@id": "https://www.weaddbots.com/#organization" },
+  "sameAs": [
+    "https://www.linkedin.com/in/scottfinney/",
+    "https://www.creatingvaluellc.com/about"
+  ],
+  "knowsAbout": ["Artificial Intelligence", "AI Automation", "Business Process Automation"]
+}
+</script>
 <!-- Schema.org — LocalBusiness -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://www.weaddbots.com/#localbusiness",
   "name": "WeAddBots",
   "description": "AI automation consulting and weekly AI meetups for Memphis businesses",
   "url": "https://www.weaddbots.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Scott Finney"
-  },
+  "founder": { "@id": "https://www.weaddbots.com/#founder" },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Memphis",
@@ -95,11 +111,7 @@
     "@type": "Country",
     "name": "United States"
   },
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Creating Value LLC",
-    "url": "https://www.creatingvaluellc.com"
-  }
+  "parentOrganization": { "@id": "https://www.creatingvaluellc.com/#organization" }
 }
 </script>
 <!-- Schema.org — BreadcrumbList -->
@@ -252,6 +264,22 @@
     </div>
     <div class="text-center mt-32">
       <a href="/services" class="btn btn-primary">See How It Works &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- Rebecca — Gateway Product -->
+<section class="section bg-white">
+  <div class="section-inner" style="max-width: 800px;">
+    <p class="section-label">Product</p>
+    <h2 class="section-title">Meet Rebecca &mdash; Your AI Receptionist</h2>
+    <p class="section-subtitle">The fastest way to experience what AI automation can do for your business.</p>
+    <div class="answer-block">
+      <p>Rebecca answers your inbound calls, qualifies leads, filters spam, and routes real opportunities to the right person &mdash; so nothing falls through the cracks. She's live right now answering calls for our sister company. <strong>Call (901) 676-7697 and talk to her yourself.</strong></p>
+      <p>From $297/month. One 30-minute setup call. Live the same day. No contracts.</p>
+    </div>
+    <div class="text-center mt-24">
+      <a href="/rebecca" class="btn btn-primary btn-lg">Learn More About Rebecca &rarr;</a>
     </div>
   </div>
 </section>
@@ -417,6 +445,7 @@
       <a href="/newsletter">Newsletter</a>
       <a href="/about">About</a>
       <a href="/services">Services</a>
+      <a href="/rebecca">Rebecca AI</a>
       <a href="/events/">Events</a>
       <a href="/locations/">Locations</a>
       <a href="/updates/">Updates</a><a href="/build-with-me">Build With Me</a><a href="/contact">Contact</a>

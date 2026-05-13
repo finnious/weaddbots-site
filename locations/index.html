@@ -22,6 +22,19 @@
 
     <link rel="stylesheet" href="/styles.css">
 
+    <!-- Schema.org — WebPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Memphis-Area Locations We Serve",
+        "url": "https://www.weaddbots.com/locations/",
+        "description": "WeAddBots serves businesses across the Memphis metro area with AI automation consulting and free weekly meetups in 6 locations.",
+        "publisher": {"@id": "https://www.weaddbots.com/#organization"},
+        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
+    }
+    </script>
+
     <!-- Schema.org — LocalBusiness (multi-location) -->
     <script type="application/ld+json">
     {
@@ -44,6 +57,24 @@
             "name": "Creating Value LLC",
             "@id": "https://www.creatingvaluellc.com/#organization"
         }
+    }
+    </script>
+
+    <!-- Schema.org — ItemList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "WeAddBots Memphis-Area Service Locations",
+        "numberOfItems": 6,
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Midtown Memphis", "url": "https://www.weaddbots.com/locations/midtown-memphis"},
+            {"@type": "ListItem", "position": 2, "name": "Downtown Memphis", "url": "https://www.weaddbots.com/locations/downtown-memphis"},
+            {"@type": "ListItem", "position": 3, "name": "Germantown", "url": "https://www.weaddbots.com/locations/germantown"},
+            {"@type": "ListItem", "position": 4, "name": "Collierville", "url": "https://www.weaddbots.com/locations/collierville"},
+            {"@type": "ListItem", "position": 5, "name": "East Memphis", "url": "https://www.weaddbots.com/locations/east-memphis"},
+            {"@type": "ListItem", "position": 6, "name": "Olive Branch, MS", "url": "https://www.weaddbots.com/locations/olive-branch"}
+        ]
     }
     </script>
 
@@ -161,6 +192,7 @@
                 <a href="/newsletter">Newsletter</a>
                 <a href="/about">About</a>
                 <a href="/services">Services</a>
+                <a href="/rebecca">Rebecca AI</a>
                 <a href="/events/">Events</a>
                 <a href="/locations/">Locations</a>
                 <a href="/updates/">Updates</a>
