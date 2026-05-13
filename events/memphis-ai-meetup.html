@@ -20,59 +20,87 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
 <link rel="stylesheet" href="/styles.css">
-<!-- Schema.org — Event (May 14) -->
+<!-- Schema.org — @graph -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Event",
-  "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#event-2026-05-14",
-  "name": "Memphis AI Meetup — May 14, 2026",
-  "description": "Free weekly in-person AI meetup for Memphis business owners. Practical conversations about AI automation — what's working, what's not, and how to get started. No pitch, no upsell.",
-  "startDate": "2026-05-14T10:15:00-05:00",
-  "endDate": "2026-05-14T10:45:00-05:00",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": "Germantown",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Germantown",
-      "addressRegion": "TN",
-      "addressCountry": "US"
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#WebPage",
+      "name": "Memphis AI Meetup — Free Weekly Events",
+      "url": "https://www.weaddbots.com/events/memphis-ai-meetup",
+      "description": "The Memphis AI Meetup is a free weekly in-person gathering for Memphis business owners interested in AI automation. 30 minutes over coffee, rotating locations across the Memphis metro area. No pitch, no upsell. Hosted by Scott Finney of WeAddBots. Over 30 business owners have attended.",
+      "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+      "about": { "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#event-2026-05-14" },
+      "breadcrumb": { "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#BreadcrumbList" },
+      "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"] }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#event-2026-05-14",
+      "name": "Memphis AI Meetup — May 14, 2026",
+      "description": "Free weekly in-person AI meetup for Memphis business owners. Practical conversations about AI automation — what's working, what's not, and how to get started. No pitch, no upsell.",
+      "startDate": "2026-05-14T10:15:00-05:00",
+      "endDate": "2026-05-14T10:45:00-05:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Germantown",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Germantown",
+          "addressRegion": "TN",
+          "addressCountry": "US"
+        }
+      },
+      "organizer": { "@id": "https://www.weaddbots.com/#organization" },
+      "performer": { "@id": "https://www.weaddbots.com/#founder" },
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.weaddbots.com/events/memphis-ai-meetup" },
+      "image": "https://www.weaddbots.com/favicon.svg",
+      "superEvent": { "@id": "https://www.weaddbots.com/events/#meetup-series" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#FAQPage",
+      "isPartOf": { "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#WebPage" },
+      "mainEntity": [
+        { "@type": "Question", "name": "Is the Memphis AI Meetup really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, always. There's no admission fee, no hidden costs, and no upsell. The meetups are a community resource — not a sales funnel. Just show up, grab a coffee, and join the conversation." } },
+        { "@type": "Question", "name": "Do I need to know anything about AI to attend?", "acceptedAnswer": { "@type": "Answer", "text": "No — most people are somewhere in the middle. Some have built automations, some just started playing with ChatGPT last week. The mix is what makes it useful. You'll hear what others are doing and leave with ideas for your own business." } },
+        { "@type": "Question", "name": "Where are the meetups held?", "acceptedAnswer": { "@type": "Answer", "text": "The meetups rotate weekly across Memphis metro locations including Collierville, Germantown, East Memphis, Midtown, Downtown, and Olive Branch. The specific venue for each week is shared when you RSVP." } },
+        { "@type": "Question", "name": "Do I need to RSVP or can I just show up?", "acceptedAnswer": { "@type": "Answer", "text": "RSVPing helps us plan for the right space and lets us send you reminders and any last-minute updates. But if you forget to RSVP and want to drop in, you're still welcome." } },
+        { "@type": "Question", "name": "What kind of businesses attend the meetup?", "acceptedAnswer": { "@type": "Answer", "text": "All kinds — restaurants, professional services, retail, real estate, healthcare practices, marketing agencies, and more. The common thread is that everyone is a business owner or operator in the Memphis area who wants to understand how AI can help their specific business." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://www.weaddbots.com/events/" },
+        { "@type": "ListItem", "position": 3, "name": "Memphis AI Meetup", "item": "https://www.weaddbots.com/events/memphis-ai-meetup" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.weaddbots.com/#organization",
+      "name": "WeAddBots",
+      "url": "https://www.weaddbots.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.weaddbots.com/#founder",
+      "name": "Scott Finney",
+      "url": "https://www.creatingvaluellc.com/about"
+    },
+    {
+      "@type": "EventSeries",
+      "@id": "https://www.weaddbots.com/events/#meetup-series",
+      "name": "Memphis AI Meetup — Weekly Series",
+      "description": "Free weekly in-person AI meetups rotating across Memphis metro locations. Hosted by WeAddBots."
     }
-  },
-  "organizer": { "@id": "https://www.weaddbots.com/#organization" },
-  "performer": { "@id": "https://www.weaddbots.com/#founder" },
-  "isAccessibleForFree": true,
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.weaddbots.com/events/memphis-ai-meetup" },
-  "image": "https://www.weaddbots.com/favicon.svg",
-  "superEvent": { "@id": "https://www.weaddbots.com/events/#meetup-series" }
-}
-</script>
-<!-- Schema.org — FAQPage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Is the Memphis AI Meetup really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, always. There's no admission fee, no hidden costs, and no upsell. The meetups are a community resource — not a sales funnel. Just show up, grab a coffee, and join the conversation." } },
-    { "@type": "Question", "name": "Do I need to know anything about AI to attend?", "acceptedAnswer": { "@type": "Answer", "text": "No — most people are somewhere in the middle. Some have built automations, some just started playing with ChatGPT last week. The mix is what makes it useful. You'll hear what others are doing and leave with ideas for your own business." } },
-    { "@type": "Question", "name": "Where are the meetups held?", "acceptedAnswer": { "@type": "Answer", "text": "The meetups rotate weekly across Memphis metro locations including Collierville, Germantown, East Memphis, Midtown, Downtown, and Olive Branch. The specific venue for each week is shared when you RSVP." } },
-    { "@type": "Question", "name": "Do I need to RSVP or can I just show up?", "acceptedAnswer": { "@type": "Answer", "text": "RSVPing helps us plan for the right space and lets us send you reminders and any last-minute updates. But if you forget to RSVP and want to drop in, you're still welcome." } },
-    { "@type": "Question", "name": "What kind of businesses attend the meetup?", "acceptedAnswer": { "@type": "Answer", "text": "All kinds — restaurants, professional services, retail, real estate, healthcare practices, marketing agencies, and more. The common thread is that everyone is a business owner or operator in the Memphis area who wants to understand how AI can help their specific business." } }
-  ]
-}
-</script>
-<!-- Schema.org — BreadcrumbList -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://www.weaddbots.com/events/" },
-    { "@type": "ListItem", "position": 3, "name": "Memphis AI Meetup", "item": "https://www.weaddbots.com/events/memphis-ai-meetup" }
   ]
 }
 </script>
@@ -94,17 +122,6 @@
 .notify-checkbox input[type="checkbox"] { width:18px; height:18px; margin-top:2px; accent-color:var(--navy); flex-shrink:0; }
 .notify-checkbox label { font-size:0.9rem; color:var(--gray-700); cursor:pointer; }
 </style>
-<!-- Schema.org — Speakable -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Memphis AI Meetup — Free Weekly Events",
-  "url": "https://www.weaddbots.com/events/memphis-ai-meetup",
-  "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"] },
-  "description": "The Memphis AI Meetup is a free weekly in-person gathering for Memphis business owners interested in AI automation. 30 minutes over coffee, rotating locations across the Memphis metro area. No pitch, no upsell. Hosted by Scott Finney of WeAddBots. Over 30 business owners have attended."
-}
-</script>
 </head>
 <body>
 
