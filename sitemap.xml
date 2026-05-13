@@ -98,6 +98,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.weaddbots.com/updates/schema-audit-case-study</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.weaddbots.com/updates/schema-pipeline-case-study</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>

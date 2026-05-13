@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema on Every Page. None of It Connected. | WeAddBots</title>
+    <meta name="description" content="A 30-page site had structured data on every page — but broken entity links, domain mismatches, and missing page types meant search engines couldn't connect any of it. Fixed in under an hour.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.weaddbots.com/updates/schema-audit-case-study">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Schema on Every Page. None of It Connected.">
+    <meta property="og:description" content="A 30-page site had structured data on every page — but broken entity links, domain mismatches, and missing page types meant search engines couldn't connect any of it. Fixed in under an hour.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.weaddbots.com/updates/schema-audit-case-study">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://www.weaddbots.com/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="article:published_time" content="2026-05-12">
+    <meta property="article:author" content="https://www.creatingvaluellc.com/about">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.weaddbots.com/img/og-image.png">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Schema.org — Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Schema on Every Page. None of It Connected.",
+        "description": "A 30-page site had structured data on every page — but broken entity links, domain mismatches, and missing page types meant search engines couldn't connect any of it. Fixed in under an hour.",
+        "datePublished": "2026-05-12",
+        "dateModified": "2026-05-12",
+        "author": { "@id": "https://www.creatingvaluellc.com/about#scott-finney" },
+        "publisher": { "@id": "https://www.weaddbots.com/#organization" },
+        "mainEntityOfPage": "https://www.weaddbots.com/updates/schema-audit-case-study",
+        "keywords": ["schema audit", "structured data", "entity graph", "JSON-LD", "technical SEO", "AI automation"],
+        "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"]}
+    }
+    </script>
+
+    <!-- Schema.org — BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.weaddbots.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Updates",
+                "item": "https://www.weaddbots.com/updates/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Schema on Every Page. None of It Connected.",
+                "item": "https://www.weaddbots.com/updates/schema-audit-case-study"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">WeAddBots</a>
+            <div class="nav-links">
+                <a href="/services">Services</a>
+                <a href="/about">About</a>
+                <a href="/events/">Events</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/events/">Events</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <!-- Event Banner -->
+    <div class="event-banner">
+        <div class="event-banner-inner">
+            <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Thu, May 14 &mdash; Germantown</span>
+            <a href="/events/memphis-ai-meetup">RSVP Free &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Article Header -->
+    <section class="hero-page has-banner">
+        <h1>Schema on Every Page. None of It Connected.</h1>
+        <p class="hero-subtitle">A 30-page site had structured data everywhere &mdash; and an entity graph that was completely fragmented. Full audit to full coverage in under an hour.</p>
+    </section>
+
+    <!-- Article Body -->
+    <section class="section bg-white">
+        <div class="section-inner" style="max-width: 48rem;">
+            <div class="answer-block">
+                <p style="color: var(--gray-500); font-size: 0.9rem; margin-bottom: 24px;">By <a href="/about">Scott Finney</a> &bull; May 12, 2026</p>
+
+                <p>A regional consulting firm had a 30-page static website with structured data on most pages. The homepage had <code>Organization</code> and <code>FAQPage</code> schema. Event pages had <code>Event</code> markup. Blog posts had <code>Article</code> schema. On paper, structured data was handled.</p>
+
+                <p>It wasn't.</p>
+
+                <p>A closer look revealed inconsistencies that undermined the entire entity graph. Seven pages &mdash; services, workshops, a recruitment page, the contact page &mdash; had nothing beyond a <code>BreadcrumbList</code>. Six location pages serving metro areas lacked <code>WebPage</code> and <code>SpeakableSpecification</code> markup, making them invisible to voice search and AI citation. The <code>@id</code> references that should have connected entities across the site were fragmented: the founder was defined with one identifier on one page and referenced with a different identifier on another. One archived event page used a bare domain while the rest used <code>www</code> &mdash; technically two different entities in JSON-LD.</p>
+
+                <p>The result: a site that looked schema-aware but wasn't actually maximizing its visibility in rich results, AI answer engines, or voice search.</p>
+
+                <h2>Phase 1: Skills Audit and Tool Mapping</h2>
+
+                <p>The first step wasn't touching the site. It was reading ten existing internal reference documents to understand what the team already knew about schema and where the gaps were. The SEO reference had a schema section with four basic JSON-LD templates &mdash; useful but shallow. The geo-optimization reference mentioned schema for entity clarity but deferred to the SEO doc for details. None of the other eight documents addressed structured data at all.</p>
+
+                <p>Simultaneously, third-party tools were mapped. ClassySchema.org was evaluated for its full capabilities: a HowTo generator, FAQPage generator, Video generator, SpecialAnnouncement generator, and a Structured Data Visualiser that accepts raw HTML or fetches a live URL. These were cataloged alongside Google's Rich Results Test and the Schema.org validator to create a generate-validate-deploy workflow.</p>
+
+                <p>The output: a comprehensive reference document covering 20+ page-type-to-schema-type mappings, copy-paste JSON-LD templates for every relevant type, a completeness audit checklist, and the full tool integration workflow. This became the playbook for everything that followed.</p>
+
+                <h2>Phase 2: First Implementation Pass</h2>
+
+                <p>With the reference framework in place, the first round of changes targeted the most visible gaps. Seven pages received new or upgraded schema:</p>
+
+                <ul>
+                    <li><strong>About page</strong> &mdash; <code>WebPage</code> upgraded to <code>AboutPage</code> with <code>mainEntity</code> linking to the Organization</li>
+                    <li><strong>Contact page</strong> &mdash; new <code>ContactPage</code> schema with <code>SpeakableSpecification</code></li>
+                    <li><strong>Workshops page</strong> &mdash; new <code>WebPage</code> with Speakable</li>
+                    <li><strong>Recruitment page</strong> &mdash; new <code>WebPage</code> plus <code>JobPosting</code> schema with proper employment type, location, and hiring organization references</li>
+                    <li><strong>Updates index</strong> &mdash; new <code>ItemList</code> with all articles, Speakable added to existing <code>CollectionPage</code></li>
+                    <li><strong>Locations index</strong> &mdash; new <code>ItemList</code> with all location pages</li>
+                </ul>
+
+                <h2>Phase 3: Entity Graph Audit</h2>
+
+                <p>Rather than assuming the first pass was clean, a full <code>@id</code> connectivity audit was run across all 32 HTML files. Every entity definition and every entity reference was cataloged and cross-checked.</p>
+
+                <p>Five issues surfaced:</p>
+
+                <ul>
+                    <li><strong>Founder defined with wrong ID</strong> &mdash; The Organization block defined the founder as one identifier, but event pages referenced a different one. Two different <code>@id</code> values for the same person.</li>
+                    <li><strong>Cross-domain orphan</strong> &mdash; An external organization ID was referenced in eight files but never formally defined on the site's domain.</li>
+                    <li><strong>Domain variance</strong> &mdash; One event page used the bare domain across eight URLs while every other file used <code>www</code>. In JSON-LD, those are two different entities.</li>
+                    <li><strong>LocalBusiness disconnected</strong> &mdash; The homepage <code>LocalBusiness</code> block had no <code>@id</code>, making it invisible to the entity graph.</li>
+                    <li><strong>Founder definition in wrong location</strong> &mdash; The <code>#founder</code> Person was only defined in the contact page, not on the homepage where the Organization lived.</li>
+                </ul>
+
+                <p>Each issue was fixed: a canonical <code>#founder</code> Person was defined on the homepage with <code>sameAs</code> linking to external profiles, the <code>LocalBusiness</code> got an <code>@id</code> and connected its <code>founder</code> property via reference, and all domain inconsistencies were standardized.</p>
+
+                <h2>Phase 4: Full Re-Audit and Final Pass</h2>
+
+                <p>A second complete audit checked every HTML file for three things: does it have a page type (<code>WebPage</code>, <code>AboutPage</code>, etc.), does it have <code>SpeakableSpecification</code>, and does it have <code>BreadcrumbList</code>. This surfaced a final layer of gaps:</p>
+
+                <ul>
+                    <li><strong>Six location pages</strong> &mdash; had <code>LocalBusiness</code> and <code>BreadcrumbList</code> but no <code>WebPage</code> or Speakable</li>
+                    <li><strong>Seven article pages</strong> &mdash; had <code>Article</code> but no Speakable</li>
+                    <li><strong>FAQ page</strong> &mdash; had <code>FAQPage</code> but no <code>WebPage</code> or Speakable</li>
+                    <li><strong>Newsletter page</strong> &mdash; had only <code>BreadcrumbList</code> (added <code>WebPage</code> with <code>SubscribeAction</code>)</li>
+                    <li><strong>Privacy and Terms pages</strong> &mdash; had only <code>BreadcrumbList</code></li>
+                    <li><strong>One event archive page</strong> &mdash; missing <code>WebPage</code> and Speakable</li>
+                </ul>
+
+                <p>All 22 files were updated in this final pass.</p>
+
+                <h2>By the Numbers</h2>
+
+                <div class="card card-accent" style="margin: 24px 0;">
+                    <div style="color: var(--gray-600); font-size: 0.95rem; line-height: 1.8;">
+                        <p><strong>Total JSON-LD blocks across site:</strong> ~55 &rarr; 90</p>
+                        <p><strong>Pages with WebPage/AboutPage/ContactPage type:</strong> 9 &rarr; 30</p>
+                        <p><strong>Pages with SpeakableSpecification:</strong> 8 &rarr; 28</p>
+                        <p><strong>Pages with only BreadcrumbList (no primary schema):</strong> 7 &rarr; 0</p>
+                        <p><strong>Unique schema types deployed:</strong> ~10 &rarr; 18</p>
+                        <p><strong>@id connectivity issues:</strong> 5 &rarr; 0</p>
+                        <p><strong>Domain inconsistencies in URIs:</strong> 8 occurrences &rarr; 0</p>
+                        <p><strong>Reusable schema reference docs created:</strong> 1 (with 20+ templates)</p>
+                        <p><strong>Files modified:</strong> 22</p>
+                        <p><strong>Estimated manual effort (senior SEO consultant):</strong> ~40 hours</p>
+                        <p><strong>Actual session time:</strong> Under 1 hour</p>
+                    </div>
+                </div>
+
+                <h2>What Changed for the Business</h2>
+
+                <p>Every page on the site now tells search engines and AI models exactly what it contains, who published it, and how it connects to the rest of the site. Before, a voice assistant or AI answer engine reading the FAQ page would see questions and answers but wouldn't know who published them or what organization they belonged to. Now that metadata is explicit on every page.</p>
+
+                <p>The location pages &mdash; critical for local search visibility &mdash; went from bare <code>LocalBusiness</code> entries to fully connected entities with <code>WebPage</code>, Speakable content markers, and an <code>ItemList</code> on the index page that tells search engines "these six pages are a set." The same pattern was applied to the blog index and its articles.</p>
+
+                <p>The reusable reference document means the next time a page is added to the site &mdash; a new case study, a new event, a new location &mdash; the schema decision is already made. The template exists, the validation workflow is documented, and the entity graph conventions are established. Schema went from something that had to be figured out each time to something that follows a pattern.</p>
+
+                <h2>How It Was Built</h2>
+
+                <p>I decided what mattered: that schema coverage should be maximized, that ClassySchema.org should be evaluated as a tool ecosystem, and that the output should include a reusable reference for future projects. I also directed the re-audit after the first implementation pass &mdash; recognizing that one round of changes wasn't enough to claim completeness.</p>
+
+                <p>The AI handled execution at a pace that made multiple audit-implement-reaudit cycles practical within a single session:</p>
+
+                <ul>
+                    <li><strong>Research</strong> &mdash; Read all ten reference documents, fetched and analyzed five ClassySchema.org pages, and ran web searches to map the full tool inventory &mdash; all in parallel.</li>
+                    <li><strong>First audit</strong> &mdash; Grepped every HTML file for existing <code>@type</code> declarations and built the gap table.</li>
+                    <li><strong>Implementation</strong> &mdash; Wrote 35+ JSON-LD blocks across 22 files, each tailored to the page's actual content.</li>
+                    <li><strong>Entity graph analysis</strong> &mdash; Cataloged every <code>@id</code> definition and reference across 32 files, identified five connectivity issues, and fixed each one.</li>
+                    <li><strong>Re-audit</strong> &mdash; Ran a second full-site scan, identified 15+ remaining gaps across location pages, articles, and utility pages, and closed all of them.</li>
+                    <li><strong>Reference creation</strong> &mdash; Synthesized everything learned into a comprehensive document with templates, checklists, and tool workflows.</li>
+                </ul>
+
+                <p>When implementation takes minutes instead of hours, you can afford to audit, implement, re-audit, and implement again in the same sitting. The planning conversation &mdash; deciding what to build and why &mdash; took longer than any single round of implementation. That's the ratio you want: human judgment as the bottleneck, not human typing.</p>
+
+                <h2>Is Your Structured Data Actually Working?</h2>
+
+                <p>Having schema on your pages isn't the same as having schema that works. If your entity graph is fragmented &mdash; different IDs for the same person, domain mismatches between pages, key pages missing page types &mdash; search engines see disconnected fragments instead of a coherent site.</p>
+
+                <p>The gap between "we have structured data" and "our structured data is connected and complete" is where visibility gets left on the table.</p>
+            </div>
+
+            <!-- Related Posts -->
+            <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--gray-200);">
+                <h3 style="font-size: 1.1rem; margin-bottom: 16px;">More from Updates</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="/updates/schema-pipeline-case-study" style="color: var(--teal); font-weight: 500;">129 Pages, Zero Structured Data &rarr;</a>
+                    <a href="/updates/inventory-intelligence-case-study" style="color: var(--teal); font-weight: 500;">$270K in Inventory, Zero Daily Visibility &rarr;</a>
+                    <a href="/updates/ai-website-overhaul-case-study" style="color: var(--teal); font-weight: 500;">12 Pages in One Afternoon &rarr;</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 48px; padding: 32px; background: var(--teal-50); border-radius: var(--radius-lg); text-align: center;">
+                <h3 style="margin-bottom: 12px;">Is Your Schema Actually Connected?</h3>
+                <p style="margin-bottom: 16px;">Free AI assessment. Find out where your structured data has gaps you can't see.</p>
+                <a href="/contact" class="btn btn-primary btn-lg">Get Free Assessment &rarr;</a>
+                <p style="margin-top: 12px; font-size: 0.9rem;"><a href="/services" style="color: var(--teal);">See how task automation and smart workflows work &rarr;</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Freshness Signal -->
+    <div class="freshness">Published: May 12, 2026</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4>WeAddBots</h4>
+                <p class="footer-tagline">AI automation for Memphis businesses.<br>Simple, practical, proven.</p>
+                <p class="footer-legal-name">A service of <a href="https://www.creatingvaluellc.com" target="_blank" rel="noopener">Creating Value LLC</a></p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="/newsletter">Newsletter</a>
+                <a href="/about">About</a>
+                <a href="/services">Services</a>
+                <a href="/rebecca">Rebecca AI</a>
+                <a href="/events/">Events</a>
+                <a href="/locations/">Locations</a>
+                <a href="/updates/">Updates</a>
+                <a href="/build-with-me">Build With Me</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; margin-top: 24px; text-align: center;">
+            <p style="color: var(--gray-400); font-size: 0.85rem; margin-bottom: 0;">Get weekly meetup details &amp; AI tips &mdash; <a href="/newsletter" style="color: var(--teal);">join the email list</a></p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <a href="https://www.creatingvaluellc.com" target="_blank" rel="noopener">Creating Value LLC</a>. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/sitemap.xml">Sitemap</a>
+                <a href="/llms.txt">LLMs.txt</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('show');
+        });
+    </script>
+    <!-- Google Analytics GA4 (lightweight, no external script) -->
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var m = 'G-WCKLX73V4P';
+                var cid = localStorage.getItem('_ga_cid');
+                if (!cid) { cid = Math.random().toString(36).substr(2) + Date.now().toString(36); localStorage.setItem('_ga_cid', cid); }
+                navigator.sendBeacon('https://www.google-analytics.com/g/collect?' +
+                    'v=2&tid=' + m + '&cid=' + cid + '&sid=' + Date.now() +
+                    '&dl=' + encodeURIComponent(location.href) +
+                    '&dt=' + encodeURIComponent(document.title) +
+                    '&en=page_view');
+            }, 100);
+        });
+    </script>
+    <!-- Clicky Analytics (deferred, clicky.init pattern per playbook) -->
+    <script>
+        window.addEventListener('load', function() {
+            var cs = document.createElement('script');
+            cs.src = '//static.getclicky.com/js';
+            cs.onload = function() {
+                try { clicky.init(101500449); } catch(e) {}
+            };
+            document.body.appendChild(cs);
+        });
+    </script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
+</body>
+</html>
