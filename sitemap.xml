@@ -63,7 +63,7 @@
   <!-- Updates / Blog -->
   <url>
     <loc>https://www.weaddbots.com/updates/</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -112,6 +112,12 @@
   <url>
     <loc>https://www.weaddbots.com/updates/inventory-intelligence-case-study</loc>
     <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.weaddbots.com/updates/content-audit-case-study</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
