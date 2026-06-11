@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.weaddbots.com/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -63,9 +63,15 @@
   <!-- Updates / Blog -->
   <url>
     <loc>https://www.weaddbots.com/updates/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.weaddbots.com/updates/dedicated-ai-agent-laptop</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.weaddbots.com/updates/ai-website-overhaul-case-study</loc>
