@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18",
+  "last_updated": "2026-06-25",
   "events": [
     {
       "id": "WAB-2026-03-25-Germantown",
@@ -113,7 +113,7 @@
     },
     {
       "id": "WAB-2026-06-24-Germantown",
-      "status": "confirmed",
+      "status": "past",
       "date_iso": "2026-06-24",
       "day_of_week": "Wednesday",
       "date_display": "June 24, 2026",
@@ -132,6 +132,17 @@
       "area": "Midtown",
       "venue_private": "Cooper House Project, 906 S Cooper St, Memphis, TN 38104",
       "venue_public": true
+    },
+    {
+      "id": "WAB-2026-07-07-Germantown",
+      "status": "confirmed",
+      "date_iso": "2026-07-07",
+      "day_of_week": "Tuesday",
+      "date_display": "July 7, 2026",
+      "time": "TBD",
+      "area": "Germantown",
+      "venue_private": "TBD",
+      "venue_public": false
     }
   ],
   "skipped_weeks": []
