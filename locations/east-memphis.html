@@ -43,6 +43,7 @@
                 "name": "WeAddBots",
                 "description": "AI automation consulting and weekly AI meetups for East Memphis businesses",
                 "url": "https://www.weaddbots.com",
+                "telephone": "+1-901-676-7697",
                 "areaServed": {
                     "@type": "Place",
                     "name": "East Memphis",
@@ -214,7 +215,7 @@
             <div>
                 <h4>Connect</h4>
                 <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
+                <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a><a href="tel:+19016767697">(901) 676-7697</a>
             </div>
         </div>
         <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; margin-top: 24px; text-align: center;">
@@ -232,14 +233,36 @@
     </footer>
 
     <script>document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('show'); });</script>
+    <!-- Google Analytics 4 — deferred to post-load. Zero render-blocking cost. -->
     <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var m = 'G-WCKLX73V4P'; var cid = localStorage.getItem('_ga_cid');
-                if (!cid) { cid = Math.random().toString(36).substr(2) + Date.now().toString(36); localStorage.setItem('_ga_cid', cid); }
-                navigator.sendBeacon('https://www.google-analytics.com/g/collect?v=2&tid=' + m + '&cid=' + cid + '&sid=' + Date.now() + '&dl=' + encodeURIComponent(location.href) + '&dt=' + encodeURIComponent(document.title) + '&dr=' + encodeURIComponent(document.referrer) + '&en=page_view');
-            }, 100);
-        });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-WCKLX73V4P');
+
+      window.addEventListener('load', function () {
+        var load = function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WCKLX73V4P';
+          document.head.appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(load, { timeout: 2000 });
+        } else {
+          setTimeout(load, 200);
+        }
+
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest && e.target.closest('a');
+          if (!a || !a.href) return;
+          if (a.href.indexOf('tel:') === 0) {
+            gtag('event', 'phone_click', { link_url: a.href });
+          } else if (a.href.indexOf('mailto:') === 0) {
+            gtag('event', 'email_click', { link_url: a.href });
+          }
+        }, { passive: true });
+      });
     </script>
     <script>
         window.addEventListener('load', function() {
