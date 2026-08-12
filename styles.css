@@ -1350,3 +1350,41 @@ table { border-collapse: collapse; width: 100%; }
     .founder-card { padding: 28px; }
     .founder-avatar { width: 96px; height: 96px; font-size: 2rem; }
 }
+
+/* Meetup photo strips (local SEO) — Phase 0 scaffolding */
+.meetup-photos {
+    margin: 2.5rem 0 1.5rem;
+}
+.meetup-photos h2 {
+    margin-bottom: 1rem;
+}
+.meetup-photos__empty {
+    color: var(--gray-500, #6b7280);
+    font-size: 0.95rem;
+    padding: 1rem 1.25rem;
+    border: 1px dashed var(--gray-200, #e5e7eb);
+    border-radius: 8px;
+    background: var(--gray-50, #f9fafb);
+}
+.meetup-photos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+.meetup-photos figure {
+    margin: 0;
+}
+.meetup-photos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--gray-100, #f3f4f6);
+}
+.meetup-photos figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--gray-500, #6b7280);
+}
