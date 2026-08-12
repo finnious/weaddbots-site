@@ -32,7 +32,7 @@
                 "@id": "https://www.weaddbots.com/workshops#WebPage",
                 "name": "AI Workshops for Memphis Businesses",
                 "url": "https://www.weaddbots.com/workshops",
-                "description": "Practical, hands-on AI workshops for Memphis business owners. $37 on Zoom, 60-90 minutes, focused on things you can use in your business that same week.",
+                "description": "Practical, hands-on AI workshops for Memphis business owners. 60-90 minutes on Zoom, focused on things you can use in your business that same week. Free to express interest; details shared privately.",
                 "publisher": { "@id": "https://www.weaddbots.com/#organization" },
                 "breadcrumb": { "@id": "https://www.weaddbots.com/workshops#BreadcrumbList" },
                 "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".answer-block", ".hero-subtitle"] }
@@ -94,8 +94,8 @@
     <!-- Answer-First Block -->
     <section class="section bg-white">
         <div class="answer-block">
-            <p><strong>We're developing a series of practical AI workshops &mdash; $37 on Zoom, 60-90 minutes, focused on things you can use in your business that same week.</strong> But here's the thing: we don't want to build workshops nobody asked for. So before we finalize topics, we're asking. Tell us what you'd actually pay to learn, and we'll build it.</p>
-            <p>This isn't a waitlist or a pre-sell. It's customer discovery &mdash; we want to know what problems you're trying to solve so we can make sure the workshops are worth your time and money.</p>
+            <p><strong>We're developing a series of practical AI workshops on Zoom &mdash; 60-90 minutes, focused on things you can use in your business that same week.</strong> But here's the thing: we don't want to build workshops nobody asked for. So before we finalize topics, we're asking. Tell us what you'd actually want to learn, and we'll build it.</p>
+            <p>This isn't a waitlist or a pre-sell. It's customer discovery &mdash; we want to know what problems you're trying to solve so we can make sure the workshops are worth your time. It's free to express interest; details are shared privately when topics are ready.</p>
         </div>
     </section>
 
@@ -142,7 +142,7 @@
                 <div class="card">
                     <div class="card-icon">&#128161;</div>
                     <h3>Something Else?</h3>
-                    <p>Have a topic you'd pay $37 to learn? Tell us below. The best workshop ideas come from the people who'd actually attend them.</p>
+                    <p>Have a topic you'd want to learn? Tell us below. The best workshop ideas come from the people who'd actually attend them.</p>
                 </div>
             </div>
         </div>
@@ -152,7 +152,7 @@
     <section class="section bg-white">
         <div class="section-inner" style="max-width: 600px;">
             <p class="section-label">Tell Us What You Want</p>
-            <h2 class="section-title">What Would You Pay to Learn?</h2>
+            <h2 class="section-title">What Do You Want to Learn?</h2>
             <p class="section-subtitle">Takes 60 seconds. Your answers directly shape what we build.</p>
 
             <div id="workshop-error" class="form-error"></div>
@@ -210,7 +210,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Would you attend a $37 Zoom workshop on these topics?</label>
+                    <label>Would you attend a Zoom workshop on these topics?</label>
                     <select name="price_validation" id="price-validation">
                         <option value="Yes definitely">Yes, definitely</option>
                         <option value="Probably">Probably, depends on timing</option>
@@ -254,14 +254,15 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <h2>Can't Wait for Workshops?</h2>
-        <p>If you've got a specific automation challenge right now, we can help. <a href="/contact">Free assessment</a> to identify your biggest friction points.</p>
+        <p>Come to the next <a href="/events/memphis-ai-meetup">Memphis AI Meetup</a> (free, no pitch), or tell us about a specific automation challenge. <a href="/contact">Free assessment</a> to identify your biggest friction points.</p>
         <div class="cta-buttons">
-            <a href="/contact" class="btn btn-white btn-lg">Free AI Assessment &rarr;</a>
+            <a href="/events/memphis-ai-meetup" class="btn btn-white btn-lg">Next Meetup &rarr;</a>
+            <a href="/contact" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,0.5); color: #fff;">Free AI Assessment</a>
         </div>
     </section>
 
     <!-- Freshness Signal -->
-    <div class="freshness">Last updated: June 25, 2026</div>
+    <div class="freshness">Last updated: August 12, 2026</div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -374,7 +375,7 @@
 
             // Add message with topics + price validation as notes
             var noteContent = 'Workshop topics: ' + topics.join(', ');
-            if (priceValidation) noteContent += ' | $37 workshop: ' + priceValidation;
+            if (priceValidation) noteContent += ' | Workshop interest: ' + priceValidation;
             if (message) noteContent += ' | Pain point: ' + message;
             payload.message = noteContent;
 

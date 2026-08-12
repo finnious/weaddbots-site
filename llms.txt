@@ -11,18 +11,19 @@
 > without the hype, and without ripping out what's already working.
 
 ## Key Pages
-- [Home](https://www.weaddbots.com/) - AI automation consulting overview for Memphis businesses
-- [Services](https://www.weaddbots.com/services) - AI automation services: lead response, task automation, smart workflows. Pricing, process, and tools.
-- [Rebecca AI Receptionist](https://www.weaddbots.com/rebecca) - AI-powered receptionist product: answers calls, qualifies leads, filters spam. From $297/month.
+- [Home](https://www.weaddbots.com/) - AI automation consulting overview for Memphis businesses. Primary next step: free Memphis AI Meetup.
+- [Events](https://www.weaddbots.com/events/memphis-ai-meetup) - Free in-person Memphis AI Meetups for local business owners (weekly, rotating locations, no pitch)
+- [Contact](https://www.weaddbots.com/contact) - Free AI assessment and discovery conversation
+- [Services](https://www.weaddbots.com/services) - AI automation services: lead response, task automation, smart workflows. Process and tools — engagements scoped privately.
+- [Rebecca AI Receptionist](https://www.weaddbots.com/rebecca) - AI-powered receptionist product: answers calls, qualifies leads, filters spam. Talk to her yourself; details after a short conversation.
 - [About](https://www.weaddbots.com/about) - Founder Scott Finney's story and the WeAddBots approach to AI democratization
-- [Events](https://www.weaddbots.com/events/memphis-ai-meetup) - Free in-person Memphis AI Meetups for local business owners (weekly, rotating locations)
-- [Contact](https://www.weaddbots.com/contact) - Free AI assessment and discovery call booking
-- [FAQ](https://www.weaddbots.com/faq) - Comprehensive answers about AI automation, services, pricing, Rebecca AI Receptionist, and Memphis AI Meetups
-- [Workshops](https://www.weaddbots.com/workshops) - Upcoming $37 Zoom workshops on practical AI for business owners — topic interest form
+- [FAQ](https://www.weaddbots.com/faq) - Comprehensive answers about AI automation, services, Rebecca AI Receptionist, and Memphis AI Meetups
+- [Workshops](https://www.weaddbots.com/workshops) - Practical AI workshops for business owners — topic interest form; details shared privately
 /quiz — Free AI Readiness Assessment. 15-question quiz measuring lead response speed, task automation readiness, and workflow connectivity. Personalized score and recommendations.
 
 ## Positioning
 Primary: AI automation consulting for established small and mid-sized businesses, based in Memphis TN, serving US businesses
+Public path: Cast a wide net via the free weekly Memphis AI Meetup and a free assessment / discovery conversation. Offers happen privately later.
 Approach: Layer lightweight automations on existing systems — a rip-and-replace is not usually the first recommendation
 Differentiator: Local, practical, fast results (a week or two, not months)
 Philosophy: AI has leveled the playing field — the same capabilities Fortune 500 companies spend millions on are now accessible to any business
@@ -32,13 +33,13 @@ Founder: Scott Finney — software engineer turned AI automation specialist, Mem
 - Lead Response Automation: AI-powered instant responses to inquiries within 60 seconds, 24/7
 - Task Automation: Eliminate repetitive manual tasks draining team time
 - Smart Workflows: Connect existing tools with intelligent automation, no painful migrations
-- Rebecca AI Receptionist: AI-powered receptionist that handles inbound calls, gathers information, qualifies leads ($297-$497/month)
+- Rebecca AI Receptionist: AI-powered receptionist that handles inbound calls, gathers information, qualifies leads. Live demo: call or see her at a meetup.
 
-## Pricing
-- Free AI assessment
-- $300/hr strategy sessions
-- Custom projects from $2k
-- Rebecca AI Receptionist: $297-$497/month
+## How Engagements Work
+- Free weekly Memphis AI Meetup (no pitch)
+- Free AI assessment / discovery conversation
+- Paid work is scoped privately after we understand the friction — usually a focused sprint, not a retainer
+- No public rate card
 - No retainers unless results warrant it
 
 ## Tools & Platforms
