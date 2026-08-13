@@ -11,9 +11,9 @@
 > without the hype, and without ripping out what's already working.
 
 ## Key Pages
-- [Home](https://www.weaddbots.com/) - AI automation consulting overview for Memphis businesses. Primary next step: free Memphis AI Meetup.
-- [Events](https://www.weaddbots.com/events/memphis-ai-meetup) - Free in-person Memphis AI Meetups for local business owners (weekly, rotating locations, no pitch)
-- [Contact](https://www.weaddbots.com/contact) - Free AI assessment and discovery conversation
+- [Home](https://www.weaddbots.com/) - AI automation consulting overview for Memphis businesses. Primary next step: free 20-minute discovery call.
+- [Events](https://www.weaddbots.com/events/memphis-ai-meetup) - Free in-person Memphis AI Meetups for local business owners (weekly, rotating locations, peer group, no pitch)
+- [Contact](https://www.weaddbots.com/contact) - Book a free 20-minute discovery call or send a message
 - [Services](https://www.weaddbots.com/services) - AI automation services: lead response, task automation, smart workflows. Process and tools — engagements scoped privately.
 - [Rebecca AI Receptionist](https://www.weaddbots.com/rebecca) - AI-powered receptionist product: answers calls, qualifies leads, filters spam. Talk to her yourself; details after a short conversation.
 - [About](https://www.weaddbots.com/about) - Founder Scott Finney's story and the WeAddBots approach to AI democratization
@@ -23,7 +23,7 @@
 
 ## Positioning
 Primary: AI automation consulting for established small and mid-sized businesses, based in Memphis TN, serving US businesses
-Public path: Cast a wide net via the free weekly Memphis AI Meetup and a free assessment / discovery conversation. Offers happen privately later.
+Public path: Cast a wide net via the free weekly Memphis AI Meetup and a free 20-minute discovery call. Offers happen privately later.
 Approach: Layer lightweight automations on existing systems — a rip-and-replace is not usually the first recommendation
 Differentiator: Local, practical, fast results (a week or two, not months)
 Philosophy: AI has leveled the playing field — the same capabilities Fortune 500 companies spend millions on are now accessible to any business
@@ -37,13 +37,13 @@ Founder: Scott Finney — software engineer turned AI automation specialist, Mem
 
 ## How Engagements Work
 - Free weekly Memphis AI Meetup (no pitch)
-- Free AI assessment / discovery conversation
+- Free 20-minute discovery call (`/contact#book-a-call`)
 - Paid work is scoped privately after we understand the friction — usually a focused sprint, not a retainer
 - No public rate card
 - No retainers unless results warrant it
 
 ## Tools & Platforms
-GoHighLevel, Zapier, Make, Gumloop, Google Workspace, Salesforce, Calendly, Canva, Read.ai, Stripe
+GoHighLevel, Zapier, Make, Gumloop, Google Workspace, Salesforce, Google Calendar, Canva, Read.ai, Stripe
 
 ## Authority Signals
 - Weekly in-person Memphis AI Meetups host (rotating locations across Memphis metro)
