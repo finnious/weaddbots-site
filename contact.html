@@ -494,6 +494,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     payload.companyName = companyName;
   }
 
+  var message = form.message.value.trim();
+  if (message) {
+    payload.customFields.push({ id: 'KgJnGSZT2gnK4LvWbTnZ', field_value: message });
+  }
+
   try {
     var response = await fetch('/api/submit', {
       method: 'POST',
