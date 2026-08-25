@@ -1408,3 +1408,136 @@ table { border-collapse: collapse; width: 100%; }
     font-size: 0.85rem;
     color: var(--gray-500, #6b7280);
 }
+
+/* === ORG CHART (joke one-person company page) === */
+.org-chart-note {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 1.05rem;
+    max-width: 32rem;
+    margin: 0 auto 36px;
+}
+
+.org-tree-wrap {
+    overflow-x: auto;
+    padding: 8px 8px 16px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.org-tree {
+    min-width: 720px;
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-level {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.org-level-mid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    align-items: start;
+}
+
+.org-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-stem {
+    width: 2px;
+    height: 28px;
+    background: var(--navy);
+    flex-shrink: 0;
+}
+
+.org-stem-short { height: 22px; }
+
+.org-bar {
+    height: 2px;
+    background: var(--navy);
+    flex-shrink: 0;
+}
+
+.org-bar-3 {
+    width: calc(66.666% - 8px);
+}
+
+.org-card {
+    width: 200px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.org-card-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--gray-100);
+}
+
+.org-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.org-card-photo .org-overlay,
+.org-card-photo svg.org-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    display: block;
+    pointer-events: none;
+}
+
+.org-card-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 8px 8px 9px;
+    line-height: 1.2;
+}
+
+.org-card-name {
+    margin: 0;
+    padding: 10px 8px 12px;
+    text-align: center;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.org-chart-scroll-hint {
+    display: none;
+    text-align: center;
+    color: var(--gray-400);
+    font-size: 0.8rem;
+    margin: 8px 0 0;
+}
+
+@media (max-width: 768px) {
+    .org-chart-scroll-hint { display: block; }
+}
