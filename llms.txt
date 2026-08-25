@@ -17,7 +17,7 @@
 - [Services](https://www.weaddbots.com/services) - AI automation services: lead response, task automation, smart workflows. Process and tools — engagements scoped privately.
 - [Rebecca AI Receptionist](https://www.weaddbots.com/rebecca) - AI-powered receptionist product: answers calls, qualifies leads, filters spam. Talk to her yourself; details after a short conversation.
 - [About](https://www.weaddbots.com/about) - Founder Scott Finney's story and the WeAddBots approach to AI democratization
-- [Org Chart](https://www.weaddbots.com/org-chart) - Joke one-person org chart. Every box is Scott Finney. He manages the bots that run each function.
+- [Org Chart](https://www.weaddbots.com/org-chart) - 2026 Org Chart. The WeAddBots team is here to help you.
 - [FAQ](https://www.weaddbots.com/faq) - Comprehensive answers about AI automation, services, Rebecca AI Receptionist, and Memphis AI Meetups
 - [Workshops](https://www.weaddbots.com/workshops) - Practical AI workshops for business owners — topic interest form; details shared privately
 /quiz — Free AI Readiness Assessment. 15-question quiz measuring lead response speed, task automation readiness, and workflow connectivity. Personalized score and recommendations.

@@ -1409,15 +1409,7 @@ table { border-collapse: collapse; width: 100%; }
     color: var(--gray-500, #6b7280);
 }
 
-/* === ORG CHART (joke one-person company page) === */
-.org-chart-note {
-    text-align: center;
-    color: var(--gray-600);
-    font-size: 1.05rem;
-    max-width: 32rem;
-    margin: 0 auto 36px;
-}
-
+/* === ORG CHART === */
 .org-tree-wrap {
     overflow-x: auto;
     padding: 8px 8px 16px;
@@ -1496,17 +1488,13 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 .org-card-bar {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background: var(--navy);
     color: var(--white);
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.02em;
     text-align: center;
-    padding: 8px 10px 9px;
+    padding: 8px 10px;
     line-height: 1.2;
     min-height: 2.5em;
     display: flex;
@@ -1516,21 +1504,9 @@ table { border-collapse: collapse; width: 100%; }
 
 .org-card-name {
     margin: 0;
-    padding: 10px 8px 12px;
+    padding: 8px 8px 12px;
     text-align: center;
     font-size: 0.88rem;
     font-weight: 600;
     color: var(--gray-700);
-}
-
-.org-chart-scroll-hint {
-    display: none;
-    text-align: center;
-    color: var(--gray-400);
-    font-size: 0.8rem;
-    margin: 8px 0 0;
-}
-
-@media (max-width: 768px) {
-    .org-chart-scroll-hint { display: block; }
 }
