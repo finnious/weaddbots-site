@@ -1408,3 +1408,105 @@ table { border-collapse: collapse; width: 100%; }
     font-size: 0.85rem;
     color: var(--gray-500, #6b7280);
 }
+
+/* === ORG CHART === */
+.org-tree-wrap {
+    overflow-x: auto;
+    padding: 8px 8px 16px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.org-tree {
+    min-width: 720px;
+    max-width: 880px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-level {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.org-level-mid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    align-items: start;
+}
+
+.org-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-stem {
+    width: 2px;
+    height: 28px;
+    background: var(--navy);
+    flex-shrink: 0;
+}
+
+.org-stem-short { height: 22px; }
+
+.org-bar {
+    height: 2px;
+    background: var(--navy);
+    flex-shrink: 0;
+}
+
+.org-bar-3 {
+    width: calc(66.666% - 8px);
+}
+
+.org-card {
+    width: 200px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.org-card-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--gray-100);
+}
+
+.org-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.org-card-bar {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 8px 10px;
+    line-height: 1.2;
+    min-height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.org-card-name {
+    margin: 0;
+    padding: 8px 8px 12px;
+    text-align: center;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--gray-700);
+}
