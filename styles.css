@@ -1502,12 +1502,16 @@ table { border-collapse: collapse; width: 100%; }
     bottom: 0;
     background: var(--navy);
     color: var(--white);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.02em;
     text-align: center;
-    padding: 8px 8px 9px;
+    padding: 8px 10px 9px;
     line-height: 1.2;
+    min-height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .org-card-name {
