@@ -1495,17 +1495,6 @@ table { border-collapse: collapse; width: 100%; }
     display: block;
 }
 
-.org-card-photo .org-overlay,
-.org-card-photo svg.org-overlay {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    display: block;
-    pointer-events: none;
-}
-
 .org-card-bar {
     position: absolute;
     left: 0;
