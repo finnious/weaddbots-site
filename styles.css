@@ -211,12 +211,11 @@ table { border-collapse: collapse; width: 100%; }
 .hero-home.has-banner { padding-top: 120px; }
 
 .hero-home h1 {
-    font-size: 2.35rem;
-    max-width: 52rem;
+    font-size: 2.75rem;
+    max-width: 48rem;
     margin: 0 auto 16px;
     color: var(--dark);
     letter-spacing: -0.02em;
-    line-height: 1.2;
 }
 
 .hero-home .hero-subtitle {
