@@ -79,9 +79,10 @@ const htmlFiles = getHtmlFiles(ROOT);
 let totalUpdated = 0;
 
 // --- Pattern 1: Event banners across all pages ---
-// Match: "Next Memphis AI Meetup:</strong> DAY, MONTH DAY &mdash; AREA"
-const bannerRegex = /(Next Memphis AI Meetup:<\/strong>\s*)[\w]{3},\s*[\w]+\s*\d{1,2}\s*&mdash;\s*[\w\s]+(<\/span>)/g;
-const bannerReplacement = `$1${dayAbbr}, ${monthAbbr} ${day} &mdash; ${area}$2`;
+// Display path: "Next Memphis AI Meetup:</strong> DAY, MONTH DAY. AREA. RSVP free."
+// Also matches the prior em-dash format so one run migrates leftover pages.
+const bannerRegex = /(Next Memphis AI Meetup:<\/strong>\s*)(?:[\w]{3},\s*[\w]+\s*\d{1,2}\s*&mdash;\s*[^<]+|[\w]{3},\s*[\w]+\s*\d{1,2}\.\s*[^.]+\.\s*RSVP free\.)(<\/span>)/g;
+const bannerReplacement = `$1${dayAbbr}, ${monthAbbr} ${day}. ${area}. RSVP free.$2`;
 
 // --- Pattern 2: events/index.html — featured event section ---
 const eventsIndexPath = path.join(ROOT, 'events', 'index.html');
