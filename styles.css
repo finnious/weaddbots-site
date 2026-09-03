@@ -221,10 +221,23 @@ table { border-collapse: collapse; width: 100%; }
 .hero-home .hero-subtitle {
     font-size: 1.2rem;
     color: var(--gray-600);
-    max-width: 36rem;
-    margin: 0 auto 32px;
+    max-width: 40rem;
+    margin: 0 auto 16px;
     line-height: 1.6;
 }
+
+.hero-home .hero-support {
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+}
+
+.hero-home .hero-support p { margin-bottom: 1.1rem; }
+
+.hero-home .hero-support p:last-child { margin-bottom: 0; }
 
 .hero-page {
     padding: 120px 24px 48px;
