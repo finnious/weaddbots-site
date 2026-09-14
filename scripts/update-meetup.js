@@ -99,11 +99,27 @@ for (const file of htmlFiles) {
   // Banner replacement (all pages)
   content = content.replace(bannerRegex, bannerReplacement);
 
+  // Locked winner-C intro "Next:" line (RSVP + events index)
+  content = content.replace(
+    /(<p>Next:\s*)[A-Za-z]+,\s*[A-Za-z]+\s*\d{1,2}\.\s*\d{1,2}:\d{2} to \d{1,2}:\d{2} AM\.[^<]*(<\/p>)/g,
+    `$1${day_of_week}, ${monthAbbr} ${day}. ${startTime} to ${endTime}. Congregation Coffee, ${area}.$2`
+  );
+
+  // Location pages — "Next metro meetup" and Germantown venue box
+  content = content.replace(
+    /(Next metro meetup:\s*)[A-Za-z]+,\s*[A-Za-z]+\s*\d{1,2}\s*&bull;\s*\d{1,2}:\d{2}\s*&ndash;\s*\d{1,2}:\d{2}\s*(?:AM|PM)\s*&bull;\s*[A-Za-z ]+(\. RSVP)/g,
+    `$1${day_of_week}, ${month} ${day} &bull; ${time.replace('–', '&ndash;')} &bull; ${area}$2`
+  );
+  content = content.replace(
+    /(Next Germantown Meetup<\/h3>\s*<p[^>]*>)[A-Za-z]+,\s*[A-Za-z]+\s*\d{1,2}\s*&bull;\s*\d{1,2}:\d{2}\s*&ndash;\s*\d{1,2}:\d{2}\s*(?:AM|PM)\s*&bull;\s*Congregation Coffee(<\/p>)/,
+    `$1${day_of_week}, ${month} ${day} &bull; ${time.replace('–', '&ndash;')} &bull; Congregation Coffee$2`
+  );
+
   // Events index — featured event card
   if (file === eventsIndexPath) {
-    // Section title: "Next Meetup — Month Day"
+    // Section title: "Next Meetup — Month Day" (entity or unicode dash)
     content = content.replace(
-      /(<h2 class="section-title">Next Meetup &mdash; )[\w]+ \d{1,2}(<\/h2>)/,
+      /(<h2 class="section-title">Next Meetup (?:&mdash;|—) )[\w]+ \d{1,2}(<\/h2>)/,
       `$1${monthAbbr} ${day}$2`
     );
     // Subtitle: "This week's free meetup is in AREA"
@@ -131,14 +147,19 @@ for (const file of htmlFiles) {
       /(&#9202;\s*)\d{1,2}:\d{2}\s*(?:AM|PM)?\s*&ndash;\s*\d{1,2}:\d{2}\s*(?:AM|PM)?(<\/span>)/,
       `$1${time.replace('–', '&ndash;')}$2`
     );
+    // CTA: "Sep 10 — RSVP Free"
+    content = content.replace(
+      /(btn btn-white btn-lg">)[A-Za-z]+ \d{1,2} &mdash; RSVP Free(<\/a>)/,
+      `$1${monthAbbr} ${day} &mdash; RSVP Free$2`
+    );
   }
 
   // Meetup RSVP page — schema.org, date card, sidebar
   if (file === meetupPagePath) {
-    // Schema.org Event @id
+    // Schema.org Event @id (Event block + WebPage about)
     content = content.replace(
-      /"@id":\s*"https:\/\/www\.weaddbots\.com\/events\/memphis-ai-meetup#event-[\d-]+"/,
-      `"@id": "https://www.weaddbots.com/events/memphis-ai-meetup#event-${date_iso}"`
+      /(#event-)[\d-]+/g,
+      `$1${date_iso}`
     );
     // Schema.org Event name
     content = content.replace(
@@ -154,10 +175,13 @@ for (const file of htmlFiles) {
       /"endDate":\s*"[^"]+"/,
       `"endDate": "${endISO}"`
     );
-    // Schema.org location name
+    // Schema.org location name — keep a public venue name when present
+    const locationName = (next.venue_public && next.venue_private)
+      ? next.venue_private.split(',')[0].trim()
+      : area;
     content = content.replace(
-      /("location":\s*\{\s*"@type":\s*"Place",\s*"name":\s*")[\w\s]+(")/,
-      `$1${area}$2`
+      /("location":\s*\{\s*"@type":\s*"Place",\s*"name":\s*")[^"]+(")/,
+      `$1${locationName}$2`
     );
     // Schema.org addressLocality
     content = content.replace(
@@ -175,7 +199,11 @@ for (const file of htmlFiles) {
       /(date-card-info">\s*<h4>&#128197;\s*)[\w]+,\s*[\w]+\s*\d{1,2}\s*&mdash;\s*[\w\s]+(<\/h4>)/,
       `$1${day_of_week}, ${monthAbbr} ${day} &mdash; ${area}$2`
     );
-    // "Next Up" date card — time text
+    // "Next Up" date card — time text (venue-public or RSVP-for-venue)
+    content = content.replace(
+      /(<label class="date-card next-up">[\s\S]*?<p>)\d{1,2}:\d{2}\s*&ndash;\s*\d{1,2}:\d{2}\s*(?:AM|PM)[^<]*(<\/p>)/,
+      `$1${time.replace('–', '&ndash;')} &bull; ${locationName}, ${area}$2`
+    );
     content = content.replace(
       /(\d{1,2}:\d{2}\s*&ndash;\s*\d{1,2}:\d{2}\s*(?:AM|PM)?\s*&bull;\s*RSVP to get the exact venue)/,
       `${time.replace('–', '&ndash;')} &bull; RSVP to get the exact venue`
