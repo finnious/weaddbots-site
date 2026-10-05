@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-02",
+  "last_updated": "2026-10-05",
   "events": [
     {
       "id": "WAB-2026-03-25-Germantown",
@@ -282,6 +282,50 @@
       "date_iso": "2026-10-08",
       "day_of_week": "Thursday",
       "date_display": "October 8, 2026",
+      "time": "9:15 – 9:45 AM",
+      "area": "Germantown",
+      "venue_private": "Congregation Coffee, 3060 Forest Hill Irene Rd, Germantown, TN 38138",
+      "venue_public": true
+    },
+    {
+      "id": "WAB-2026-10-13-Germantown",
+      "status": "confirmed",
+      "date_iso": "2026-10-13",
+      "day_of_week": "Tuesday",
+      "date_display": "October 13, 2026",
+      "time": "9:15 – 9:45 AM",
+      "area": "Germantown",
+      "venue_private": "Congregation Coffee, 3060 Forest Hill Irene Rd, Germantown, TN 38138",
+      "venue_public": true
+    },
+    {
+      "id": "WAB-2026-10-22-Germantown",
+      "status": "confirmed",
+      "date_iso": "2026-10-22",
+      "day_of_week": "Thursday",
+      "date_display": "October 22, 2026",
+      "time": "9:15 – 9:45 AM",
+      "area": "Germantown",
+      "venue_private": "Congregation Coffee, 3060 Forest Hill Irene Rd, Germantown, TN 38138",
+      "venue_public": true
+    },
+    {
+      "id": "WAB-2026-10-29-Germantown",
+      "status": "confirmed",
+      "date_iso": "2026-10-29",
+      "day_of_week": "Thursday",
+      "date_display": "October 29, 2026",
+      "time": "9:15 – 9:45 AM",
+      "area": "Germantown",
+      "venue_private": "Congregation Coffee, 3060 Forest Hill Irene Rd, Germantown, TN 38138",
+      "venue_public": true
+    },
+    {
+      "id": "WAB-2026-11-03-Germantown",
+      "status": "confirmed",
+      "date_iso": "2026-11-03",
+      "day_of_week": "Tuesday",
+      "date_display": "November 3, 2026",
       "time": "9:15 – 9:45 AM",
       "area": "Germantown",
       "venue_private": "Congregation Coffee, 3060 Forest Hill Irene Rd, Germantown, TN 38138",
