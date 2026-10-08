@@ -115,7 +115,8 @@
 .date-card-info h4 { font-size:1rem; margin-bottom:2px; color:var(--gray-800); }
 .date-card-info p { font-size:0.875rem; color:var(--gray-500); margin:0; }
 .date-card .next-badge { background:var(--teal); color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:9999px; text-transform:uppercase; letter-spacing:0.03em; margin-left:auto; flex-shrink:0; }
-.date-card.tba { opacity:0.7; }
+.date-card.tba { opacity:0.7; border-style:dashed; cursor:default; }
+.date-card.tba:hover { border-color:var(--gray-200); background:var(--white); }
 .date-card.tba .date-card-info h4 { color:var(--gray-500); }
 .help-us-plan { background:var(--gray-50); border-radius:var(--radius-md); padding:20px; margin-top:16px; }
 .help-us-plan summary { cursor:pointer; font-weight:600; color:var(--gray-700); font-size:0.95rem; }
@@ -205,6 +206,64 @@
               <p>9:15 &ndash; 9:45 AM &bull; Congregation Coffee, Germantown</p>
             </div>
           </label>
+
+          <!-- meetup-tba-placeholders:start -->
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Nov 9</h4>
+              <p>Date, time &amp; location TBA</p>
+            </div>
+          </div>
+
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Nov 16</h4>
+              <p>Date, time &amp; location TBA</p>
+            </div>
+          </div>
+
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Nov 23</h4>
+              <p>Date, time &amp; location TBA</p>
+            </div>
+          </div>
+
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Nov 30</h4>
+              <p>Date, time &amp; location TBA</p>
+            </div>
+          </div>
+
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Dec 7</h4>
+              <p>Date, time &amp; location TBA</p>
+            </div>
+          </div>
+
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Dec 14</h4>
+              <p>Date, time &amp; location TBA</p>
+            </div>
+          </div>
+
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Dec 21</h4>
+              <p>Date, time &amp; location TBA</p>
+            </div>
+          </div>
+
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Dec 28</h4>
+              <p>Date, time &amp; location TBA</p>
+            </div>
+          </div>
+          <!-- meetup-tba-placeholders:end -->
 
           <div class="notify-checkbox">
             <input type="checkbox" id="notify_future" name="notify_future">
@@ -435,6 +494,7 @@ document.getElementById('mobile-menu-btn').addEventListener('click', function() 
 <script>
 document.querySelectorAll('.date-card').forEach(function(card) {
   var checkbox = card.querySelector('input[type="checkbox"]');
+  if (!checkbox) return;
   card.addEventListener('click', function(e) {
     if (e.target.tagName !== 'INPUT') { checkbox.checked = !checkbox.checked; }
     card.classList.toggle('selected', checkbox.checked);

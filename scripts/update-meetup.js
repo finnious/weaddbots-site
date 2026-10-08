@@ -59,6 +59,60 @@ function to24(timeStr) {
 
 console.log(`Updating site for: ${day_of_week}, ${month} ${day} — ${area} (${time})`);
 
+// Tentative weeks with no set day, time, or venue. These stay out of
+// meetup-events.json and out of schema.org Event data so search engines
+// never see a fake date. The meetup page keeps them in a marked block that
+// this script re-emits after the scheduled cards.
+const TBA_WEEKS = [
+  'Week of Nov 9',
+  'Week of Nov 16',
+  'Week of Nov 23',
+  'Week of Nov 30',
+  'Week of Dec 7',
+  'Week of Dec 14',
+  'Week of Dec 21',
+  'Week of Dec 28',
+];
+const TBA_START = '<!-- meetup-tba-placeholders:start -->';
+const TBA_END = '<!-- meetup-tba-placeholders:end -->';
+const TBA_SLOT = '<!--MEETUP_TBA_SLOT-->';
+const TBA_BLOCK_RE = /[ \t]*<!-- meetup-tba-placeholders:start -->[\s\S]*?<!-- meetup-tba-placeholders:end -->/;
+
+function buildTbaPlaceholderBlock() {
+  const cards = TBA_WEEKS.map((week) => {
+    return [
+      '          <div class="date-card tba">',
+      '            <div class="date-card-info">',
+      `              <h4>&#128197; ${week}</h4>`,
+      '              <p>Date, time &amp; location TBA</p>',
+      '            </div>',
+      '          </div>',
+    ].join('\n');
+  }).join('\n\n');
+  return `          ${TBA_START}\n${cards}\n          ${TBA_END}`;
+}
+
+function shieldTbaPlaceholders(html) {
+  if (!TBA_BLOCK_RE.test(html)) return html;
+  return html.replace(TBA_BLOCK_RE, TBA_SLOT);
+}
+
+function ensureTbaPlaceholders(html) {
+  const block = buildTbaPlaceholderBlock();
+  if (html.includes(TBA_SLOT)) {
+    return html.replace(TBA_SLOT, block);
+  }
+  if (TBA_BLOCK_RE.test(html)) {
+    return html.replace(TBA_BLOCK_RE, block);
+  }
+  // Placeholders were removed. Put them back between the last scheduled
+  // card and the notify checkbox, with the same spacing as the page.
+  return html.replace(
+    /<\/label>\s*<div class="notify-checkbox">/,
+    `</label>\n\n${block}\n\n          <div class="notify-checkbox">`
+  );
+}
+
 // --- Collect all HTML files (excluding mnt/) ---
 
 function getHtmlFiles(dir) {
@@ -156,6 +210,9 @@ for (const file of htmlFiles) {
 
   // Meetup RSVP page — schema.org, date card, sidebar
   if (file === meetupPagePath) {
+    // Lift TBA placeholders out so date-card rewrites cannot touch them.
+    content = shieldTbaPlaceholders(content);
+
     // Schema.org Event @id (Event block + WebPage about)
     content = content.replace(
       /(#event-)[\d-]+/g,
@@ -194,9 +251,9 @@ for (const file of htmlFiles) {
       /(<label class="date-card next-up">\s*<input type="checkbox" name="event_dates" value=")[\w\d-]+(" data-date=")[\d-]+(" data-area=")[\w\s]+(" data-name=")Memphis AI Meetup — [\w\s\d]+(")/,
       `$1${id}$2${date_iso}$3${area}$4Memphis AI Meetup — ${monthAbbr} ${day}$5`
     );
-    // "Next Up" date card — h4 text
+    // "Next Up" date card — h4 text (scheduled card only; not TBA weeks)
     content = content.replace(
-      /(date-card-info">\s*<h4>&#128197;\s*)[\w]+,\s*[\w]+\s*\d{1,2}\s*&mdash;\s*[\w\s]+(<\/h4>)/,
+      /(<label class="date-card next-up">[\s\S]*?date-card-info">\s*<h4>&#128197;\s*)[\w]+,\s*[\w]+\s*\d{1,2}\s*&mdash;\s*[\w\s]+(<\/h4>)/,
       `$1${day_of_week}, ${monthAbbr} ${day} &mdash; ${area}$2`
     );
     // "Next Up" date card — time text (venue-public or RSVP-for-venue)
@@ -222,6 +279,10 @@ for (const file of htmlFiles) {
       /(&#128205;\s*<strong>Where:<\/strong>\s*)[\w\s]+(<\/span>)/,
       `$1${area}$2`
     );
+
+    content = ensureTbaPlaceholders(content);
+    const tbaCount = (content.match(/class="date-card tba"/g) || []).length;
+    console.log(`  TBA placeholders on meetup page: ${tbaCount} (not in JSON-LD)`);
   }
 
   if (content !== original) {
