@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Which job should I hand to AI? | WeAddBots</title>
+<meta name="description" content="Score 3 to 10 weekly tasks and see which job to hand off first. Free calculator for business owners. Estimates hours you might get back. No login.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.weaddbots.com/tools/ai-handoff">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<meta property="og:title" content="Which job should I hand to AI? | WeAddBots">
+<meta property="og:description" content="Score 3 to 10 weekly tasks and see which job to hand off first. Free, in your browser. No login.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.weaddbots.com/tools/ai-handoff">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.weaddbots.com/img/og-ai-handoff.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Which job should I hand to AI? A free calculator from WeAddBots.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Which job should I hand to AI? | WeAddBots">
+<meta name="twitter:description" content="Score 3 to 10 weekly tasks and see which job to hand off first. Free, in your browser. No login.">
+<meta name="twitter:image" content="https://www.weaddbots.com/img/og-ai-handoff.png">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.weaddbots.com/#organization",
+      "name": "WeAddBots",
+      "url": "https://www.weaddbots.com"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://www.weaddbots.com/tools/ai-handoff#app",
+      "name": "Which job should I hand to AI?",
+      "url": "https://www.weaddbots.com/tools/ai-handoff",
+      "description": "Free browser calculator that ranks weekly tasks for a script or an AI agent and estimates hours a business might get back.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Runs in the browser. No account.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "provider": { "@id": "https://www.weaddbots.com/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.weaddbots.com/tools/ai-handoff#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weaddbots.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Which job should I hand to AI?", "item": "https://www.weaddbots.com/tools/ai-handoff" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+.handoff-skip {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  z-index: 80;
+  background: var(--navy);
+  color: var(--white);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+}
+.handoff-skip:focus {
+  left: 8px;
+  color: var(--white);
+}
+.handoff-crumb {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-bottom: 12px;
+}
+.handoff-crumb a { color: var(--teal-700); }
+.handoff-wrap { max-width: 42rem; margin: 0 auto; }
+.handoff-lead { color: var(--gray-700); font-size: 1.05rem; }
+.handoff-formula {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-top: 24px;
+}
+.handoff-formula h2 { font-size: 1.25rem; margin-bottom: 8px; }
+.handoff-formula p { color: var(--gray-700); }
+.handoff-eq {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  margin: 12px 0;
+  overflow-x: auto;
+}
+.handoff-table { font-size: 0.92rem; margin: 12px 0 4px; }
+.handoff-table th,
+.handoff-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: top;
+}
+.handoff-table th { color: var(--gray-600); font-weight: 600; }
+.handoff-note { font-size: 0.92rem; color: var(--gray-600); }
+.handoff-tasks { display: flex; flex-direction: column; gap: 16px; }
+.handoff-task {
+  position: relative;
+  min-inline-size: 0;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+.handoff-task legend {
+  font-weight: 700;
+  color: var(--gray-900);
+  padding: 0 7.5rem 8px 0;
+}
+.handoff-remove {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.handoff-field { margin-bottom: 14px; }
+.handoff-field label,
+.handoff-slider-top label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 6px;
+}
+.handoff-field input[type="text"],
+.handoff-field input[type="number"] {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  color: var(--gray-900);
+  background: var(--white);
+}
+.handoff-field input:focus-visible,
+.handoff-slider input:focus-visible,
+.handoff-task button:focus-visible,
+.handoff-actions button:focus-visible,
+.handoff-results button:focus-visible,
+.handoff-cta a:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+.handoff-field input[aria-invalid="true"] { border-color: var(--red-600); }
+.handoff-error { color: var(--red-600); font-size: 0.85rem; margin-top: 6px; }
+.handoff-slider { margin-bottom: 14px; }
+.handoff-slider-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.handoff-slider-top label { margin-bottom: 4px; }
+.handoff-out {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.9rem;
+}
+.handoff-slider input[type="range"] {
+  width: 100%;
+  height: 2rem;
+  accent-color: var(--teal-600);
+  margin: 4px 0;
+}
+.handoff-scale {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--gray-600);
+}
+.handoff-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.handoff-actions .btn,
+.handoff-task .btn { min-height: 44px; }
+.handoff-hint { color: var(--gray-700); }
+.handoff-results { scroll-margin-top: 96px; }
+.handoff-results-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.handoff-results-head h2 { margin: 0; }
+.handoff-copy-row { display: flex; align-items: center; gap: 12px; }
+.handoff-total {
+  background: var(--navy-50);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  margin: 16px 0;
+}
+.handoff-total strong { color: var(--navy); font-size: 1.35rem; }
+.handoff-rank { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; }
+.handoff-rank li {
+  list-style: none;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  background: var(--white);
+}
+.handoff-rank li.handoff-first {
+  border-color: var(--teal-600);
+  box-shadow: var(--shadow);
+}
+.handoff-badge {
+  display: inline-block;
+  background: var(--teal-700);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  margin-bottom: 8px;
+}
+.handoff-rank h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.handoff-meta { color: var(--gray-700); margin-bottom: 8px; }
+.handoff-score { font-weight: 800; color: var(--navy); }
+.handoff-share {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  overflow-wrap: anywhere;
+}
+.handoff-cta {
+  margin-top: 28px;
+  background: var(--teal-50);
+  border: 1px solid var(--teal-100);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+}
+.handoff-cta h2 { font-size: 1.35rem; margin-bottom: 8px; }
+.handoff-cta p { color: var(--gray-700); margin-bottom: 16px; }
+.handoff-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .handoff-task { padding: 14px; }
+  .handoff-actions .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<a class="handoff-skip" href="#handoff-form">Skip to the calculator</a>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">WeAddBots</a>
+    <div class="nav-links">
+      <a href="/services">Services</a>
+      <a href="/about">About</a>
+      <a href="/events/">Events</a>
+      <a href="/contact">Contact</a>
+      <a href="/tools/ai-handoff" aria-current="page">Free tools</a>
+    </div>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">&#9776;</button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/services">Services</a>
+  <a href="/about">About</a>
+  <a href="/events/">Events</a>
+  <a href="/contact">Contact</a>
+  <a href="/tools/ai-handoff" aria-current="page">Free tools</a>
+</div>
+
+<div class="event-banner">
+  <div class="event-banner-inner">
+    <span>&#128197; <strong>Next Memphis AI Meetup:</strong> Tue, Oct 13. Germantown. RSVP free.</span>
+    <a href="/events/memphis-ai-meetup">RSVP Free &rarr;</a>
+  </div>
+</div>
+
+<section class="hero-page has-banner">
+  <div class="handoff-wrap">
+    <nav class="handoff-crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> / <span aria-current="page">Free tools</span>
+    </nav>
+    <p class="section-label">Free tool</p>
+    <h1>Which job should I hand to AI?</h1>
+    <p class="hero-subtitle">List the jobs that eat your week. This ranks which one to hand off first, and how many hours you might get back.</p>
+  </div>
+</section>
+
+<section class="section bg-white">
+  <div class="handoff-wrap">
+    <p class="handoff-lead">Add 3 to 10 tasks you actually do. For each one, put the hours and move three sliders. The score is on this page. Nothing is sent to a server, and there is no login.</p>
+    <div class="handoff-formula">
+      <h2>The math, in the open</h2>
+      <p>Each slider is 1 to 5. Add the three numbers, divide by 15, and multiply by 100. That is the score. A 5, 5, and 5 scores 100. A 1, 1, and 1 scores 20.</p>
+      <p class="handoff-eq">Score = (Repetitive + Rule-based + Text/data) &divide; 15 &times; 100</p>
+      <p>Hours you might get back are a conservative percent of the weekly hours. A perfect score still only counts 55%. The rest stays with you for review, exceptions, and the week that does not go to plan.</p>
+      <table class="handoff-table">
+        <caption class="handoff-sr">Conservative percent of weekly hours counted, by score</caption>
+        <thead>
+          <tr><th scope="col">Score</th><th scope="col">Percent of hours counted</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>90&ndash;100</td><td>55%</td></tr>
+          <tr><td>75&ndash;89</td><td>40%</td></tr>
+          <tr><td>60&ndash;74</td><td>30%</td></tr>
+          <tr><td>45&ndash;59</td><td>15%</td></tr>
+          <tr><td>25&ndash;44</td><td>5%</td></tr>
+          <tr><td>Under 25</td><td>0%</td></tr>
+        </tbody>
+      </table>
+      <p>Tasks are ranked by score. If two scores match, the one that gives back more hours comes first. The top task is the cleanest handoff, which is not always the longest one.</p>
+      <p>The middle slider also picks the kind of help:</p>
+      <ul class="content-list">
+        <li><strong>4 or 5, mostly rules: transport.</strong> You are moving information and the meaning stays the same. A script fits.</li>
+        <li><strong>1 or 2, mostly judgment: translation.</strong> Someone has to read it and decide what it means. An AI agent fits. When I say an AI agent, I mean a tool like Grok. You still check what comes back.</li>
+        <li><strong>3: both.</strong> A script moves what never changes. An agent drafts what needs a judgment. You keep the exceptions.</li>
+      </ul>
+      <p class="handoff-note">This is a rough sort, not a quote.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-gray-50">
+  <div class="handoff-wrap">
+    <h2>Your tasks</h2>
+    <p class="handoff-note" id="handoff-count">3 tasks on the form. 10 is the max.</p>
+    <form id="handoff-form" novalidate autocomplete="off">
+      <div class="handoff-tasks" id="handoff-tasks"></div>
+      <div class="handoff-actions">
+        <button type="submit" class="btn btn-primary" id="handoff-see">See the ranking</button>
+        <button type="button" class="btn btn-secondary" id="handoff-add">Add a task</button>
+        <button type="button" class="btn btn-outline" id="handoff-sample">Try a sample week</button>
+      </div>
+    </form>
+    <noscript>
+      <p>This calculator runs in your browser. Turn on JavaScript to score your tasks. Nothing is sent to a server.</p>
+    </noscript>
+  </div>
+</section>
+
+<section class="section bg-white handoff-results" id="handoff-results" aria-labelledby="handoff-results-title">
+  <div class="handoff-wrap">
+    <div class="handoff-results-head">
+      <h2 id="handoff-results-title">Your ranking</h2>
+    </div>
+    <div id="handoff-results-body">
+      <p class="handoff-hint">Name at least 3 tasks and give each a number of hours.</p>
+    </div>
+    <p id="handoff-status" class="handoff-sr" aria-live="polite"></p>
+  </div>
+</section>
+
+<div class="freshness">Last updated: October 12, 2026</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>WeAddBots</h4>
+      <p class="footer-tagline">AI automation for Memphis businesses.<br>Simple, practical, proven.</p>
+      <p class="footer-legal-name">A service of <a href="https://www.creatingvaluellc.com" target="_blank" rel="noopener">Creating Value LLC</a></p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="/newsletter">Newsletter</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/rebecca">Rebecca AI</a>
+      <a href="/events/">Events</a>
+      <a href="/locations/">Locations</a>
+      <a href="/updates/">Updates</a>
+      <a href="/build-with-me">Build With Me</a>
+      <a href="/org-chart">Org Chart</a>
+      <a href="/contact">Contact</a>
+      <a href="/tools/ai-handoff">Free tools</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="https://www.linkedin.com/company/weaddbots/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/scottfinney/" target="_blank" rel="noopener">Scott Finney</a>
+      <a href="tel:+19016767697">(901) 676-7697</a>
+    </div>
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; margin-top: 24px; text-align: center;">
+    <p style="color: var(--gray-400); font-size: 0.85rem; margin-bottom: 0;">Get weekly meetup details &amp; AI tips &mdash; <a href="/newsletter" style="color: var(--teal);">join the email list</a></p>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 <a href="https://www.creatingvaluellc.com" target="_blank" rel="noopener">Creating Value LLC</a>. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="/tools/ai-handoff">Free tools</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/sitemap.xml">Sitemap</a>
+      <a href="/llms.txt">LLMs.txt</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/tools/ai-handoff/handoff.js"></script>
+<script>
+(function () {
+  var S = window.HandoffScore;
+  var SCALES = {
+    r: ['rarely the same', 'mostly the same steps', 'a mix', 'usually the same', 'same every time'],
+    u: ['mostly judgment', 'more judgment than rules', 'half and half', 'more rules than judgment', 'mostly rules'],
+    d: ['almost no text or data', 'a little text or data', 'about half', 'mostly text or data', 'almost all text or data']
+  };
+  var state = { rows: [S.blankRow(), S.blankRow(), S.blankRow()] };
+  var lastSig = '';
+  var urlTimer = 0;
+  var announceTimer = 0;
+  var booted = false;
+
+  var menuBtn = document.getElementById('mobile-menu-btn');
+  menuBtn.addEventListener('click', function () {
+    var menu = document.getElementById('mobile-menu');
+    var open = menu.classList.toggle('show');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  function el(tag, attrs) {
+    var node = document.createElement(tag);
+    if (attrs) {
+      Object.keys(attrs).forEach(function (key) {
+        if (key === 'class') node.className = attrs[key];
+        else if (key === 'text') node.textContent = attrs[key];
+        else node.setAttribute(key, attrs[key]);
+      });
+    }
+    for (var i = 2; i < arguments.length; i++) {
+      var child = arguments[i];
+      if (child == null) continue;
+      node.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
+    }
+    return node;
+  }
+
+  function valueText(field, n) {
+    return n + ' of 5, ' + SCALES[field][n - 1];
+  }
+
+  function readCard(card) {
+    return {
+      n: card.querySelector('[data-field="name"]').value,
+      h: card.querySelector('[data-field="hours"]').value,
+      r: Number(card.querySelector('[data-field="r"]').value),
+      u: Number(card.querySelector('[data-field="u"]').value),
+      d: Number(card.querySelector('[data-field="d"]').value)
+    };
+  }
+
+  function problemsFor(row) {
+    var name = String(row.n || '').trim();
+    var blankHours = row.h === '' || row.h == null;
+    var hours = S.cleanHours(row.h);
+    if (!name && blankHours) return [];
+    var problems = [];
+    if (!name) problems.push('Name this task.');
+    if (blankHours) problems.push('Add the hours per week.');
+    else if (hours == null) problems.push('Use 0.5 to 80 hours.');
+    return problems;
+  }
+
+  function sharePath(rows) {
+    var url = new URL(window.location.href);
+    var dirty = rows.length !== 3 || rows.some(function (t) {
+      return String(t.n || '').trim() !== '' || String(t.h) !== '' || t.r !== 3 || t.u !== 3 || t.d !== 3;
+    });
+    if (dirty) url.searchParams.set('t', S.serialize(rows));
+    else url.searchParams.delete('t');
+    return url.pathname + url.search;
+  }
+
+  function absoluteShare(rows) {
+    return new URL(sharePath(rows), window.location.origin).href;
+  }
+
+  function syncUrl() {
+    var next = sharePath(state.rows);
+    if (next !== window.location.pathname + window.location.search) {
+      history.replaceState(null, '', next);
+    }
+  }
+
+  function scheduleUrl() {
+    window.clearTimeout(urlTimer);
+    urlTimer = window.setTimeout(syncUrl, 200);
+  }
+
+  function updateCardChrome(card, row) {
+    var index = Number(card.getAttribute('data-index'));
+    var name = String(row.n || '').trim();
+    card.querySelector('legend').textContent = name ? ('Task ' + (index + 1) + ', ' + name) : ('Task ' + (index + 1));
+    ['r', 'u', 'd'].forEach(function (field) {
+      var input = card.querySelector('[data-field="' + field + '"]');
+      var n = Number(input.value);
+      card.querySelector('[data-out="' + field + '"]').textContent = n + ' of 5';
+      input.setAttribute('aria-valuenow', String(n));
+      input.setAttribute('aria-valuetext', valueText(field, n));
+    });
+    var problems = problemsFor(row);
+    var error = card.querySelector('.handoff-error');
+    error.textContent = problems.join(' ');
+    error.hidden = problems.length === 0;
+    var nameInput = card.querySelector('[data-field="name"]');
+    var hoursInput = card.querySelector('[data-field="hours"]');
+    var nameBad = problems.some(function (p) { return p.indexOf('Name') === 0; });
+    var hoursBad = problems.some(function (p) { return p.indexOf('Name') !== 0; });
+    if (nameBad) nameInput.setAttribute('aria-invalid', 'true');
+    else nameInput.removeAttribute('aria-invalid');
+    if (hoursBad) hoursInput.setAttribute('aria-invalid', 'true');
+    else hoursInput.removeAttribute('aria-invalid');
+    var described = card.querySelector('.handoff-error').id;
+    if (problems.length) {
+      nameInput.setAttribute('aria-describedby', described);
+      hoursInput.setAttribute('aria-describedby', described);
+    } else {
+      nameInput.removeAttribute('aria-describedby');
+      hoursInput.removeAttribute('aria-describedby');
+    }
+  }
+
+  function sliderBlock(index, field, label, low, high, value) {
+    var id = 'task-' + index + '-' + field;
+    var scaleId = id + '-scale';
+    var input = el('input', {
+      type: 'range',
+      id: id,
+      min: '1',
+      max: '5',
+      step: '1',
+      value: String(value),
+      'data-field': field,
+      'aria-valuemin': '1',
+      'aria-valuemax': '5',
+      'aria-valuenow': String(value),
+      'aria-valuetext': valueText(field, value),
+      'aria-describedby': scaleId
+    });
+    return el('div', { class: 'handoff-slider' },
+      el('div', { class: 'handoff-slider-top' },
+        el('label', { for: id, text: label }),
+        el('span', { class: 'handoff-out', 'data-out': field, 'aria-hidden': 'true', text: value + ' of 5' })
+      ),
+      input,
+      el('div', { class: 'handoff-scale', id: scaleId },
+        el('span', { text: low }),
+        el('span', { text: high })
+      )
+    );
+  }
+
+  function renderTasks(focusSelector) {
+    var list = document.getElementById('handoff-tasks');
+    var active = document.activeElement;
+    var focusKey = active && active.getAttribute ? active.getAttribute('data-field') : '';
+    var focusCard = active && active.closest ? active.closest('.handoff-task') : null;
+    var focusIndex = focusCard ? Number(focusCard.getAttribute('data-index')) : -1;
+    var sel = active && typeof active.selectionStart === 'number' ? active.selectionStart : null;
+    list.replaceChildren();
+    state.rows.forEach(function (row, index) {
+      var nameId = 'task-' + index + '-name';
+      var hoursId = 'task-' + index + '-hours';
+      var errorId = 'task-' + index + '-error';
+      var remove = el('button', {
+        type: 'button',
+        class: 'btn btn-outline btn-sm handoff-remove',
+        'data-remove': String(index),
+        'aria-label': 'Remove task ' + (index + 1)
+      }, 'Remove');
+      if (state.rows.length <= S.MIN_TASKS) {
+        remove.disabled = true;
+        remove.setAttribute('aria-label', 'Remove task ' + (index + 1) + ', disabled. Keep at least 3 tasks.');
+      }
+      var nameInput = el('input', {
+        type: 'text',
+        id: nameId,
+        'data-field': 'name',
+        maxlength: '80',
+        autocomplete: 'off',
+        value: row.n
+      });
+      var hoursInput = el('input', {
+        type: 'number',
+        id: hoursId,
+        'data-field': 'hours',
+        min: '0.5',
+        max: '80',
+        step: '0.5',
+        inputmode: 'decimal',
+        value: row.h === '' || row.h == null ? '' : String(row.h)
+      });
+      var card = el('fieldset', { class: 'handoff-task', 'data-index': String(index) },
+        el('legend', { text: 'Task ' + (index + 1) }),
+        remove,
+        el('div', { class: 'handoff-field' },
+          el('label', { for: nameId, text: 'Task name' }),
+          nameInput
+        ),
+        el('div', { class: 'handoff-field' },
+          el('label', { for: hoursId, text: 'Hours per week' }),
+          hoursInput
+        ),
+        sliderBlock(index, 'r', 'How repetitive is it?', '1, rarely the same', '5, same every time', row.r),
+        sliderBlock(index, 'u', 'Rule-based or judgment?', '1, mostly judgment', '5, mostly rules', row.u),
+        sliderBlock(index, 'd', 'How much is text or data?', '1, almost none', '5, almost all of it', row.d),
+        el('p', { class: 'handoff-error', id: errorId, hidden: 'hidden' })
+      );
+      list.appendChild(card);
+      updateCardChrome(card, row);
+    });
+    var addBtn = document.getElementById('handoff-add');
+    addBtn.disabled = state.rows.length >= S.MAX_TASKS;
+    addBtn.textContent = state.rows.length >= S.MAX_TASKS ? '10 tasks is the max' : 'Add a task';
+    var ready = state.rows.map(S.readyTask).filter(Boolean).length;
+    document.getElementById('handoff-count').textContent =
+      state.rows.length + (state.rows.length === 1 ? ' task' : ' tasks') +
+      ' on the form. ' + ready + (ready === 1 ? ' is' : ' are') + ' ready to score. Keep at least 3. 10 is the max.';
+    if (focusSelector) {
+      var target = document.querySelector(focusSelector);
+      if (target) target.focus();
+    } else if (focusIndex >= 0 && focusKey) {
+      var again = list.querySelector('[data-index="' + focusIndex + '"] [data-field="' + focusKey + '"]');
+      if (again) {
+        again.focus();
+        if (sel != null && again.setSelectionRange && again.type !== 'range') {
+          try { again.setSelectionRange(sel, sel); } catch (err) {}
+        }
+      }
+    }
+  }
+
+  function resultItem(task, position, weakFirst) {
+    var badgeText = position === 0
+      ? (weakFirst ? 'Start here if you start anywhere.' : 'Hand this one off first.')
+      : '';
+    var title = el('h3', { text: task.n });
+    var meta = el('p', { class: 'handoff-meta' },
+      el('span', { class: 'handoff-score', text: 'Score ' + task.score + '. ' }),
+      'About ' + S.formatHours(task.hoursBack) + ' of ' + S.formatHours(task.h) +
+      ' a week (' + S.formatPct(task.rate) + '). ' + task.modeLabel + '.'
+    );
+    var item = el('li', position === 0 ? { class: 'handoff-first' } : {},
+      badgeText ? el('p', { class: 'handoff-badge', text: badgeText }) : null,
+      title,
+      meta,
+      el('p', { text: task.explain })
+    );
+    return item;
+  }
+
+  function renderResults() {
+    var ready = [];
+    state.rows.forEach(function (row) {
+      var task = S.readyTask(row);
+      if (task) ready.push(task);
+    });
+    var body = document.getElementById('handoff-results-body');
+    body.replaceChildren();
+    var head = document.querySelector('.handoff-results-head');
+    var oldCopy = document.getElementById('handoff-copy-row');
+    if (oldCopy) oldCopy.remove();
+
+    if (ready.length < S.MIN_TASKS) {
+      var need = S.MIN_TASKS - ready.length;
+      body.appendChild(el('p', {
+        class: 'handoff-hint',
+        text: ready.length === 0
+          ? 'Name at least 3 tasks and give each a number of hours. You can add up to 10.'
+          : (ready.length + (ready.length === 1 ? ' task is' : ' tasks are') + ' ready. Add ' + need + ' more.')
+      }));
+      return { ready: ready, result: null };
+    }
+
+    var result = S.scoreTasks(ready);
+    var list = el('ol', { class: 'handoff-rank' });
+    result.ranked.forEach(function (task, i) {
+      list.appendChild(resultItem(task, i, result.firstIsWeak));
+    });
+    var total = el('div', { class: 'handoff-total' },
+      el('p', {},
+        'Hours you might get back: ',
+        el('strong', { text: 'about ' + S.formatHours(result.totalBack) }),
+        ' of ' + S.formatHours(result.totalHours) + ' a week.'
+      ),
+      el('p', { class: 'handoff-note', text: 'That total uses the conservative percents in the table above. It is a rough sort, not a quote.' })
+    );
+    var share = absoluteShare(state.rows);
+    body.appendChild(list);
+    body.appendChild(total);
+    body.appendChild(el('p', { class: 'handoff-share' }, 'Share this address: ', el('span', { text: share })));
+
+    var cta = el('div', { class: 'handoff-cta' },
+      el('h2', { text: 'Bring the list with you' }),
+      el('p', { text: 'The Memphis AI Meetup is free. Bring the top task. We can talk through whether a script or an agent should take it. No pitch.' }),
+      el('div', { class: 'cta-buttons' },
+        el('a', { class: 'btn btn-primary', href: '/events/memphis-ai-meetup' }, 'Come to the Memphis AI Meetup'),
+        el('a', {
+          class: 'btn btn-outline',
+          href: 'https://x.com/finnious',
+          target: '_blank',
+          rel: 'noopener'
+        }, 'DM Scott on X')
+      )
+    );
+    body.appendChild(cta);
+
+    var status = el('span', { id: 'handoff-copy-status', role: 'status' });
+    var copyBtn = el('button', { type: 'button', class: 'btn btn-outline btn-sm', id: 'handoff-copy' }, 'Copy results');
+    copyBtn.addEventListener('click', function () {
+      var text = S.copyText(result, absoluteShare(state.rows));
+      copyPlain(text).then(function () {
+        status.textContent = 'Copied.';
+        window.setTimeout(function () { status.textContent = ''; }, 2000);
+      }).catch(function () {
+        status.textContent = 'Select the share address and copy it from there.';
+      });
+    });
+    var row = el('div', { class: 'handoff-copy-row', id: 'handoff-copy-row' }, copyBtn, status);
+    head.appendChild(row);
+    return { ready: ready, result: result };
+  }
+
+  function announce(view) {
+    var status = document.getElementById('handoff-status');
+    if (!view.result) {
+      var need = S.MIN_TASKS - view.ready.length;
+      status.textContent = view.ready.length === 0
+        ? ''
+        : ('Add ' + need + ' more ' + (need === 1 ? 'task' : 'tasks') + ' to rank them.');
+      return;
+    }
+    var top = view.result.ranked[0];
+    var lead = view.result.firstIsWeak ? 'Start here if you start anywhere: ' : 'Hand this one off first: ';
+    status.textContent = 'Ranking updated. ' + lead + top.n + '. About ' +
+      S.formatHours(view.result.totalBack) + ' a week across the list.';
+  }
+
+  function refresh() {
+    var view = renderResults();
+    var sig = view.result ? S.copyText(view.result, '') : ('need:' + view.ready.length);
+    if (!booted) {
+      lastSig = sig;
+      return;
+    }
+    if (sig === lastSig) return;
+    lastSig = sig;
+    window.clearTimeout(announceTimer);
+    announceTimer = window.setTimeout(function () { announce(view); }, 500);
+  }
+
+  function onFormInput(event) {
+    var card = event.target.closest && event.target.closest('.handoff-task');
+    if (!card) return;
+    var index = Number(card.getAttribute('data-index'));
+    state.rows[index] = readCard(card);
+    updateCardChrome(card, state.rows[index]);
+    var ready = state.rows.map(S.readyTask).filter(Boolean).length;
+    document.getElementById('handoff-count').textContent =
+      state.rows.length + (state.rows.length === 1 ? ' task' : ' tasks') +
+      ' on the form. ' + ready + (ready === 1 ? ' is' : ' are') + ' ready to score. Keep at least 3. 10 is the max.';
+    refresh();
+    scheduleUrl();
+  }
+
+  function copyPlain(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      var area = document.createElement('textarea');
+      area.value = text;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.left = '-9999px';
+      document.body.appendChild(area);
+      area.select();
+      try {
+        var ok = document.execCommand('copy');
+        document.body.removeChild(area);
+        if (ok) resolve();
+        else reject(new Error('copy failed'));
+      } catch (err) {
+        document.body.removeChild(area);
+        reject(err);
+      }
+    });
+  }
+
+  function loadFromUrl() {
+    var raw = new URLSearchParams(window.location.search).get('t');
+    var parsed = S.parse(raw);
+    if (!parsed) return;
+    while (parsed.length < S.MIN_TASKS) parsed.push(S.blankRow());
+    state.rows = parsed.slice(0, S.MAX_TASKS);
+  }
+
+  document.getElementById('handoff-form').addEventListener('input', onFormInput);
+  document.getElementById('handoff-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    syncUrl();
+    refresh();
+    var target = document.getElementById('handoff-results');
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var heading = document.getElementById('handoff-results-title');
+    heading.setAttribute('tabindex', '-1');
+    heading.focus();
+  });
+  document.getElementById('handoff-tasks').addEventListener('click', function (event) {
+    var button = event.target.closest('[data-remove]');
+    if (!button || button.disabled) return;
+    var index = Number(button.getAttribute('data-remove'));
+    if (state.rows.length <= S.MIN_TASKS) return;
+    state.rows.splice(index, 1);
+    var next = Math.min(index, state.rows.length - 1);
+    renderTasks('#task-' + next + '-name');
+    refresh();
+    scheduleUrl();
+  });
+  document.getElementById('handoff-add').addEventListener('click', function () {
+    if (state.rows.length >= S.MAX_TASKS) return;
+    state.rows.push(S.blankRow());
+    renderTasks('#task-' + (state.rows.length - 1) + '-name');
+    refresh();
+    scheduleUrl();
+  });
+  document.getElementById('handoff-sample').addEventListener('click', function () {
+    state.rows = S.sampleRows();
+    renderTasks('#task-0-name');
+    refresh();
+    syncUrl();
+  });
+
+  loadFromUrl();
+  renderTasks();
+  refresh();
+  booted = true;
+})();
+</script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-WCKLX73V4P');
+
+  window.addEventListener('load', function () {
+    var load = function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WCKLX73V4P';
+      document.head.appendChild(s);
+    };
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(load, { timeout: 2000 });
+    } else {
+      setTimeout(load, 200);
+    }
+
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a');
+      if (!a || !a.href) return;
+      if (a.href.indexOf('tel:') === 0) {
+        gtag('event', 'phone_click', { link_url: a.href });
+      } else if (a.href.indexOf('mailto:') === 0) {
+        gtag('event', 'email_click', { link_url: a.href });
+      }
+    }, { passive: true });
+  });
+</script>
+
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var cs = document.createElement('script');
+    cs.async = true;
+    cs.src = '//static.getclicky.com/js';
+    cs.onload = function() {
+      try { clicky.init(101500449); } catch(e) {}
+    };
+    document.body.appendChild(cs);
+  }, 100);
+});
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101500449ns.gif" /></p></noscript>
+
+</body>
+</html>
