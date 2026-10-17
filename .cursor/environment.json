@@ -1,0 +1,17 @@
+{
+  "name": "WeAddBots Site",
+  "install": "npm config set prefix \"$HOME/.local\" && npm install -g wrangler@4.122.0",
+  "terminals": [
+    {
+      "name": "pages-dev",
+      "command": "\"$HOME/.local/bin/wrangler\" pages dev . --port 8788 --ip 0.0.0.0 --compatibility-date=2026-08-12",
+      "description": "Cloudflare Pages dev server (static site + functions/api/* Pages Functions) on http://localhost:8788"
+    }
+  ],
+  "ports": [
+    {
+      "name": "Cloudflare Pages dev server",
+      "port": 8788
+    }
+  ]
+}
