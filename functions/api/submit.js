@@ -1,52 +1,81 @@
+import {
+    buildGhlBody,
+    customFieldsNeedLookup,
+    indexCustomFields,
+    resolveCustomFields
+} from './ghl-payload.mjs';
+
+const JSON_HEADERS = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json'
+};
+
+function jsonResponse(body, status) {
+    return new Response(JSON.stringify(body), { status: status, headers: JSON_HEADERS });
+}
+
+async function loadCustomFieldIndex(env) {
+    const response = await fetch(
+        'https://services.leadconnectorhq.com/locations/' + env.GHL_LOCATION_ID + '/customFields',
+        {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + env.GHL_API_KEY,
+                'Version': '2021-07-28',
+                'Accept': 'application/json'
+            }
+        }
+    );
+    if (!response.ok) {
+        const error = new Error('custom field lookup failed');
+        error.status = response.status;
+        throw error;
+    }
+    return indexCustomFields(await response.json());
+}
+
 export async function onRequestPost(context) {
     const { request, env } = context;
-
-    const corsHeaders = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'Content-Type': 'application/json'
-    };
 
     try {
         const data = await request.json();
 
-        // Validate required fields
         if (!data.first_name || !data.email) {
-            return new Response(
-                JSON.stringify({ success: false, error: 'Missing required fields' }),
-                { status: 400, headers: corsHeaders }
-            );
+            return jsonResponse({ success: false, error: 'Missing required fields' }, 400);
         }
 
-        // Build GHL v2 API request body
-        const ghlBody = {
-            locationId: env.GHL_LOCATION_ID,
-            firstName: data.first_name,
-            lastName: data.last_name || '',
-            email: data.email,
-            tags: data.tags || [],
-            source: data.source || 'Website'
-        };
-
-        // Only include phone if provided (prevents blanking existing phone on upsert)
-        if (data.phone && data.phone.trim() !== '') {
-            ghlBody.phone = data.phone.trim();
+        let index = null;
+        if (customFieldsNeedLookup(data.customFields)) {
+            try {
+                index = await loadCustomFieldIndex(env);
+            } catch (error) {
+                // The contacts token may not be allowed to list fields. Fall
+                // back to sending contact.{key} and let upsert accept or reject it.
+                console.error('GHL custom field lookup failed; sending field keys', error.status || error.message);
+                index = null;
+            }
         }
 
-        // Map custom fields using GHL field IDs
-        if (data.customFields && data.customFields.length > 0) {
-            ghlBody.customFields = data.customFields.map(field => ({
-                id: field.id,
-                field_value: field.field_value || ''
-            }));
+        const resolved = resolveCustomFields(data.customFields, index);
+        if (resolved.missingKeys.length > 0) {
+            return jsonResponse({
+                success: false,
+                error: 'Missing GHL custom fields',
+                missingKeys: resolved.missingKeys
+            }, 422);
         }
 
-        // GHL v2 API — upsert: creates new contact OR updates existing (matched by email/phone)
+        const ghlBody = buildGhlBody(
+            Object.assign({}, data, { locationId: env.GHL_LOCATION_ID }),
+            resolved.customFields
+        );
+
         const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${env.GHL_API_KEY}`,
+                'Authorization': 'Bearer ' + env.GHL_API_KEY,
                 'Content-Type': 'application/json',
                 'Version': '2021-07-28'
             },
@@ -54,31 +83,21 @@ export async function onRequestPost(context) {
         });
 
         if (!ghlResponse.ok) {
-            const error = await ghlResponse.text();
-            console.error('GHL Error:', error);
-            return new Response(
-                JSON.stringify({ success: false, error: 'Failed to submit to CRM' }),
-                { status: 500, headers: corsHeaders }
-            );
+            const errorText = await ghlResponse.text();
+            console.error('GHL Error:', errorText);
+            return jsonResponse({ success: false, error: 'Failed to submit to CRM' }, 500);
         }
 
         const result = await ghlResponse.json();
 
-        return new Response(
-            JSON.stringify({ success: true, contactId: result.contact?.id }),
-            { status: 200, headers: corsHeaders }
-        );
+        return jsonResponse({ success: true, contactId: result.contact && result.contact.id }, 200);
 
     } catch (error) {
         console.error('Function error:', error);
-        return new Response(
-            JSON.stringify({ success: false, error: 'Server error' }),
-            { status: 500, headers: corsHeaders }
-        );
+        return jsonResponse({ success: false, error: 'Server error' }, 500);
     }
 }
 
-// Handle CORS preflight
 export async function onRequestOptions() {
     return new Response(null, {
         status: 204,
