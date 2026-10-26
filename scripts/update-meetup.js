@@ -64,8 +64,6 @@ console.log(`Updating site for: ${day_of_week}, ${month} ${day} — ${area} (${t
 // never see a fake date. The meetup page keeps them in a marked block that
 // this script re-emits after the scheduled cards.
 const TBA_WEEKS = [
-  'Week of Nov 9',
-  'Week of Nov 16',
   'Week of Nov 23',
   'Week of Nov 30',
   'Week of Dec 7',
