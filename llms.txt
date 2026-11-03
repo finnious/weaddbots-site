@@ -20,7 +20,7 @@
 - [Org Chart](https://www.weaddbots.com/org-chart) - 2026 Org Chart. The WeAddBots team is here to help you.
 - [FAQ](https://www.weaddbots.com/faq) - Comprehensive answers about AI automation, services, Rebecca AI Receptionist, and Memphis AI Meetups
 - [Workshops](https://www.weaddbots.com/workshops) - Practical AI workshops for business owners — topic interest form; details shared privately
-/quiz — Free AI Readiness Assessment. 15-question quiz measuring lead response speed, task automation readiness, and workflow connectivity. Personalized score and recommendations.
+- [5-Minute Bot Check](https://www.weaddbots.com/quiz) - Five questions, no sign-up. Score out of 15 across lead response, follow-ups, tool handoffs, notes and recaps, and owner away. Optional business email after the score.
 
 ## Positioning
 Primary: AI automation consulting for established small and mid-sized businesses, based in Memphis TN, serving US businesses
