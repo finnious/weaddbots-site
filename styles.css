@@ -1167,7 +1167,8 @@ table { border-collapse: collapse; width: 100%; }
 
 .footer-bottom-links {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 8px 24px;
 }
 .footer-bottom-links a { display: inline; padding: 0; }
 
@@ -1353,6 +1354,7 @@ table { border-collapse: collapse; width: 100%; }
 
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-bottom-links { justify-content: center; }
 
     .form-row { flex-direction: column; gap: 0; }
 
