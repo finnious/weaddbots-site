@@ -65,7 +65,6 @@ console.log(`Updating site for: ${day_of_week}, ${month} ${day} — ${area} (${t
 // this script re-emits after the scheduled cards.
 const TBA_WEEKS = [
   'Week of Nov 23',
-  'Week of Nov 30',
   'Week of Dec 7',
   'Week of Dec 14',
   'Week of Dec 21',
