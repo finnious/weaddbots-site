@@ -23,7 +23,6 @@ if (!next) {
 }
 
 const { date_iso, day_of_week, date_display, time, area } = next;
-const id = next.id || `WAB-${date_iso}-${area}`;
 
 // Parse time range ("10:15 – 10:45 AM")
 const [startTime, endTimeWithPeriod] = time.split(/\s*[–-]\s*/);
@@ -39,75 +38,188 @@ const day = dateObj.getDate();
 const year = dateObj.getFullYear();
 const dayAbbr = day_of_week.slice(0, 3);
 
-// Build ISO datetime for schema.org (Central Time)
-const startISO = `${date_iso}T${to24(startTime)}:00-05:00`;
-const endISO = `${date_iso}T${to24(endTime)}:00-05:00`;
-
-function to24(timeStr) {
+function to24(timeStr, fullTime) {
   const match = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)?/i);
   if (!match) return '09:00';
   let [, h, m, period] = match;
   h = parseInt(h);
   // If no AM/PM on this piece, infer from the full time string
   if (!period) {
-    period = time.match(/AM|PM/i)?.[0] || 'AM';
+    period = (fullTime || timeStr).match(/AM|PM/i)?.[0] || 'AM';
   }
   if (period.toUpperCase() === 'PM' && h !== 12) h += 12;
   if (period.toUpperCase() === 'AM' && h === 12) h = 0;
   return `${String(h).padStart(2, '0')}:${m}`;
 }
 
+function eventParts(event) {
+  const dateObj = new Date(event.date_iso + 'T12:00:00');
+  const [startRaw, endRaw] = event.time.split(/\s*[–-]\s*/);
+  const startTime = startRaw.trim();
+  const endTime = endRaw.trim();
+  const bits = (event.venue_private || '').split(',').map((part) => part.trim());
+  const regionZip = (bits[3] || '').split(/\s+/).filter(Boolean);
+  return {
+    month: monthNames[dateObj.getMonth()],
+    monthAbbr: monthShort[dateObj.getMonth()],
+    day: dateObj.getDate(),
+    year: dateObj.getFullYear(),
+    startTime,
+    endTime,
+    startISO: `${event.date_iso}T${to24(startTime, event.time)}:00-05:00`,
+    endISO: `${event.date_iso}T${to24(endTime, event.time)}:00-05:00`,
+    timeHtml: event.time.replace('–', '&ndash;'),
+    id: event.id || `WAB-${event.date_iso}-${event.area}`,
+    venueName: (event.venue_public && bits[0]) ? bits[0] : event.area,
+    street: bits[1] || '',
+    locality: bits[2] || event.area,
+    region: regionZip[0] || 'TN',
+    postal: regionZip[1] || '',
+  };
+}
+
 console.log(`Updating site for: ${day_of_week}, ${month} ${day} — ${area} (${time})`);
 
 // Tentative weeks with no set day, time, or venue. These stay out of
 // meetup-events.json and out of schema.org Event data so search engines
-// never see a fake date. The meetup page keeps them in a marked block that
-// this script re-emits after the scheduled cards.
+// never see a fake date. A string is a TBA week. An object keeps the same
+// dashed card and replaces the TBA line (used for a skipped holiday week).
+// Week of Nov 30 is omitted because Thu Dec 3 covers that week. Week of
+// Dec 7 is omitted because Thu Dec 10 covers that week.
+// sort is the Monday (or named day) of that week in 2026, so these cards
+// interleave with confirmed events in calendar order.
 const TBA_WEEKS = [
-  'Week of Nov 23',
-  'Week of Nov 30',
-  'Week of Dec 7',
-  'Week of Dec 14',
-  'Week of Dec 21',
-  'Week of Dec 28',
+  { week: 'Week of Nov 23', sort: '2026-11-23', body: 'No meetup this week &mdash; Happy Thanksgiving!' },
+  { week: 'Week of Dec 14', sort: '2026-12-14' },
+  { week: 'Week of Dec 21', sort: '2026-12-21' },
+  { week: 'Week of Dec 28', sort: '2026-12-28' },
 ];
-const TBA_START = '<!-- meetup-tba-placeholders:start -->';
-const TBA_END = '<!-- meetup-tba-placeholders:end -->';
-const TBA_SLOT = '<!--MEETUP_TBA_SLOT-->';
-const TBA_BLOCK_RE = /[ \t]*<!-- meetup-tba-placeholders:start -->[\s\S]*?<!-- meetup-tba-placeholders:end -->/;
+const UPCOMING_START = '<!-- meetup-upcoming-cards:start -->';
+const UPCOMING_END = '<!-- meetup-upcoming-cards:end -->';
+const UPCOMING_BLOCK_RE = /[ \t]*<!-- meetup-upcoming-cards:start -->[\s\S]*?<!-- meetup-upcoming-cards:end -->/;
+const LEGACY_CARDS_RE = /[ \t]*<label class="date-card next-up">[\s\S]*?<!-- meetup-tba-placeholders:end -->/;
+const EVENT_DESCRIPTION = "Free weekly in-person AI meetup for Memphis business owners. Practical conversations about AI automation — what's working, what's not, and how to get started. No pitch, no upsell.";
 
-function buildTbaPlaceholderBlock() {
-  const cards = TBA_WEEKS.map((week) => {
-    return [
-      '          <div class="date-card tba">',
-      '            <div class="date-card-info">',
-      `              <h4>&#128197; ${week}</h4>`,
-      '              <p>Date, time &amp; location TBA</p>',
-      '            </div>',
-      '          </div>',
-    ].join('\n');
-  }).join('\n\n');
-  return `          ${TBA_START}\n${cards}\n          ${TBA_END}`;
+function tbaWeek(entry) {
+  if (typeof entry === 'string') {
+    return { week: entry, sort: '9999-99-99', body: 'Date, time &amp; location TBA' };
+  }
+  return {
+    week: entry.week,
+    sort: entry.sort,
+    body: entry.body || 'Date, time &amp; location TBA',
+  };
 }
 
-function shieldTbaPlaceholders(html) {
-  if (!TBA_BLOCK_RE.test(html)) return html;
-  return html.replace(TBA_BLOCK_RE, TBA_SLOT);
+function tbaCard(entry) {
+  const week = tbaWeek(entry);
+  return [
+    '          <div class="date-card tba">',
+    '            <div class="date-card-info">',
+    `              <h4>&#128197; ${week.week}</h4>`,
+    `              <p>${week.body}</p>`,
+    '            </div>',
+    '          </div>',
+  ].join('\n');
 }
 
-function ensureTbaPlaceholders(html) {
-  const block = buildTbaPlaceholderBlock();
-  if (html.includes(TBA_SLOT)) {
-    return html.replace(TBA_SLOT, block);
+function confirmedCard(event) {
+  const parts = eventParts(event);
+  const isNext = event === next;
+  const place = (event.venue_public && event.venue_private)
+    ? `${parts.timeHtml} &bull; ${parts.venueName}, ${event.area}`
+    : `${parts.timeHtml} &bull; RSVP to get the exact venue`;
+  const lines = [
+    `          <label class="date-card${isNext ? ' next-up' : ''}">`,
+    `            <input type="checkbox" name="event_dates" value="${parts.id}" data-date="${event.date_iso}" data-area="${event.area}" data-name="Memphis AI Meetup — ${parts.monthAbbr} ${parts.day}">`,
+    '            <div class="date-card-info">',
+    `              <h4>&#128197; ${event.day_of_week}, ${parts.monthAbbr} ${parts.day} &mdash; ${event.area}</h4>`,
+    `              <p>${place}</p>`,
+    '            </div>',
+  ];
+  if (isNext) lines.push('            <span class="next-badge">Next Up</span>');
+  lines.push('          </label>');
+  return lines.join('\n');
+}
+
+function upcomingItems() {
+  const items = data.events
+    .filter((event) => event.status === 'confirmed')
+    .map((event) => ({
+      sort: event.date_iso,
+      label: `${event.day_of_week}, ${eventParts(event).monthAbbr} ${eventParts(event).day}${event === next ? ' (Next Up)' : ''}`,
+      html: confirmedCard(event),
+    }));
+  for (const entry of TBA_WEEKS) {
+    const week = tbaWeek(entry);
+    items.push({ sort: week.sort, label: week.week, html: tbaCard(entry) });
   }
-  if (TBA_BLOCK_RE.test(html)) {
-    return html.replace(TBA_BLOCK_RE, block);
-  }
-  // Placeholders were removed. Put them back between the last scheduled
-  // card and the notify checkbox, with the same spacing as the page.
+  items.sort((a, b) => (a.sort < b.sort ? -1 : a.sort > b.sort ? 1 : 0));
+  return items;
+}
+
+function buildUpcomingCardsBlock() {
+  const cards = upcomingItems().map((item) => item.html).join('\n\n');
+  return `          ${UPCOMING_START}\n${cards}\n          ${UPCOMING_END}`;
+}
+
+function ensureUpcomingCards(html) {
+  const block = buildUpcomingCardsBlock();
+  if (UPCOMING_BLOCK_RE.test(html)) return html.replace(UPCOMING_BLOCK_RE, block);
+  if (LEGACY_CARDS_RE.test(html)) return html.replace(LEGACY_CARDS_RE, block);
   return html.replace(
-    /<\/label>\s*<div class="notify-checkbox">/,
-    `</label>\n\n${block}\n\n          <div class="notify-checkbox">`
+    /<div class="notify-checkbox">/,
+    `${block}\n\n          <div class="notify-checkbox">`
+  );
+}
+
+function buildEventSchema(event) {
+  const parts = eventParts(event);
+  return [
+    '    {',
+    '      "@type": "Event",',
+    `      "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#event-${event.date_iso}",`,
+    `      "name": "Memphis AI Meetup — ${parts.month} ${parts.day}, ${parts.year}",`,
+    `      "description": ${JSON.stringify(EVENT_DESCRIPTION)},`,
+    `      "startDate": "${parts.startISO}",`,
+    `      "endDate": "${parts.endISO}",`,
+    '      "eventStatus": "https://schema.org/EventScheduled",',
+    '      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",',
+    '      "location": {',
+    '        "@type": "Place",',
+    `        "name": ${JSON.stringify(parts.venueName)},`,
+    '        "address": {',
+    '          "@type": "PostalAddress",',
+    `          "streetAddress": ${JSON.stringify(parts.street)},`,
+    `          "addressLocality": ${JSON.stringify(parts.locality)},`,
+    `          "addressRegion": ${JSON.stringify(parts.region)},`,
+    `          "postalCode": ${JSON.stringify(parts.postal)},`,
+    '          "addressCountry": "US"',
+    '        }',
+    '      },',
+    '      "organizer": { "@id": "https://www.weaddbots.com/#organization" },',
+    '      "performer": { "@id": "https://www.weaddbots.com/about#scott-finney" },',
+    '      "isAccessibleForFree": true,',
+    '      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.weaddbots.com/events/memphis-ai-meetup" },',
+    '      "image": "https://www.weaddbots.com/favicon.svg",',
+    '      "superEvent": { "@id": "https://www.weaddbots.com/events/#meetup-series" }',
+    '    }',
+  ].join('\n');
+}
+
+function syncConfirmedSchemas(html) {
+  const confirmed = data.events.filter((event) => event.status === 'confirmed');
+  const block = confirmed.map(buildEventSchema).join(',\n');
+  const one = '\\{\\n      "@type": "Event",\\n      "@id": "https:\\/\\/www\\.weaddbots\\.com\\/events\\/memphis-ai-meetup#event-[0-9-]+",[\\s\\S]*?"superEvent": \\{ "@id": "https:\\/\\/www\\.weaddbots\\.com\\/events\\/#meetup-series" \\}\\n    \\}';
+  const re = new RegExp(`    ${one}(?:,\\n    ${one})*`);
+  if (!re.test(html)) {
+    console.error('  Meetup Event schema block not found; left schema unchanged');
+    return html;
+  }
+  html = html.replace(re, block);
+  return html.replace(
+    /("about": \{ "@id": "https:\/\/www\.weaddbots\.com\/events\/memphis-ai-meetup#event-)[0-9-]+(" \})/,
+    `$1${next.date_iso}$2`
   );
 }
 
@@ -206,65 +318,12 @@ for (const file of htmlFiles) {
     );
   }
 
-  // Meetup RSVP page — schema.org, date card, sidebar
+  // Meetup RSVP page — schema.org for every confirmed event, cards in
+  // date order, sidebar still describes the next event only.
   if (file === meetupPagePath) {
-    // Lift TBA placeholders out so date-card rewrites cannot touch them.
-    content = shieldTbaPlaceholders(content);
+    content = syncConfirmedSchemas(content);
 
-    // Schema.org Event @id (Event block + WebPage about)
-    content = content.replace(
-      /(#event-)[\d-]+/g,
-      `$1${date_iso}`
-    );
-    // Schema.org Event name
-    content = content.replace(
-      /"name":\s*"Memphis AI Meetup — [\w\s]+\d{1,2},\s*\d{4}"/,
-      `"name": "Memphis AI Meetup — ${month} ${day}, ${year}"`
-    );
-    // Schema.org startDate / endDate
-    content = content.replace(
-      /"startDate":\s*"[^"]+"/,
-      `"startDate": "${startISO}"`
-    );
-    content = content.replace(
-      /"endDate":\s*"[^"]+"/,
-      `"endDate": "${endISO}"`
-    );
-    // Schema.org location name — keep a public venue name when present
-    const locationName = (next.venue_public && next.venue_private)
-      ? next.venue_private.split(',')[0].trim()
-      : area;
-    content = content.replace(
-      /("location":\s*\{\s*"@type":\s*"Place",\s*"name":\s*")[^"]+(")/,
-      `$1${locationName}$2`
-    );
-    // Schema.org addressLocality
-    content = content.replace(
-      /("addressLocality":\s*")[\w\s]+(")/,
-      `$1${area}$2`
-    );
-
-    // "Next Up" date card — input value and data attributes
-    content = content.replace(
-      /(<label class="date-card next-up">\s*<input type="checkbox" name="event_dates" value=")[\w\d-]+(" data-date=")[\d-]+(" data-area=")[\w\s]+(" data-name=")Memphis AI Meetup — [\w\s\d]+(")/,
-      `$1${id}$2${date_iso}$3${area}$4Memphis AI Meetup — ${monthAbbr} ${day}$5`
-    );
-    // "Next Up" date card — h4 text (scheduled card only; not TBA weeks)
-    content = content.replace(
-      /(<label class="date-card next-up">[\s\S]*?date-card-info">\s*<h4>&#128197;\s*)[\w]+,\s*[\w]+\s*\d{1,2}\s*&mdash;\s*[\w\s]+(<\/h4>)/,
-      `$1${day_of_week}, ${monthAbbr} ${day} &mdash; ${area}$2`
-    );
-    // "Next Up" date card — time text (venue-public or RSVP-for-venue)
-    content = content.replace(
-      /(<label class="date-card next-up">[\s\S]*?<p>)\d{1,2}:\d{2}\s*&ndash;\s*\d{1,2}:\d{2}\s*(?:AM|PM)[^<]*(<\/p>)/,
-      `$1${time.replace('–', '&ndash;')} &bull; ${locationName}, ${area}$2`
-    );
-    content = content.replace(
-      /(\d{1,2}:\d{2}\s*&ndash;\s*\d{1,2}:\d{2}\s*(?:AM|PM)?\s*&bull;\s*RSVP to get the exact venue)/,
-      `${time.replace('–', '&ndash;')} &bull; RSVP to get the exact venue`
-    );
-
-    // Sidebar Quick Details
+    // Sidebar Quick Details stay on the next event (Dec 3), not later ones.
     content = content.replace(
       /(&#128197;\s*<strong>Next:<\/strong>\s*)[\w]+,\s*[\w]+\s*\d{1,2}/,
       `$1${day_of_week}, ${monthAbbr} ${day}`
@@ -278,9 +337,11 @@ for (const file of htmlFiles) {
       `$1${area}$2`
     );
 
-    content = ensureTbaPlaceholders(content);
-    const tbaCount = (content.match(/class="date-card tba"/g) || []).length;
-    console.log(`  TBA placeholders on meetup page: ${tbaCount} (not in JSON-LD)`);
+    content = ensureUpcomingCards(content);
+    const order = upcomingItems().map((item) => item.label);
+    const schemaIds = [...content.matchAll(/"@type": "Event",\s*"@id": "https:\/\/www\.weaddbots\.com\/events\/memphis-ai-meetup#event-(\d{4}-\d{2}-\d{2})"/g)].map((match) => match[1]);
+    console.log(`  Upcoming cards: ${order.join(' → ')}`);
+    console.log(`  Schema events: ${schemaIds.join(', ')} (about stays #event-${date_iso})`);
   }
 
   if (content !== original) {

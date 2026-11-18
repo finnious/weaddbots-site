@@ -65,6 +65,34 @@
       "superEvent": { "@id": "https://www.weaddbots.com/events/#meetup-series" }
     },
     {
+      "@type": "Event",
+      "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#event-2026-12-10",
+      "name": "Memphis AI Meetup — December 10, 2026",
+      "description": "Free weekly in-person AI meetup for Memphis business owners. Practical conversations about AI automation — what's working, what's not, and how to get started. No pitch, no upsell.",
+      "startDate": "2026-12-10T09:15:00-05:00",
+      "endDate": "2026-12-10T09:45:00-05:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Congregation Coffee",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3060 Forest Hill Irene Rd",
+          "addressLocality": "Germantown",
+          "addressRegion": "TN",
+          "postalCode": "38138",
+          "addressCountry": "US"
+        }
+      },
+      "organizer": { "@id": "https://www.weaddbots.com/#organization" },
+      "performer": { "@id": "https://www.weaddbots.com/about#scott-finney" },
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.weaddbots.com/events/memphis-ai-meetup" },
+      "image": "https://www.weaddbots.com/favicon.svg",
+      "superEvent": { "@id": "https://www.weaddbots.com/events/#meetup-series" }
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#FAQPage",
       "isPartOf": { "@id": "https://www.weaddbots.com/events/memphis-ai-meetup#WebPage" },
@@ -174,6 +202,14 @@
           <h2 class="mb-24" style="font-size:1.5rem;">Upcoming Meetups</h2>
           <p class="text-sm mb-16" style="color:var(--gray-500);">Select the date(s) you'd like to attend. We'll send you reminders and venue details.</p>
 
+          <!-- meetup-upcoming-cards:start -->
+          <div class="date-card tba">
+            <div class="date-card-info">
+              <h4>&#128197; Week of Nov 23</h4>
+              <p>No meetup this week &mdash; Happy Thanksgiving!</p>
+            </div>
+          </div>
+
           <label class="date-card next-up">
             <input type="checkbox" name="event_dates" value="WAB-2026-12-03-Germantown" data-date="2026-12-03" data-area="Germantown" data-name="Memphis AI Meetup — Dec 3">
             <div class="date-card-info">
@@ -183,27 +219,13 @@
             <span class="next-badge">Next Up</span>
           </label>
 
-          <!-- meetup-tba-placeholders:start -->
-          <div class="date-card tba">
+          <label class="date-card">
+            <input type="checkbox" name="event_dates" value="WAB-2026-12-10-Germantown" data-date="2026-12-10" data-area="Germantown" data-name="Memphis AI Meetup — Dec 10">
             <div class="date-card-info">
-              <h4>&#128197; Week of Nov 23</h4>
-              <p>Date, time &amp; location TBA</p>
+              <h4>&#128197; Thursday, Dec 10 &mdash; Germantown</h4>
+              <p>9:15 &ndash; 9:45 AM &bull; Congregation Coffee, Germantown</p>
             </div>
-          </div>
-
-          <div class="date-card tba">
-            <div class="date-card-info">
-              <h4>&#128197; Week of Nov 30</h4>
-              <p>Date, time &amp; location TBA</p>
-            </div>
-          </div>
-
-          <div class="date-card tba">
-            <div class="date-card-info">
-              <h4>&#128197; Week of Dec 7</h4>
-              <p>Date, time &amp; location TBA</p>
-            </div>
-          </div>
+          </label>
 
           <div class="date-card tba">
             <div class="date-card-info">
@@ -225,7 +247,7 @@
               <p>Date, time &amp; location TBA</p>
             </div>
           </div>
-          <!-- meetup-tba-placeholders:end -->
+          <!-- meetup-upcoming-cards:end -->
 
           <div class="notify-checkbox">
             <input type="checkbox" id="notify_future" name="notify_future">
