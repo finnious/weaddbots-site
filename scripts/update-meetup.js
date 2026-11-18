@@ -85,14 +85,15 @@ console.log(`Updating site for: ${day_of_week}, ${month} ${day} — ${area} (${t
 // never see a fake date. A string is a TBA week. An object keeps the same
 // dashed card and replaces the TBA line (used for a skipped holiday week).
 // Week of Nov 30 is omitted because Thu Dec 3 covers that week. Week of
-// Dec 7 is omitted because Thu Dec 10 covers that week.
+// Dec 7 is omitted because Thu Dec 10 covers that week. Week of Dec 14
+// is omitted because Thu Dec 17 covers that week. Week of Dec 28 is
+// omitted because Tue Dec 29 covers that week. Week of Dec 21 stays:
+// no locked room falls in that week.
 // sort is the Monday (or named day) of that week in 2026, so these cards
 // interleave with confirmed events in calendar order.
 const TBA_WEEKS = [
   { week: 'Week of Nov 23', sort: '2026-11-23', body: 'No meetup this week &mdash; Happy Thanksgiving!' },
-  { week: 'Week of Dec 14', sort: '2026-12-14' },
   { week: 'Week of Dec 21', sort: '2026-12-21' },
-  { week: 'Week of Dec 28', sort: '2026-12-28' },
 ];
 const UPCOMING_START = '<!-- meetup-upcoming-cards:start -->';
 const UPCOMING_END = '<!-- meetup-upcoming-cards:end -->';
