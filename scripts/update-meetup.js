@@ -63,9 +63,11 @@ console.log(`Updating site for: ${day_of_week}, ${month} ${day} — ${area} (${t
 // meetup-events.json and out of schema.org Event data so search engines
 // never see a fake date. The meetup page keeps them in a marked block that
 // this script re-emits after the scheduled cards.
+// A string is a TBA week. An object keeps the same dashed card and replaces
+// the TBA line (used for a skipped holiday week). Week of Nov 30 is omitted
+// because the Thu Dec 3 meetup already covers that week.
 const TBA_WEEKS = [
-  'Week of Nov 23',
-  'Week of Nov 30',
+  { week: 'Week of Nov 23', body: 'No meetup this week &mdash; Happy Thanksgiving!' },
   'Week of Dec 7',
   'Week of Dec 14',
   'Week of Dec 21',
@@ -77,12 +79,14 @@ const TBA_SLOT = '<!--MEETUP_TBA_SLOT-->';
 const TBA_BLOCK_RE = /[ \t]*<!-- meetup-tba-placeholders:start -->[\s\S]*?<!-- meetup-tba-placeholders:end -->/;
 
 function buildTbaPlaceholderBlock() {
-  const cards = TBA_WEEKS.map((week) => {
+  const cards = TBA_WEEKS.map((entry) => {
+    const week = typeof entry === 'string' ? entry : entry.week;
+    const body = typeof entry === 'string' ? 'Date, time &amp; location TBA' : entry.body;
     return [
       '          <div class="date-card tba">',
       '            <div class="date-card-info">',
       `              <h4>&#128197; ${week}</h4>`,
-      '              <p>Date, time &amp; location TBA</p>',
+      `              <p>${body}</p>`,
       '            </div>',
       '          </div>',
     ].join('\n');
