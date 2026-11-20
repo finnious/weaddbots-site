@@ -5,6 +5,9 @@
 /events/memphis-ai-meetup-feb-2026  /events/memphis-ai-meetup  301
 /events/memphis-ai-meetup-feb-2026/  /events/memphis-ai-meetup  301
 
+# Calculator directory URL to the canonical file URL
+/tools/ai-handoff/  /tools/ai-handoff  301
+
 # Future redirects for monthly pages
 /events/memphis-ai-meetup-jan-2026  /events/memphis-ai-meetup  301
 /events/memphis-ai-meetup-mar-2026  /events/memphis-ai-meetup  301

@@ -21,6 +21,7 @@
 - [FAQ](https://www.weaddbots.com/faq) - Comprehensive answers about AI automation, services, Rebecca AI Receptionist, and Memphis AI Meetups
 - [Workshops](https://www.weaddbots.com/workshops) - Practical AI workshops for business owners — topic interest form; details shared privately
 /quiz — Free AI Readiness Assessment. 15-question quiz measuring lead response speed, task automation readiness, and workflow connectivity. Personalized score and recommendations.
+- [Which job should I hand to AI?](https://www.weaddbots.com/tools/ai-handoff) - Free in-browser calculator. Rank 3 to 10 weekly tasks, see whether a script or an AI agent fits, and estimate hours you might get back. No login.
 
 ## Positioning
 Primary: AI automation consulting for established small and mid-sized businesses, based in Memphis TN, serving US businesses
